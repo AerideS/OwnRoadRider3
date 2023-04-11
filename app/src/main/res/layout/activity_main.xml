@@ -126,7 +126,7 @@
                 android:button="@null"
                 android:checked="true"
                 android:gravity="center"
-                android:text="RadioButton"
+                android:text="인기있는"
                 android:textColor="@drawable/cate_text_selector" />
 
             <RadioButton
@@ -138,7 +138,7 @@
                 android:background="@drawable/cate_button_selector"
                 android:button="@null"
                 android:gravity="center"
-                android:text="RadioButton"
+                android:text="요즘뜨는"
                 android:textColor="@drawable/cate_text_selector" />
 
             <RadioButton
@@ -150,7 +150,7 @@
                 android:background="@drawable/cate_button_selector"
                 android:button="@null"
                 android:gravity="center"
-                android:text="RadioButton"
+                android:text="평이좋은"
                 android:textColor="@drawable/cate_text_selector" />
 
             <RadioButton
@@ -162,7 +162,7 @@
                 android:background="@drawable/cate_button_selector"
                 android:button="@null"
                 android:gravity="center"
-                android:text="RadioButton"
+                android:text="다시찾는"
                 android:textColor="@drawable/cate_text_selector" />
 
         </RadioGroup>
