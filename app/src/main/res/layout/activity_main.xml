@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--상단 검색창 레이아웃-->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="414dp"
+        android:layout_height="335dp"
+        android:background="@drawable/search_background_ractangle"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="VisualLintBounds">
+
+        <ImageView
+            android:id="@+id/logoImage"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:contentDescription="@string/logo"
+            android:padding="10dp"
+            app:srcCompat="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/sloganText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:text="@string/slogan"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="360dp"
+            android:layout_height="115dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/search_boxes"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <!--출발지 입력창-->
+            <EditText
+                android:id="@+id/startPointSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="5dp"
+                android:autofillHints=""
+                android:background="@null"
+                android:ems="10"
+                android:hint="@string/startPoint"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:privateImeOptions="defaultInputmode=korean"
+                />
+
+            <!--목적지 입력창-->
+            <EditText
+                android:id="@+id/finishPointSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="8dp"
+                android:autofillHints=""
+                android:background="@null"
+                android:ems="10"
+                android:hint="@string/destination"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:privateImeOptions="defaultInputmode=korean"
+                />
+        </LinearLayout>
+
+        <!--경로 검색 버튼-->
+        <ImageButton
+            android:id="@+id/pathSearchButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/button_for_path_search"
+            android:minHeight="48dp"
+            app:srcCompat="@drawable/search_button_box"
+            tools:ignore="RedundantDescriptionCheck" />
+
+    </LinearLayout>
+
+    <!--카테고리 스크롤 뷰-->
+    <HorizontalScrollView
+        android:id="@+id/categoryScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:layout_marginTop="16dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <RadioGroup
+            android:id="@+id/themeRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/theme1"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_margin="12dp"
+                android:layout_weight="1"
+                android:background="@drawable/cate_button_selector"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="RadioButton"
+                android:textColor="@drawable/cate_text_selector" />
+
+            <RadioButton
+                android:id="@+id/theme2"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_margin="12dp"
+                android:layout_weight="1"
+                android:background="@drawable/cate_button_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:text="RadioButton"
+                android:textColor="@drawable/cate_text_selector" />
+
+            <RadioButton
+                android:id="@+id/theme3"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_margin="12dp"
+                android:layout_weight="1"
+                android:background="@drawable/cate_button_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:text="RadioButton"
+                android:textColor="@drawable/cate_text_selector" />
+
+            <RadioButton
+                android:id="@+id/theme4"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_margin="12dp"
+                android:layout_weight="1"
+                android:background="@drawable/cate_button_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:text="RadioButton"
+                android:textColor="@drawable/cate_text_selector" />
+
+            <include
+                android:id="@+id/navigation_bar"
+                layout="@layout/navigation_bar"></include>
+        </RadioGroup>
+    </HorizontalScrollView>
+
+    <!--여행지 사진 스크롤 뷰-->
+    <HorizontalScrollView
+        android:id="@+id/photoByThemeScrollView"
+        android:layout_width="388dp"
+        android:layout_height="176dp"
+        android:contentDescription="@string/photograph"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoryScrollView">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/landscapeImageButton1"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="12dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/landscape1"
+                android:src="@drawable/jinju2"
+                android:scaleType="fitCenter"/>
+
+            <ImageButton
+                android:id="@+id/landscapeImageButton2"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="12dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/landscape2"
+                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+            <ImageButton
+                android:id="@+id/landscapeImageButton3"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="12dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/laanscape3"
+                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!--하단 네비게이션 바 삽입-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

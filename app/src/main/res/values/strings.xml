@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">OwnRoadRider</string>
+    <string name="return_to_main">return_to_main</string>
+    <string name="category">category</string>
+    <string name="map">map</string>
+    <string name="detail_search">detail search</string>
+    <string name="my_page">my page</string>
+    <string name="slogan">당신의 지도를 펴세요!</string>
+    <string name="logo">logo</string>
+    <string name="button_for_path_search">button for pathSearch</string>
+    <string name="destination">도착지</string>
+    <string name="startPoint">출발지</string>
+    <string name="theme1">theme1</string>
+    <string name="theme2">theme2</string>
+    <string name="theme3">theme3</string>
+    <string name="theme4">theme4</string>
+    <string name="photograph">photograph</string>
+    <string name="image1">image1</string>
+    <string name="image2">image2</string>
+    <string name="image3">image3</string>
+    <string name="landscape1">landscape1</string>
+    <string name="landscape2">landscape2</string>
+    <string name="laanscape3">laanscape3</string>
+    <string name="advancedSearchText">목적지 검색</string>
+</resources>
