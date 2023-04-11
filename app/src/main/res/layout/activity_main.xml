@@ -191,8 +191,7 @@
                 android:layout_margin="12dp"
                 android:layout_weight="1"
                 android:contentDescription="@string/landscape1"
-                android:src="@drawable/jinju2"
-                android:scaleType="fitCenter"/>
+                android:src="@drawable/small"/>
 
             <ImageButton
                 android:id="@+id/landscapeImageButton2"
@@ -201,7 +200,8 @@
                 android:layout_margin="12dp"
                 android:layout_weight="1"
                 android:contentDescription="@string/landscape2"
-                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+                android:src="@drawable/sacheon"
+                />
 
             <ImageButton
                 android:id="@+id/landscapeImageButton3"
@@ -210,7 +210,7 @@
                 android:layout_margin="12dp"
                 android:layout_weight="1"
                 android:contentDescription="@string/laanscape3"
-                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+                android:src="@drawable/bak" />
         </LinearLayout>
     </HorizontalScrollView>
 
