@@ -31,16 +31,7 @@ public class ReviewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.review);
 
-        // 더보기 이벤트 뷰
 
-        more_text=findViewById(R.id.more_text);
-
-        more_text.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"모두보기 선택",Toast.LENGTH_LONG).show();
-            }
-        });
 
         //하단 네이게이션바
         //홈
