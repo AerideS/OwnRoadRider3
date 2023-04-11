@@ -55,10 +55,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getHashKey();
 
-
-
         advancedSearch = findViewById(R.id.detailSearchButton);
-
         startpoint=findViewById(R.id.startPointSearch);
         endpoint=findViewById(R.id.finishPointSearch);
         pathSearchButton=findViewById(R.id.pathSearchButton);
