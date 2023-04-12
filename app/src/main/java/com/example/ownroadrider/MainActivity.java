@@ -51,11 +51,11 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageButton pathSearchButton;
 
-    private ImageButton homeButton;
-    private ImageButton categoryButton;
-    private ImageButton mapButton;
-    private ImageButton detailSearchButton;
-    private ImageButton mypageButton;
+    private ImageButton homeButton_m;
+    private ImageButton categoryButton_m;
+    private ImageButton mapButton_m;
+    private ImageButton detailSearchButton_m;
+    private ImageButton mypageButton_m;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,9 +68,9 @@ public class MainActivity extends AppCompatActivity {
         endpoint=findViewById(R.id.finishPointSearch);
         pathSearchButton=findViewById(R.id.pathSearchButton);
 
-        homeButton=findViewById(R.id.homeButton);
+        homeButton_m=findViewById(R.id.homeButton);
 
-        homeButton.setOnClickListener(new View.OnClickListener() {
+        homeButton_m.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
@@ -79,18 +79,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //카테고리
-        categoryButton=findViewById(R.id.categoryButton);
+        categoryButton_m=findViewById(R.id.categoryButton);
 
-        categoryButton.setOnClickListener(new View.OnClickListener() {
+        categoryButton_m.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(),"카테고리 선택",Toast.LENGTH_LONG).show();
             }
         });
         //맵
-        mapButton=findViewById(R.id.mapButton);
+        mapButton_m=findViewById(R.id.mapButton);
 
-        mapButton.setOnClickListener(new View.OnClickListener() {
+        mapButton_m.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(),"맵 선택",Toast.LENGTH_LONG).show();
@@ -98,9 +98,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //검색
-        detailSearchButton=findViewById(R.id.detailSearchButton);
+        detailSearchButton_m=findViewById(R.id.detailSearchButton);
 
-        detailSearchButton.setOnClickListener(new View.OnClickListener() {
+        detailSearchButton_m.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), AdvancedSearchActivity.class);
@@ -108,9 +108,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         //마이페이지
-        mypageButton=findViewById(R.id.mypageButton);
+        mypageButton_m=findViewById(R.id.mypageButton);
 
-        mypageButton.setOnClickListener(new View.OnClickListener() {
+        mypageButton_m.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(),"내정보 선택",Toast.LENGTH_LONG).show();

@@ -76,8 +76,6 @@
 
     <include
         android:id="@+id/navigation_bar"
-        layout="@layout/navigation_bar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></include>
+        layout="@layout/navigation_bar"></include>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

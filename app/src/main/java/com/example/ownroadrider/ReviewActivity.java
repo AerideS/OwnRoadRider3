@@ -20,7 +20,6 @@ public class ReviewActivity extends AppCompatActivity {
     private int num_page = 4;
     private CircleIndicator3 mIndicator;
 
-    private TextView more_text;
     private ImageButton homeButton;
     private ImageButton categoryButton;
     private ImageButton mapButton;
