@@ -257,5 +257,10 @@
     </HorizontalScrollView>
 
     <!--하단 네비게이션 바 삽입-->
+    <include
+        android:id="@+id/navigation_bar"
+        layout="@layout/navigation_bar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></include>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

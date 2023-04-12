@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -49,6 +50,13 @@ public class MainActivity extends AppCompatActivity {
     private EditText endpoint;
 
     private ImageButton pathSearchButton;
+
+    private ImageButton homeButton;
+    private ImageButton categoryButton;
+    private ImageButton mapButton;
+    private ImageButton detailSearchButton;
+    private ImageButton mypageButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +67,55 @@ public class MainActivity extends AppCompatActivity {
         startpoint=findViewById(R.id.startPointSearch);
         endpoint=findViewById(R.id.finishPointSearch);
         pathSearchButton=findViewById(R.id.pathSearchButton);
+
+        homeButton=findViewById(R.id.homeButton);
+
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //카테고리
+        categoryButton=findViewById(R.id.categoryButton);
+
+        categoryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(),"카테고리 선택",Toast.LENGTH_LONG).show();
+            }
+        });
+        //맵
+        mapButton=findViewById(R.id.mapButton);
+
+        mapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(),"맵 선택",Toast.LENGTH_LONG).show();
+            }
+        });
+
+        //검색
+        detailSearchButton=findViewById(R.id.detailSearchButton);
+
+        detailSearchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), AdvancedSearchActivity.class);
+                startActivity(intent);
+            }
+        });
+        //마이페이지
+        mypageButton=findViewById(R.id.mypageButton);
+
+        mypageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(),"내정보 선택",Toast.LENGTH_LONG).show();
+            }
+        });
 
        pathSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
