@@ -169,7 +169,7 @@ public class MapSearchActivity extends AppCompatActivity {
         MapPolyline polyline = new MapPolyline();           //맵구현 부
         polyline.setTag(1000);
         polyline.setLineColor(Color.argb(128, 255, 51, 0)); // Polyline 컬러 지정.
-        MapView mapView = new MapView(this);
+        MapView mapView = new MapView(MapSearchActivity.this);
         ViewGroup mapViewContainer = (ViewGroup) findViewById(R.id.map_view);
         mapViewContainer.addView(mapView);
         MapPOIItem startpoint = new MapPOIItem();

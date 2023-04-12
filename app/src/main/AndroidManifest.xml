@@ -29,6 +29,7 @@
         <activity android:name=".AdvancedSearchActivity" /> <!-- 상세 검색 화면 동작하게 하기 -->
         <activity android:name=".ReviewActivity" />
         <activity android:name=".MapSearchActivity" />
+        <activity android:name=".Map_view" />
 
         <meta-data
             android:name="com.kakao.sdk.AppKey"

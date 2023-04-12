@@ -129,13 +129,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        advancedSearch.setOnClickListener(new View.OnClickListener() {  // 검색 버튼 클릭 시 상세 검색 화면으로 전환
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), AdvancedSearchActivity.class);
-                startActivity(intent);
-            }
-        });
+
 
         landscape1 = findViewById(R.id.landscapeImageButton1);
         landscape1.setOnClickListener(new View.OnClickListener() {
@@ -146,14 +140,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        map = findViewById(R.id.mapButton);
-        map.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MapSearchActivity.class);
-                startActivity(intent);
-            }
-        });
 
 
 
