@@ -59,7 +59,8 @@ public class ReviewActivity extends AppCompatActivity {
         mapButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"맵 선택",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(ReviewActivity.this, Map_view.class);
+                startActivity(intent);
             }
         });
 

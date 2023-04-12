@@ -93,7 +93,8 @@ public class MainActivity extends AppCompatActivity {
         mapButton_m.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"맵 선택",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MainActivity.this, Map_view.class);
+                startActivity(intent);
             }
         });
 
@@ -103,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
         detailSearchButton_m.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), AdvancedSearchActivity.class);
+                Intent intent = new Intent(MainActivity.this, AdvancedSearchActivity.class);
                 startActivity(intent);
             }
         });
