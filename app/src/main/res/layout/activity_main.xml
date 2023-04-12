@@ -23,27 +23,14 @@
         <ImageView
             android:id="@+id/logoImage"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:contentDescription="@string/logo"
             android:padding="10dp"
             app:srcCompat="@drawable/logo" />
 
-        <TextView
-            android:id="@+id/sloganText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
-            android:gravity="center"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:text="@string/slogan"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
         <LinearLayout
             android:layout_width="360dp"
-            android:layout_height="115dp"
+            android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:background="@drawable/search_boxes"
             android:gravity="center_vertical"
@@ -63,14 +50,13 @@
                 android:hint="@string/startPoint"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:privateImeOptions="defaultInputmode=korean"
-                />
+                android:privateImeOptions="defaultInputmode=korean" />
 
             <!--목적지 입력창-->
             <EditText
                 android:id="@+id/finishPointSearch"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="8dp"
@@ -80,11 +66,64 @@
                 android:hint="@string/destination"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:privateImeOptions="defaultInputmode=korean"
-                />
+                android:privateImeOptions="defaultInputmode=korean" />
         </LinearLayout>
 
         <!--경로 검색 버튼-->
+
+        <LinearLayout
+            android:layout_width="414dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <CheckBox
+                    android:id="@+id/checkBox8"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="바다"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+
+                <CheckBox
+                    android:id="@+id/checkBox9"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="섬"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <CheckBox
+                    android:id="@+id/checkBox10"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="산"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+
+                <CheckBox
+                    android:id="@+id/checkBox11"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="유적지"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
         <ImageButton
             android:id="@+id/pathSearchButton"
             android:layout_width="match_parent"
@@ -165,6 +204,10 @@
                 android:text="다시찾는"
                 android:textColor="@drawable/cate_text_selector" />
 
+            <include
+                android:id="@+id/navigation_bar"
+                layout="@layout/navigation_bar"></include>
+
         </RadioGroup>
     </HorizontalScrollView>
 
@@ -191,7 +234,7 @@
                 android:layout_margin="12dp"
                 android:layout_weight="1"
                 android:contentDescription="@string/landscape1"
-                android:src="@drawable/small"/>
+                android:src="@drawable/small" />
 
             <ImageButton
                 android:id="@+id/landscapeImageButton2"
@@ -200,8 +243,7 @@
                 android:layout_margin="12dp"
                 android:layout_weight="1"
                 android:contentDescription="@string/landscape2"
-                android:src="@drawable/sacheon"
-                />
+                android:src="@drawable/sacheon" />
 
             <ImageButton
                 android:id="@+id/landscapeImageButton3"
@@ -215,12 +257,5 @@
     </HorizontalScrollView>
 
     <!--하단 네비게이션 바 삽입-->
-    <include
-        android:id="@+id/navigation_bar"
-        layout="@layout/navigation_bar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></include>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
