@@ -2,11 +2,12 @@ package com.example.ownroadrider;
 
 
 
-public class Dijkstra {
+public class  Dijkstra {
     private int n;
     private int[][] weight;
     private String[] saveRoute;
-    private String[] vertex = {"진주", "사천", "산청", "마산", "창원"};
+    private String[] vertex = {"창원", "진주", "통영", "사천", "밀양", "거제", "양산", "의령",
+    "함양", "창녕", "고성", "남해", "하동", "산청", "함안", "거창", "합천"};
 
     public Dijkstra(int n, int[][] matrix) {
         super();
