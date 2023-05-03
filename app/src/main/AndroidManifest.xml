@@ -18,6 +18,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Map_search"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -28,12 +31,11 @@
         </activity>
         <activity android:name=".AdvancedSearchActivity" /> <!-- 상세 검색 화면 동작하게 하기 -->
         <activity android:name=".ReviewActivity" />
-        <activity android:name=".MapSearchActivity" />
         <activity android:name=".Map_view" />
 
         <meta-data
-            android:name="com.kakao.sdk.AppKey"
-            android:value="376fb455bd5128c312e9f5984e5104fd" />
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="nowdd7jigt" />
     </application>
 
 </manifest>
