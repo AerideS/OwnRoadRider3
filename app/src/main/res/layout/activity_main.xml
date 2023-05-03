@@ -143,6 +143,8 @@
     </LinearLayout>
 
     <!--카테고리 스크롤 뷰-->
+
+    <!--여행지 사진 스크롤 뷰-->
     <HorizontalScrollView
         android:id="@+id/categoryScrollView"
         android:layout_width="match_parent"
@@ -217,7 +219,6 @@
         </RadioGroup>
     </HorizontalScrollView>
 
-    <!--여행지 사진 스크롤 뷰-->
     <HorizontalScrollView
         android:id="@+id/photoByThemeScrollView"
         android:layout_width="388dp"

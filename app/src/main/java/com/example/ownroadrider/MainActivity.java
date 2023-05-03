@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -43,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     private ImageButton advancedSearch;  //하단 바 검색 버튼
-    private ImageButton landscape1; //리뷰창과 연결됨(임시)
     private ImageButton map;    //지도 버튼
 
     private EditText startpoint;
@@ -56,6 +56,11 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton mapButton_m;
     private ImageButton detailSearchButton_m;
     private ImageButton mypageButton_m;
+
+    private RadioGroup themeRg; // 테마 선택 라디오 그룹
+    private ImageButton landscape1;
+    private ImageButton landscape2;
+    private ImageButton landscape3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-       pathSearchButton.setOnClickListener(new View.OnClickListener() {
+        pathSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -129,9 +134,27 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
+        themeRg = findViewById(R.id.themeRadioGroup);           //라디오 그룹
         landscape1 = findViewById(R.id.landscapeImageButton1);
+        landscape2 = findViewById(R.id.landscapeImageButton2);
+        landscape3 = findViewById(R.id.landscapeImageButton3);
+
+        themeRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int checked) {
+                if(checked == R.id.theme1){
+                    landscape1.setImageResource(R.drawable.small);
+                    landscape2.setImageResource(R.drawable.sacheon);
+                    landscape3.setImageResource(R.drawable.bak);
+                }
+                else if(checked == R.id.theme2){
+                    landscape1.setImageResource(R.drawable.tongyeong_dongpirang);
+                    landscape2.setImageResource(R.drawable.sachoen_seacablecar);
+                    landscape3.setImageResource(R.drawable.hapcheon_haeinsa);
+                }
+            }
+        });
+
         landscape1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
