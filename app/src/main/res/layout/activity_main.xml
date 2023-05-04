@@ -231,6 +231,7 @@
                 android:layout_margin="12dp"
                 android:layout_weight="1"
                 android:contentDescription="@string/landscape1"
+                android:scaleType="centerInside"
                 android:src="@drawable/small" />
 
             <ImageButton
@@ -240,6 +241,7 @@
                 android:layout_margin="12dp"
                 android:layout_weight="1"
                 android:contentDescription="@string/landscape2"
+                android:scaleType="centerInside"
                 android:src="@drawable/sacheon" />
 
             <ImageButton
@@ -249,6 +251,7 @@
                 android:layout_margin="12dp"
                 android:layout_weight="1"
                 android:contentDescription="@string/laanscape3"
+                android:scaleType="centerInside"
                 android:src="@drawable/bak" />
         </LinearLayout>
     </HorizontalScrollView>
