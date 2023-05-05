@@ -14,6 +14,9 @@ import com.naver.maps.map.MapView;
 import com.naver.maps.map.NaverMap;
 import com.naver.maps.map.OnMapReadyCallback;
 import com.naver.maps.map.overlay.Marker;
+import com.naver.maps.map.overlay.PolylineOverlay;
+
+import java.util.Arrays;
 
 public class Map_search extends AppCompatActivity implements OnMapReadyCallback {
     private MapView mapView;
@@ -292,5 +295,12 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
                 break;
         }
         naverMap.setCameraPosition(new CameraPosition(new LatLng(35.2519,128.3094),6));
+        PolylineOverlay polyline = new PolylineOverlay();
+        polyline.setCoords(Arrays.asList(
+                new LatLng(region_position[dj.stringToInt(st)][0],region_position[dj.stringToInt(st)][1]),
+                new LatLng(region_position[dj.stringToInt(rot[1])][0],region_position[dj.stringToInt(rot[1])][1]),
+                new LatLng(region_position[dj.stringToInt(ed)][0],region_position[dj.stringToInt(ed)][1])
+        ));
+        polyline.setMap(naverMap);
     }
 }
