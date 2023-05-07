@@ -64,7 +64,8 @@ public class MyPageActivity extends AppCompatActivity {
                         break;
                     case R.id.recommendScheduleBtn:
                         Toast.makeText(getApplicationContext(), "여행 고수들의 추천 일정!", Toast.LENGTH_SHORT).show();
-                        Log.d(this.getClass().getName(), "여행 고수들의 추천 일정!");
+                        Intent recommedIntent = new Intent(MyPageActivity.this, RecommendedScheduleActivity.class);
+                        startActivity(recommedIntent);
                         break;
                 }
             }
