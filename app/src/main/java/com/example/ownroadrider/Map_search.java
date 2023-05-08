@@ -294,7 +294,10 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
                 marker_e.setHeight(100);
                 break;
         }
-        naverMap.setCameraPosition(new CameraPosition(new LatLng(35.2519,128.3094),6));
+
+        double mid_camera_point_la = (region_position[dj.stringToInt(st)][0]+region_position[dj.stringToInt(st)][0]+region_position[dj.stringToInt(st)][0])/3;
+        double mid_camera_point_long = (region_position[dj.stringToInt(st)][1]+region_position[dj.stringToInt(st)][1]+region_position[dj.stringToInt(st)][1])/3;
+        naverMap.setCameraPosition(new CameraPosition(new LatLng(mid_camera_point_la,mid_camera_point_long),6));
         PolylineOverlay polyline = new PolylineOverlay();
         polyline.setCoords(Arrays.asList(
                 new LatLng(region_position[dj.stringToInt(st)][0],region_position[dj.stringToInt(st)][1]),
