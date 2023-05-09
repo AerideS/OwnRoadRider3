@@ -122,25 +122,28 @@ public class MainActivity extends AppCompatActivity {
                     landscape1.setImageResource(R.drawable.small);
                     landscape2.setImageResource(R.drawable.sacheon);
                     landscape3.setImageResource(R.drawable.bak);
+                    landscape1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(getApplicationContext(), ReviewActivity.class);
+                            startActivity(intent);
+                        }
+                    });
                 }
                 else if(checked == R.id.theme2){
                     landscape1.setImageResource(R.drawable.tongyeong_dongpirang);
                     landscape2.setImageResource(R.drawable.sachoen_seacablecar);
                     landscape3.setImageResource(R.drawable.hapcheon_haeinsa);
+                    landscape1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(getApplicationContext(), TyDprDetailActivity.class);
+                            startActivity(intent);
+                        }
+                    });
                 }
             }
         });
-
-        landscape1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ReviewActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
-
 
     }
 
