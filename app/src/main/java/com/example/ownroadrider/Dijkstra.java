@@ -6,7 +6,7 @@ public class  Dijkstra {
     private int n;                  // 도시의 총수
     private int[][] weight;         // 가중치 지도
     private String[] saveRoute;     // 이동 경로 저장
-    private String[] vertex = {"창원", "진주", "통영", "사천", "밀양", "거제", "양산", "의령",
+    private String[] vertex = {"창원", "진주", "통영", "사천","김해", "밀양", "거제", "양산", "의령",
     "함양", "창녕", "고성", "남해", "하동", "산청", "함안", "거창", "합천"};
 
     public Dijkstra(int n, int[][] matrix) {        // 변수 초기화
@@ -21,7 +21,7 @@ public class  Dijkstra {
     public int stringToInt(String s) {              // String to Int
         int x = 0;
         for (int i = 0; i < vertex.length; i++) {
-            if (vertex[i] == s) x = i;
+            if (vertex[i].equals(s)) x = i;
         }
         return x;
     }
@@ -78,8 +78,8 @@ public class  Dijkstra {
             route += vertex[stringToInt(prev)];
             route += " ";
             prev = saveRoute[stringToInt(prev)];
-            if(prev == a) {
-                route += prev;
+            if(prev.equals(a)) {
+                route+=a;
                 break;
             }
         }

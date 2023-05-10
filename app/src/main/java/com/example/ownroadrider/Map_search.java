@@ -17,9 +17,20 @@ import com.naver.maps.map.overlay.Marker;
 import com.naver.maps.map.overlay.PolylineOverlay;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 public class Map_search extends AppCompatActivity implements OnMapReadyCallback {
     private MapView mapView;
+
+    private String[] vertex = {"창원", "진주", "통영", "사천", "김해","밀양", "거제", "양산", "의령",
+            "함양", "창녕", "고성", "남해", "하동", "산청", "함안", "거창", "합천"};
+    public int stringToInt(String s) {              // String to Int
+        int x = 0;
+        for (int i = 0; i < vertex.length; i++) {
+            if (vertex[i].equals(s)) x = i;
+        }
+        return x;
+    }
     int[][] matrixGN = new int[][]{
             {0,27,Integer.MAX_VALUE,Integer.MAX_VALUE,27,51,Integer.MAX_VALUE,Integer.MAX_VALUE,Integer.MAX_VALUE,
                     Integer.MAX_VALUE,35,63,Integer.MAX_VALUE,Integer.MAX_VALUE,Integer.MAX_VALUE,31,Integer.MAX_VALUE,Integer.MAX_VALUE},      //창원
@@ -141,212 +152,118 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
         String st = intent.getStringExtra("start");          //출발지 받아오기
         String ed = intent.getStringExtra("end");             //목적지 받아오기
         Dijkstra dj=new Dijkstra(18, matrixGN);
-        String[]rot =new String[3];
+        String[]rot =dj.algorithm(vertex[dj.stringToInt(st)],vertex[dj.stringToInt(ed)]);
+        Collections.reverse(Arrays.asList(rot));
+        Marker marker_s = new Marker();
         Marker marker_m = new Marker();             //경유지 마커
         Marker marker_e = new Marker();             //도착지 마커
-
-        switch(st){
-            case"진주":
-                switch (ed){
-                    case"사천":
-                        rot=dj.algorithm("진주","사천");
-                        break;
-                    case"창원":
-                        rot=dj.algorithm("진주","창원");
-                        break;
-                    case"거제":
-                        rot=dj.algorithm("진주","거제");
-                        break;
-                    case"남해":
-                        rot=dj.algorithm("진주","남해");
-                        break;
-                    case"마산":
-                        rot=dj.algorithm("진주","마산");
-                        break;
-                }
-                break;
-            case"사천":
-                switch (ed){
-                    case"진주":
-                        rot=dj.algorithm("사천","진주");
-                        break;
-                    case"창원":
-                        rot=dj.algorithm("사천","창원");
-                        break;
-                    case"거제":
-                        rot=dj.algorithm("사천","거제");
-                        break;
-                    case"남해":
-                        rot=dj.algorithm("사천","남해");
-                        break;
-                    case"마산":
-                        rot=dj.algorithm("사천","마산");
-                        break;
-                }
-                break;
-            case"창원":
-                switch (ed){
-                    case"진주":
-                        rot=dj.algorithm("창원","진주");
-                        break;
-                    case"사천":
-                        rot=dj.algorithm("창원","사천");
-                        break;
-                    case"거제":
-                        rot=dj.algorithm("창원","거제");
-                        break;
-                    case"남해":
-                        rot=dj.algorithm("창원","남해");
-                        break;
-                    case"마산":
-                        rot=dj.algorithm("창원","마산");
-                        break;
-                }
-                break;
-            case"거제":
-                switch (ed){
-                    case"진주":
-                        rot=dj.algorithm("거제","진주");
-                        break;
-                    case"사천":
-                        rot=dj.algorithm("거제","사천");
-                        break;
-                    case"창원":
-                        rot=dj.algorithm("거제","창원");
-                        break;
-                    case"남해":
-                        rot=dj.algorithm("거제","남해");
-                        break;
-                    case"마산":
-                        rot=dj.algorithm("거제","마산");
-                        break;
-                }
-                break;
-            case"남해":
-                switch (ed){
-                    case"진주":
-                        rot=dj.algorithm("남해","진주");
-                        break;
-                    case"사천":
-                        rot=dj.algorithm("남해","사천");
-                        break;
-                    case"창원":
-                        rot=dj.algorithm("남해","창원");
-                        break;
-                    case"거제":
-                        rot=dj.algorithm("남해","거제");
-                        break;
-                    case"마산":
-                        rot=dj.algorithm("남해","마산");
-                        break;
-                }
-                break;
-            case"마산":
-                switch (ed){
-                    case"진주":
-                        rot=dj.algorithm("마산","진주");
-                        break;
-                    case"사천":
-                        rot=dj.algorithm("마산","사천");
-                        break;
-                    case"창원":
-                        rot=dj.algorithm("마산","창원");
-                        break;
-                    case"거제":
-                        rot=dj.algorithm("마산","거제");
-                        break;
-                    case"남해":
-                        rot=dj.algorithm("마산","남해");
-                        break;
-                }
-                break;
-        }
-        switch (st) {                                     //시작점 찍기
-            case "진주":
-                Marker marker = new Marker();
-                marker.setPosition(new LatLng(35.1805, 128.1087));
-                marker.setMap(naverMap);
-                marker.setWidth(80);
-                marker.setHeight(100);
-                break;
-        }
-
-        switch (rot[1]) {                                   //경유지찍기
-            case "사천":
-                marker_m.setPosition(new LatLng(region_position[2][0], region_position[2][1]));
-                marker_m.setMap(naverMap);
-                marker_m.setWidth(80);
-                marker_m.setHeight(100);
-                break;
-            case "창원":
-                marker_m.setPosition(new LatLng(region_position[0][0], region_position[0][1]));
-                marker_m.setMap(naverMap);
-                marker_m.setWidth(80);
-                marker_m.setHeight(100);
-                break;
-            case "거제":
-                marker_m.setPosition(new LatLng(region_position[3][0], region_position[3][1]));
-                marker_m.setMap(naverMap);
-                marker_m.setWidth(80);
-                marker_m.setHeight(100);
-                break;
-            case "남해":
-                marker_m.setPosition(new LatLng(region_position[4][0], region_position[4][1]));
-                marker_m.setMap(naverMap);
-                marker_m.setWidth(80);
-                marker_m.setHeight(100);
-                break;
-            case "마산":
-                marker_m.setPosition(new LatLng(region_position[5][0], region_position[5][1]));
-                marker_m.setMap(naverMap);
-                marker_m.setWidth(80);
-                marker_m.setHeight(100);
-                break;
-        }
-
-
-        switch (ed) {                                                   //도착지
-            case "사천":
-                marker_e.setPosition(new LatLng(region_position[2][0], region_position[2][1]));
-                marker_e.setMap(naverMap);
-                marker_e.setWidth(80);
-                marker_e.setHeight(100);
-                break;
-            case "창원":
-                marker_e.setPosition(new LatLng(region_position[0][0], region_position[0][1]));
-                marker_e.setMap(naverMap);
-                marker_e.setWidth(80);
-                marker_e.setHeight(100);
-                break;
-            case "거제":
-                marker_e.setPosition(new LatLng(region_position[3][0], region_position[3][1]));
-                marker_e.setMap(naverMap);
-                marker_e.setWidth(80);
-                marker_e.setHeight(100);
-                break;
-            case "남해":
-                marker_e.setPosition(new LatLng(region_position[4][0], region_position[4][1]));
-                marker_e.setMap(naverMap);
-                marker_e.setWidth(80);
-                marker_e.setHeight(100);
-                break;
-            case "마산":
-                marker_e.setPosition(new LatLng(region_position[5][0], region_position[5][1]));
-                marker_e.setMap(naverMap);
-                marker_e.setWidth(80);
-                marker_e.setHeight(100);
-                break;
-        }
-
-        double mid_camera_point_la = (region_position[dj.stringToInt(st)][0]+region_position[dj.stringToInt(st)][0]+region_position[dj.stringToInt(st)][0])/3;
-        double mid_camera_point_long = (region_position[dj.stringToInt(st)][1]+region_position[dj.stringToInt(st)][1]+region_position[dj.stringToInt(st)][1])/3;
-        naverMap.setCameraPosition(new CameraPosition(new LatLng(mid_camera_point_la,mid_camera_point_long),6));
+        int rot_num=rot.length-2;                   //경유지 수
+        double mid_camera_point_la;                 //카메라 중심점 위도
+        double mid_camera_point_long;               //카메라 중심점 경도
         PolylineOverlay polyline = new PolylineOverlay();
-        polyline.setCoords(Arrays.asList(
-                new LatLng(region_position[dj.stringToInt(st)][0],region_position[dj.stringToInt(st)][1]),
-                new LatLng(region_position[dj.stringToInt(rot[1])][0],region_position[dj.stringToInt(rot[1])][1]),
-                new LatLng(region_position[dj.stringToInt(ed)][0],region_position[dj.stringToInt(ed)][1])
-        ));
-        polyline.setMap(naverMap);
+
+        marker_s.setPosition(new LatLng(region_position[stringToInt(rot[0])][0], region_position[stringToInt(rot[0])][1]));                 //시작점 찍기
+        marker_s.setMap(naverMap);
+        marker_s.setWidth(80);
+        marker_s.setHeight(100);
+
+        switch (rot_num){                   //경유지 수 별 경유지 점찍기
+            case 0:
+                break;
+            case 1:
+                marker_m.setPosition(new LatLng(region_position[stringToInt(rot[1])][0], region_position[stringToInt(rot[1])][1]));
+                marker_m.setMap(naverMap);
+                marker_m.setWidth(80);
+                marker_m.setHeight(100);
+                break;
+            case 2:
+                marker_m.setPosition(new LatLng(region_position[stringToInt(rot[1])][0], region_position[stringToInt(rot[1])][1]));
+                marker_m.setMap(naverMap);
+                marker_m.setWidth(80);
+                marker_m.setHeight(100);
+                marker_m.setPosition(new LatLng(region_position[stringToInt(rot[2])][0], region_position[stringToInt(rot[2])][1]));
+                marker_m.setMap(naverMap);
+                marker_m.setWidth(80);
+                marker_m.setHeight(100);
+                break;
+            case 3:
+                marker_m.setPosition(new LatLng(region_position[stringToInt(rot[1])][0], region_position[stringToInt(rot[1])][1]));
+                marker_m.setMap(naverMap);
+                marker_m.setWidth(80);
+                marker_m.setHeight(100);
+                marker_m.setPosition(new LatLng(region_position[stringToInt(rot[2])][0], region_position[stringToInt(rot[2])][1]));
+                marker_m.setMap(naverMap);
+                marker_m.setWidth(80);
+                marker_m.setHeight(100);
+                marker_m.setPosition(new LatLng(region_position[stringToInt(rot[3])][0], region_position[stringToInt(rot[3])][1]));
+                marker_m.setMap(naverMap);
+                marker_m.setWidth(80);
+                marker_m.setHeight(100);
+                break;
+        }
+
+        marker_e.setPosition(new LatLng(region_position[stringToInt(rot[rot.length-1])][0], region_position[stringToInt(rot[rot.length-1])][1]));           //끝점찍기
+        marker_e.setMap(naverMap);
+        marker_e.setWidth(80);
+        marker_e.setHeight(100);
+        switch (rot_num){               //경유지 수 마다 다른 카메라 중심점계산
+            case 0:
+                mid_camera_point_la = (region_position[stringToInt(rot[0])][0]+region_position[stringToInt(rot[rot.length-1])][0])/2;
+                mid_camera_point_long = (region_position[stringToInt(rot[0])][1]+region_position[stringToInt(rot[rot.length-1])][1])/2;
+                naverMap.setCameraPosition(new CameraPosition(new LatLng(mid_camera_point_la,mid_camera_point_long),8));
+                break;
+            case 1:
+                mid_camera_point_la = (region_position[stringToInt(rot[0])][0]+region_position[stringToInt(rot[1])][0]+region_position[stringToInt(rot[rot.length-1])][0])/3;
+                mid_camera_point_long = (region_position[stringToInt(rot[0])][1]+region_position[stringToInt(rot[1])][1]+region_position[stringToInt(rot[rot.length-1])][1])/3;
+                naverMap.setCameraPosition(new CameraPosition(new LatLng(mid_camera_point_la,mid_camera_point_long),8));
+                break;
+            case 2:
+                mid_camera_point_la = (region_position[stringToInt(rot[0])][0]+region_position[stringToInt(rot[1])][0]+region_position[stringToInt(rot[2])][0]+region_position[stringToInt(rot[rot.length-1])][0])/3;
+                mid_camera_point_long = (region_position[stringToInt(rot[0])][1]+region_position[stringToInt(rot[1])][1]+region_position[stringToInt(rot[2])][1]+region_position[stringToInt(rot[rot.length-1])][1])/3;
+                naverMap.setCameraPosition(new CameraPosition(new LatLng(mid_camera_point_la,mid_camera_point_long),8));
+                break;
+            case 3:
+                mid_camera_point_la = (region_position[stringToInt(rot[0])][0]+region_position[stringToInt(rot[1])][0]+region_position[stringToInt(rot[2])][0]+region_position[stringToInt(rot[3])][0]+region_position[stringToInt(rot[rot.length-1])][0])/3;
+                mid_camera_point_long = (region_position[stringToInt(rot[0])][1]+region_position[stringToInt(rot[1])][1]+region_position[stringToInt(rot[2])][1]+region_position[stringToInt(rot[3])][1]+region_position[stringToInt(rot[rot.length-1])][1])/3;
+                naverMap.setCameraPosition(new CameraPosition(new LatLng(mid_camera_point_la,mid_camera_point_long),8));
+                break;
+        }
+        switch (rot_num){               //경유지 수 마다 다른 선 계산
+            case 0:
+                polyline.setCoords(Arrays.asList(
+                        new LatLng(region_position[dj.stringToInt(st)][0],region_position[dj.stringToInt(st)][1]),
+                        new LatLng(region_position[dj.stringToInt(ed)][0],region_position[dj.stringToInt(ed)][1])
+                ));
+                polyline.setMap(naverMap);
+                break;
+            case 1:
+                polyline.setCoords(Arrays.asList(
+                        new LatLng(region_position[dj.stringToInt(st)][0],region_position[dj.stringToInt(st)][1]),
+                        new LatLng(region_position[dj.stringToInt(rot[1])][0],region_position[dj.stringToInt(rot[1])][1]),
+                        new LatLng(region_position[dj.stringToInt(ed)][0],region_position[dj.stringToInt(ed)][1])
+                ));
+                polyline.setMap(naverMap);
+                break;
+            case 2:
+                polyline.setCoords(Arrays.asList(
+                        new LatLng(region_position[dj.stringToInt(st)][0],region_position[dj.stringToInt(st)][1]),
+                        new LatLng(region_position[dj.stringToInt(rot[1])][0],region_position[dj.stringToInt(rot[1])][1]),
+                        new LatLng(region_position[dj.stringToInt(rot[2])][0],region_position[dj.stringToInt(rot[2])][1]),
+                        new LatLng(region_position[dj.stringToInt(ed)][0],region_position[dj.stringToInt(ed)][1])
+                ));
+                polyline.setMap(naverMap);
+                break;
+            case 3:
+                polyline.setCoords(Arrays.asList(
+                        new LatLng(region_position[dj.stringToInt(st)][0],region_position[dj.stringToInt(st)][1]),
+                        new LatLng(region_position[dj.stringToInt(rot[1])][0],region_position[dj.stringToInt(rot[1])][1]),
+                        new LatLng(region_position[dj.stringToInt(rot[2])][0],region_position[dj.stringToInt(rot[2])][1]),
+                        new LatLng(region_position[dj.stringToInt(rot[3])][0],region_position[dj.stringToInt(rot[3])][1]),
+                        new LatLng(region_position[dj.stringToInt(ed)][0],region_position[dj.stringToInt(ed)][1])
+                ));
+                polyline.setMap(naverMap);;
+                break;
+        }
+
     }
 }
