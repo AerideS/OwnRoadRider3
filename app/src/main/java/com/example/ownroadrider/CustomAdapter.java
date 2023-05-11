@@ -1,5 +1,9 @@
 package com.example.ownroadrider;
 
+import android.content.Context;
+import android.graphics.drawable.AnimatedVectorDrawable;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,11 +15,13 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
     private List<CardForSchedule> dataList;
+    Context mContext;
     private int itemLayout;
 
     /**
@@ -23,11 +29,11 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
      * @param items
      * @param itemLayout
      */
-    public CustomAdapter(List<CardForSchedule> items , int itemLayout){
+    public CustomAdapter(List<CardForSchedule> items , int itemLayout, Context context){
         this.dataList = items;
         this.itemLayout = itemLayout;
+        this.mContext = context;
     }
-
     /**
      * 레이아웃을 만들어서 Holer에 저장
      * @param viewGroup
@@ -55,7 +61,17 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         viewHolder.scheduleTitleTxt.setText(item.getScheduleTitle());
         viewHolder.courseTxt.setText(item.getCourse());
         viewHolder.totalReviewTxt.setText(item.getTotalreview());
-        //viewHolder.dest1Img.setImageDrawable(item.getDest1Image());
+        viewHolder.dest1Img.setImageResource(item.getDest1Img());
+        viewHolder.dest1Img.setBackground(viewHolder.dest1Img.getDrawable());
+        viewHolder.dest1Img.setImageResource(0);
+        viewHolder.dest2Img.setImageResource(item.getDest2Img());
+        viewHolder.dest2Img.setBackground(viewHolder.dest2Img.getDrawable());
+        viewHolder.dest2Img.setImageResource(0);
+        viewHolder.dest3Img.setImageResource(item.getDest3Img());
+        viewHolder.dest3Img.setBackground(viewHolder.dest3Img.getDrawable());
+        viewHolder.dest3Img.setImageResource(0);
+        viewHolder.ratingBar.setRating(item.getRating());
+
         viewHolder.itemView.setTag(item);
 
         // 아이템뷰(하나의 카드뷰) 링크 클릭 리스너
