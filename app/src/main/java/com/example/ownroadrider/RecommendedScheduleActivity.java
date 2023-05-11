@@ -34,16 +34,16 @@ public class RecommendedScheduleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recommended_schedule);
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
-        recyclerView.setAdapter(new CustomAdapter(list, R.layout.card_view_item_layout, getApplicationContext()));
+        recyclerView.setAdapter(new CustomAdapter(list, R.layout.card_view_item_layout));
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         handler = new Handler();
 
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                recyclerView.setAdapter(new CustomAdapter(list, R.layout.card_view_item_layout, getApplicationContext()));
+                recyclerView.setAdapter(new CustomAdapter(list, R.layout.card_view_item_layout));
                 recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
             }
         }, 1000);   // 1000 = 1초 후 도출
@@ -73,16 +73,13 @@ public class RecommendedScheduleActivity extends AppCompatActivity {
                 String scheduleTitle = jsonObject.getString("scheduleTitle");
                 String course = jsonObject.getString("course");
                 Integer rating = jsonObject.getInt("rating");
-                String imgStr = jsonObject.getString("dest1Img");
-                Integer iResId1 = getResources().getIdentifier( imgStr, "drawable", this.getPackageName() );
-                imgStr = jsonObject.getString("dest2Img");
-                Integer iResId2 = getResources().getIdentifier( imgStr, "drawable", this.getPackageName() );
-                imgStr = jsonObject.getString("dest3Img");
-                Integer iResId3 = getResources().getIdentifier( imgStr, "drawable", this.getPackageName() );
+                String img1Str = jsonObject.getString("dest1Img");
+                Integer iResId1 = getResources().getIdentifier( img1Str, "drawable", this.getPackageName() );
+                String img2Str = jsonObject.getString("dest2Img");
+                Integer iResId2 = getResources().getIdentifier( img2Str, "drawable", this.getPackageName() );
+                String img3Str = jsonObject.getString("dest3Img");
+                Integer iResId3 = getResources().getIdentifier( img3Str, "drawable", this.getPackageName() );
                 String totalReview = jsonObject.getString("totalReview");
-                /*JSONObject flag = jsonObject.getJSONObject("flag");
-                int aa = flag.getInt("aa");
-                int bb = flag.getInt("bb");*/
 
                 list.add(new CardForSchedule(scheduleTitle, course, iResId1, iResId2, iResId3, rating,totalReview));
             }

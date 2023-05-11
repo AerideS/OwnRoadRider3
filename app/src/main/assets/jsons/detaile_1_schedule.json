@@ -1,0 +1,5 @@
+[
+  {"destTitle": "창원 저도 연육교", "rating":  "4", "review":  "저도 연육교는 야경이 너무 이쁘고 시원한 바다바람도 즐길 수 있었어요.", "destImg":"@drawable/yeonyuk_bridge"},
+  {"destTitle": "진주 진양호", "rating":  "5", "review":  "벚꽃도 구경하고 높은 곳에서 넓은 호수도 바라보니 마음이 탁 트이는 기분이었어요.", "destImg":"@drawable/jinyang_lake"},
+  {"destTitle": "하동 송림공원", "rating":  "3", "review":  "섬진강을 따라 나무향도 느끼면서 걸으니 여행의 마무리를 부드럽게 즐길 수 있었어요.", "destImg":"@drawable/songrim_park"}
+]

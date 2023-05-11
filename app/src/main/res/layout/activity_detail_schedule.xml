@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DetailScheduleActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/totalScheduleTitleTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="충렬 애국의 혼을 새기는 역사 관광"
+            android:textSize="23dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:layout_gravity="center"/>
+        <TextView
+            android:id="@+id/detailCourseTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="창원 저도 연육교 - 진주 진양호 - 하동 송림공원"
+            android:textSize="15dp"
+            android:textStyle=""
+            android:textAlignment="center"
+            android:layout_gravity="center"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/detailRecycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/detail_schedule_card_view_item_layout" />
+
+        <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="5dp">
+                <RatingBar
+                    android:id="@+id/totalRatingBar"
+                    style="@android:style/Widget.DeviceDefault.Light.RatingBar.Indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:background="@color/white"
+                    android:progressTint="@color/yellow"
+                    android:isIndicator="false"
+                    android:numStars="5"
+                    android:rating="1"
+                    android:stepSize="1" />
+            </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/detailTotalReviewTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="강, 바다, 호수를 자연이라는 테마에 맞게 즐길 수 있어서 좋았어요! 평소 직장생활로 쌓인 스트레스를 탁 트인 자연을 바라보며 훌훌 털어버린 기분이에요."
+            android:textSize="15dp" />
+    </LinearLayout>
+
+</ScrollView>

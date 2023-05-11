@@ -1,6 +1,7 @@
 package com.example.ownroadrider;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.AnimatedVectorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -21,7 +22,7 @@ import java.util.List;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
     private List<CardForSchedule> dataList;
-    Context mContext;
+    //private Context mContext;
     private int itemLayout;
 
     /**
@@ -29,10 +30,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
      * @param items
      * @param itemLayout
      */
-    public CustomAdapter(List<CardForSchedule> items , int itemLayout, Context context){
+    public CustomAdapter(List<CardForSchedule> items , int itemLayout){
         this.dataList = items;
         this.itemLayout = itemLayout;
-        this.mContext = context;
+        //this.mContext = context;
     }
     /**
      * 레이아웃을 만들어서 Holer에 저장
@@ -82,6 +83,39 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                 view.getContext().startActivity(it);
             }
         });*/
+
+        // 아이템 클릭 이벤트 처리.
+        viewHolder.cardScheduleView.setClickable(true);
+        viewHolder.cardScheduleView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int mPosition = viewHolder.getAdapterPosition();
+                Context context = v.getContext();
+                Intent intent = new Intent(context, DetailScheduleActivity.class);
+
+                switch(dataList.get(mPosition).getScheduleTitle()) {
+                    case "강. 바다. 호수":
+                        intent.putExtra("추천경로파일", "jsons/detaile_1_schedule.json");
+                        intent.putExtra("추천경로제목", item.getScheduleTitle());
+                        intent.putExtra("추천경로", item.getCourse());
+                        intent.putExtra("총평점", item.getRating());
+                        intent.putExtra("총평가", item.getTotalreview());
+                        break;
+                    case "충렬 애국의 혼을 새기는 역사 관광":
+                        intent.putExtra("추천경로파일", "jsons/detail_2_schedule.json");
+                        intent.putExtra("추천경로제목", item.getScheduleTitle());
+                        intent.putExtra("추천경로", item.getCourse());
+                        intent.putExtra("총평점", item.getRating());
+                        intent.putExtra("총평가", item.getTotalreview());
+                        break;
+                }
+
+                //context.startActivity(intent);
+                //v.getContext().startActivity(intent);
+                ((RecommendedScheduleActivity)context).startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -104,6 +138,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
         public ViewHolder(View itemView) {
             super(itemView);
+
             cardScheduleView = (CardView)itemView.findViewById(R.id.cardScheduleView);
             scheduleTitleTxt = (TextView) itemView.findViewById(R.id.scheduleTitleTxt);
             courseTxt = (TextView) itemView.findViewById(R.id.courseTxt);

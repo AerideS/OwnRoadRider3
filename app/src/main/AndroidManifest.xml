@@ -18,6 +18,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".DetailScheduleActivity"
+            android:exported="false" />
+        <activity
             android:name=".Map_search"
             android:exported="false" />
         <activity
@@ -38,10 +41,11 @@
         <activity android:name=".AdvancedSearchActivity" /> <!-- 상세 검색 화면 동작하게 하기 -->
         <activity android:name=".ReviewActivity" />
         <activity android:name=".Map_view" />
-        <activity android:name=".TyDprDetailActivity"></activity>
+        <activity android:name=".TyDprDetailActivity" />
 
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="nowdd7jigt" />
     </application>
+
 </manifest>
