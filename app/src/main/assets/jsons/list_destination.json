@@ -1,0 +1,6 @@
+[
+  {"destName": "화왕산", "location":  "경남 창녕군 창녕읍", "destImg":"@drawable/hwawang_mountain"},
+  {"destName": "황매산", "location":  "경남 합천군 가회면 둔내리 산219", "destImg":"@drawable/hwangmae_mountain"},
+  {"destName": "한우산 ", "location":  "경남 의령군 대의면 신전리", "destImg":"@drawable/hanwoo_mountain"},
+  {"destName": "덕유산 ", "location":  "전북 무주군 설천면 구천동1로 159", "destImg":"@drawable/deogyu_mountain"}
+]
