@@ -232,7 +232,7 @@
                 android:layout_weight="1"
                 android:contentDescription="@string/landscape1"
                 android:scaleType="centerInside"
-                android:src="@drawable/small" />
+                android:src="@drawable/namgang" />
 
             <ImageButton
                 android:id="@+id/landscapeImageButton2"

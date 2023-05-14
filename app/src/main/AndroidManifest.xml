@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
@@ -25,7 +26,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -36,7 +36,17 @@
             android:name=".MyPageActivity"
             android:exported="false" />
         <activity android:name=".AdvancedSearchActivity" /> <!-- 상세 검색 화면 동작하게 하기 -->
-        <activity android:name=".ReviewActivity" />
+        <activity android:name=".Jinju_inform"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="actionPath?parameter=value&amp;appname=ownroadrider"
+                    android:host="nmap"
+                    tools:ignore="AppLinkUrlError" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Map_view" />
         <activity android:name=".TyDprDetailActivity"></activity>
 

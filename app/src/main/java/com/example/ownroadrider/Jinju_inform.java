@@ -5,15 +5,25 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import org.json.JSONException;
+
+import java.io.IOException;
+import java.net.URI;
+import java.util.List;
+import java.util.concurrent.Executors;
 
 import me.relex.circleindicator.CircleIndicator3;
 
-public class ReviewActivity extends AppCompatActivity {
+public class Jinju_inform extends AppCompatActivity {
 
     private ViewPager2 mPager;
     private FragmentStateAdapter pagerAdapter;
@@ -25,10 +35,11 @@ public class ReviewActivity extends AppCompatActivity {
     private ImageButton mapButton;
     private ImageButton detailSearchButton;
     private ImageButton mypageButton;
+    private Button route_search;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.review);
+        setContentView(R.layout.jinju);
 
 
 
@@ -59,7 +70,7 @@ public class ReviewActivity extends AppCompatActivity {
         mapButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ReviewActivity.this, Map_view.class);
+                Intent intent = new Intent(Jinju_inform.this, Map_view.class);
                 startActivity(intent);
             }
         });
@@ -83,6 +94,28 @@ public class ReviewActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"내정보 선택",Toast.LENGTH_LONG).show();
             }
         });
+
+        route_search=findViewById(R.id.route_search);
+
+        route_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = "nmap://actionPath?parameter=value&appname=ownroadrider";
+
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+
+                List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+                if (list == null || list.isEmpty()) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                } else {
+                    startActivity(intent);
+                }
+            }
+        });
+
+
+
 
         /**
          * 가로 슬라이드 뷰 Fragment

@@ -1,12 +1,7 @@
 package com.example.ownroadrider;
 
 import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.Signature;
 import android.os.Bundle;
-import android.util.Base64;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -14,9 +9,6 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -115,17 +107,25 @@ public class MainActivity extends AppCompatActivity {
         landscape2 = findViewById(R.id.landscapeImageButton2);
         landscape3 = findViewById(R.id.landscapeImageButton3);
 
-        themeRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        landscape1.setOnClickListener(new View.OnClickListener() {
             @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Jinju_inform.class);
+                startActivity(intent);
+            }
+        });
+
+        themeRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {           //테마1일때 클릭 안되는 문제
+            @Override                                                                           //테마1인거 밖으로 빼야작동잘됨
             public void onCheckedChanged(RadioGroup radioGroup, int checked) {
                 if(checked == R.id.theme1){
-                    landscape1.setImageResource(R.drawable.small);
+                    landscape1.setImageResource(R.drawable.namgang);
                     landscape2.setImageResource(R.drawable.sacheon);
                     landscape3.setImageResource(R.drawable.bak);
                     landscape1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Intent intent = new Intent(getApplicationContext(), ReviewActivity.class);
+                            Intent intent = new Intent(getApplicationContext(), Jinju_inform.class);
                             startActivity(intent);
                         }
                     });
