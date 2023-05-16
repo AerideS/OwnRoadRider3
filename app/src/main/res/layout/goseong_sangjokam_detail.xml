@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Jinju_inform">
+
+    <ScrollView
+        android:id="@+id/dt_scrollView"
+        android:layout_width="411dp"
+        android:layout_height="620dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="615dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="277dp"
+                    android:layout_gravity="center">
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/sliderViewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        android:scaleType="fitXY" />
+
+                    <me.relex.circleindicator.CircleIndicator3
+                        android:id="@+id/indicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="10dp" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/ty_dpr"
+                    android:layout_width="105dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="306dp"
+                    android:layout_marginBottom="295dp"
+                    android:text="상족암"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/ty_dpr_explain"
+                    android:layout_width="403dp"
+                    android:layout_height="275dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="11dp"
+                    android:text="상족암 군립 공원은 남해안 한려수도를 한눈에 바라볼 수 있고 해면의 넓은 암반과 기암절벽이 계곡을 형성한 자연 경관의 수려함이 극치를 이룬 곳에 있다. 고성군은 천혜의 석보 상족암과 중생대 백악기에 살았던 공룡발자국이 선명하게 나타나 보존적 가치가 있는 지역을 1983년 11월 10일에 고성군 고시로 군립 공원으로 지정하였다."
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/route_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/black"
+                    android:text="길찾기" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/navigation_bar"
+        layout="@layout/navigation_bar"></include>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

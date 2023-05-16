@@ -14,12 +14,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import org.json.JSONException;
-
-import java.io.IOException;
-import java.net.URI;
 import java.util.List;
-import java.util.concurrent.Executors;
 
 import me.relex.circleindicator.CircleIndicator3;
 
@@ -34,12 +29,12 @@ public class Jinju_inform extends AppCompatActivity {
     private ImageButton categoryButton;
     private ImageButton mapButton;
     private ImageButton detailSearchButton;
-    private ImageButton mypageButton;
+    private ImageButton mypageButton_m;
     private Button route_search;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.jinju);
+        setContentView(R.layout.jinju_jinjucastle_detail);
 
 
 
@@ -86,12 +81,14 @@ public class Jinju_inform extends AppCompatActivity {
             }
         });
         //마이페이지
-        mypageButton=findViewById(R.id.mypageButton);
+        mypageButton_m=findViewById(R.id.mypageButton);
 
-        mypageButton.setOnClickListener(new View.OnClickListener() {
+        mypageButton_m.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(),"내정보 선택",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(Jinju_inform.this, MyPageActivity.class);
+                startActivity(intent);
             }
         });
 

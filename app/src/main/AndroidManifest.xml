@@ -49,7 +49,16 @@
         </activity>
         <activity android:name=".Map_view" />
         <activity android:name=".TyDprDetailActivity"></activity>
-
+        <activity android:name=".ChangwonDreamparkDetailActivity"></activity>
+        <activity android:name=".GoseongSangjokamDetailActivity"></activity>
+        <activity android:name=".SacheonSeaCableCarDetailActivity"></activity>
+        <activity android:name=".HapcheonHaeinsaDetailActivity"></activity>
+        <activity android:name=".GeojeWindDetailActivity"></activity>
+        <activity android:name=".GimhaeSurowangDetailActivity"></activity>
+        <activity android:name=".HadongSamsunggungDetailActivity"></activity>
+        <activity android:name=".HamanMujinjeongDetailActivity"></activity>
+        <activity android:name=".MiryangLotusDetailActivity"></activity>
+        <activity android:name=".NamhaeBoriamDetailActivity"></activity>
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="nowdd7jigt" />

@@ -4,20 +4,28 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AdvancedSearchActivity extends AppCompatActivity {
 
-    private ImageButton homeButton; //하단 네비 바 홈 버튼
+    private ImageButton homeButton;
+    private ImageButton categoryButton;
+    private ImageButton mapButton;
+    private ImageButton detailSearchButton;
+    private ImageButton mypageButton_m;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advanced_search);
 
-        homeButton = findViewById(R.id.homeButton);
-        homeButton.setOnClickListener(new View.OnClickListener() {  // 홈 버튼 클릭 시 홈으로 화면 전환
+        //하단 네이게이션바
+        //홈
+        homeButton=findViewById(R.id.homeButton);
+
+        homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
@@ -25,5 +33,46 @@ public class AdvancedSearchActivity extends AppCompatActivity {
             }
         });
 
+        //카테고리
+        categoryButton=findViewById(R.id.categoryButton);
+
+        categoryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(),"카테고리 선택",Toast.LENGTH_LONG).show();
+            }
+        });
+        //맵
+        mapButton=findViewById(R.id.mapButton);
+
+        mapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdvancedSearchActivity.this, Map_view.class);
+                startActivity(intent);
+            }
+        });
+
+        //검색
+        detailSearchButton=findViewById(R.id.detailSearchButton);
+
+        detailSearchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), AdvancedSearchActivity.class);
+                startActivity(intent);
+            }
+        });
+        //마이페이지
+        mypageButton_m=findViewById(R.id.mypageButton);
+
+        mypageButton_m.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(),"내정보 선택",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(AdvancedSearchActivity.this, MyPageActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
