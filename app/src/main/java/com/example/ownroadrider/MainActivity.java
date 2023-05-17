@@ -3,6 +3,7 @@ package com.example.ownroadrider;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioGroup;
@@ -30,14 +31,15 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton landscape2;
     private ImageButton landscape3;
 
+    private CheckBox checkBoxSite;
+    private CheckBox checkBoxMountain;
+    private CheckBox checkBoxSea;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        startpoint=findViewById(R.id.startPointSearch);
-        endpoint=findViewById(R.id.finishPointSearch);
-        pathSearchButton=findViewById(R.id.pathSearchButton);
+
 
         homeButton_m=findViewById(R.id.homeButton);
 
@@ -90,6 +92,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        startpoint = findViewById(R.id.startPointSearch);
+        endpoint = findViewById(R.id.finishPointSearch);
+        pathSearchButton = findViewById(R.id.pathSearchButton);
+        checkBoxSite = findViewById(R.id.checkBoxSite);
+        checkBoxMountain = findViewById(R.id.checkBoxMountain);
+        checkBoxSea = findViewById(R.id.checkBoxSea);
 
         pathSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
