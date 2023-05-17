@@ -70,6 +70,72 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
                     Integer.MAX_VALUE,30,Integer.MAX_VALUE,Integer.MAX_VALUE,Integer.MAX_VALUE,31,Integer.MAX_VALUE,27,0}      //합천
     };
 
+    //해양
+    double[][] weight_sea = {
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	1	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	1	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	1	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	1	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	1	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	1	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	1	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	1	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	1	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	1	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	1	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	1	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	1	}
+    };
+
+    //산
+    double[][] weight_mountain = {
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	1	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	1	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	1	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	1	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	1	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	0.5	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	1	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	1	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	1	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	1	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	0.5	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	1	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	1	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	0.5	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	1	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	0.5	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	0.5	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	1	}
+    };
+
+    //유적
+    double[][] weight_sites = {
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	}
+    };
+
     double[][] region_position = {
             {35.2371, 128.6066},        //창원
             {35.1805, 128.1087},        //진주
@@ -145,9 +211,26 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
         mapView.onLowMemory();
     }
 
+
     @Override
     public void onMapReady(@NonNull NaverMap naverMap) {                                        //맵객체 매서드 사용시 여기서 작성
+        int num = 0;
+        int[][] newGN = new int[matrixGN.length][matrixGN[0].length];
+        switch(num) {
+            case 0:
+                // 가중치 아무것도 없음
 
+                break;
+            case 1:
+                //해양 가중치
+                break;
+            case 2:
+                //산 가중치
+                break;
+            case 3:
+                //유적 가중치
+                break;
+        }
         Intent intent = getIntent();
         String st = intent.getStringExtra("start");          //출발지 받아오기
         String ed = intent.getStringExtra("end");             //목적지 받아오기
@@ -160,6 +243,200 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
         int rot_num=rot.length-2;                   //경유지 수
         double mid_camera_point_la;                 //카메라 중심점 위도
         double mid_camera_point_long;               //카메라 중심점 경도
+
+        switch(st){
+            case"진주":
+                switch (ed){
+                    case"사천":
+                        rot=dj.algorithm("진주","사천");
+                        break;
+                    case"창원":
+                        rot=dj.algorithm("진주","창원");
+                        break;
+                    case"거제":
+                        rot=dj.algorithm("진주","거제");
+                        break;
+                    case"남해":
+                        rot=dj.algorithm("진주","남해");
+                        break;
+                    case"마산":
+                        rot=dj.algorithm("진주","마산");
+                        break;
+                }
+                break;
+            case"사천":
+                switch (ed){
+                    case"진주":
+                        rot=dj.algorithm("사천","진주");
+                        break;
+                    case"창원":
+                        rot=dj.algorithm("사천","창원");
+                        break;
+                    case"거제":
+                        rot=dj.algorithm("사천","거제");
+                        break;
+                    case"남해":
+                        rot=dj.algorithm("사천","남해");
+                        break;
+                    case"마산":
+                        rot=dj.algorithm("사천","마산");
+                        break;
+                }
+                break;
+            case"창원":
+                switch (ed){
+                    case"진주":
+                        rot=dj.algorithm("창원","진주");
+                        break;
+                    case"사천":
+                        rot=dj.algorithm("창원","사천");
+                        break;
+                    case"거제":
+                        rot=dj.algorithm("창원","거제");
+                        break;
+                    case"남해":
+                        rot=dj.algorithm("창원","남해");
+                        break;
+                    case"마산":
+                        rot=dj.algorithm("창원","마산");
+                        break;
+                }
+                break;
+            case"거제":
+                switch (ed){
+                    case"진주":
+                        rot=dj.algorithm("거제","진주");
+                        break;
+                    case"사천":
+                        rot=dj.algorithm("거제","사천");
+                        break;
+                    case"창원":
+                        rot=dj.algorithm("거제","창원");
+                        break;
+                    case"남해":
+                        rot=dj.algorithm("거제","남해");
+                        break;
+                    case"마산":
+                        rot=dj.algorithm("거제","마산");
+                        break;
+                }
+                break;
+            case"남해":
+                switch (ed){
+                    case"진주":
+                        rot=dj.algorithm("남해","진주");
+                        break;
+                    case"사천":
+                        rot=dj.algorithm("남해","사천");
+                        break;
+                    case"창원":
+                        rot=dj.algorithm("남해","창원");
+                        break;
+                    case"거제":
+                        rot=dj.algorithm("남해","거제");
+                        break;
+                    case"마산":
+                        rot=dj.algorithm("남해","마산");
+                        break;
+                }
+                break;
+            case"마산":
+                switch (ed){
+                    case"진주":
+                        rot=dj.algorithm("마산","진주");
+                        break;
+                    case"사천":
+                        rot=dj.algorithm("마산","사천");
+                        break;
+                    case"창원":
+                        rot=dj.algorithm("마산","창원");
+                        break;
+                    case"거제":
+                        rot=dj.algorithm("마산","거제");
+                        break;
+                    case"남해":
+                        rot=dj.algorithm("마산","남해");
+                        break;
+                }
+                break;
+        }
+        switch (st) {                                     //시작점 찍기
+            case "진주":
+                Marker marker = new Marker();
+                marker.setPosition(new LatLng(region_position[1][0], region_position[1][1]));
+                marker.setMap(naverMap);
+                marker.setWidth(80);
+                marker.setHeight(100);
+                break;
+        }
+
+        switch (rot[1]) {                                   //경유지찍기
+            case "사천":
+                marker_m.setPosition(new LatLng(region_position[3][0], region_position[3][1]));
+                marker_m.setMap(naverMap);
+                marker_m.setWidth(80);
+                marker_m.setHeight(100);
+                break;
+            case "창원":
+                marker_m.setPosition(new LatLng(region_position[0][0], region_position[0][1]));
+                marker_m.setMap(naverMap);
+                marker_m.setWidth(80);
+                marker_m.setHeight(100);
+                break;
+            case "거제":
+                marker_m.setPosition(new LatLng(region_position[3][0], region_position[3][1]));
+                marker_m.setMap(naverMap);
+                marker_m.setWidth(80);
+                marker_m.setHeight(100);
+                break;
+            case "남해":
+                marker_m.setPosition(new LatLng(region_position[4][0], region_position[4][1]));
+                marker_m.setMap(naverMap);
+                marker_m.setWidth(80);
+                marker_m.setHeight(100);
+                break;
+            case "마산":
+                marker_m.setPosition(new LatLng(region_position[5][0], region_position[5][1]));
+                marker_m.setMap(naverMap);
+                marker_m.setWidth(80);
+                marker_m.setHeight(100);
+                break;
+        }
+
+
+        switch (ed) {                                                   //도착지
+            case "사천":
+                marker_e.setPosition(new LatLng(region_position[2][0], region_position[2][1]));
+                marker_e.setMap(naverMap);
+                marker_e.setWidth(80);
+                marker_e.setHeight(100);
+                break;
+            case "창원":
+                marker_e.setPosition(new LatLng(region_position[0][0], region_position[0][1]));
+                marker_e.setMap(naverMap);
+                marker_e.setWidth(80);
+                marker_e.setHeight(100);
+                break;
+            case "거제":
+                marker_e.setPosition(new LatLng(region_position[3][0], region_position[3][1]));
+                marker_e.setMap(naverMap);
+                marker_e.setWidth(80);
+                marker_e.setHeight(100);
+                break;
+            case "남해":
+                marker_e.setPosition(new LatLng(region_position[4][0], region_position[4][1]));
+                marker_e.setMap(naverMap);
+                marker_e.setWidth(80);
+                marker_e.setHeight(100);
+                break;
+            case "마산":
+                marker_e.setPosition(new LatLng(region_position[5][0], region_position[5][1]));
+                marker_e.setMap(naverMap);
+                marker_e.setWidth(80);
+                marker_e.setHeight(100);
+                break;
+        }
+        naverMap.setCameraPosition(new CameraPosition(new LatLng(35.2519,128.3094),6));
         PolylineOverlay polyline = new PolylineOverlay();
 
         marker_s.setPosition(new LatLng(region_position[stringToInt(rot[0])][0], region_position[stringToInt(rot[0])][1]));                 //시작점 찍기
