@@ -103,7 +103,7 @@ public class ChangwonDreamparkDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://route/car?dlat=35.2371&dlng=128.6066&dname=%ec%b0%bd%ec%9b%90%0d%0a&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }

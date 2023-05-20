@@ -206,6 +206,7 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
         marker_e.setMap(naverMap);
         marker_e.setWidth(80);
         marker_e.setHeight(100);
+
         switch (rot_num){               //경유지 수 마다 다른 카메라 중심점계산
             case 0:
                 mid_camera_point_la = (region_position[stringToInt(rot[0])][0]+region_position[stringToInt(rot[rot.length-1])][0])/2;
@@ -227,6 +228,12 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
                 mid_camera_point_long = (region_position[stringToInt(rot[0])][1]+region_position[stringToInt(rot[1])][1]+region_position[stringToInt(rot[2])][1]+region_position[stringToInt(rot[3])][1]+region_position[stringToInt(rot[rot.length-1])][1])/3;
                 naverMap.setCameraPosition(new CameraPosition(new LatLng(mid_camera_point_la,mid_camera_point_long),8));
                 break;
+            case 4:
+                mid_camera_point_la = (region_position[stringToInt(rot[0])][0]+region_position[stringToInt(rot[1])][0]+region_position[stringToInt(rot[2])][0]+region_position[stringToInt(rot[3])][0]+region_position[stringToInt(rot[4])][0]+region_position[stringToInt(rot[rot.length-1])][0])/4;
+                mid_camera_point_long = (region_position[stringToInt(rot[0])][1]+region_position[stringToInt(rot[1])][1]+region_position[stringToInt(rot[2])][1]+region_position[stringToInt(rot[3])][1]+region_position[stringToInt(rot[4])][1]+region_position[stringToInt(rot[rot.length-1])][1])/4;
+                naverMap.setCameraPosition(new CameraPosition(new LatLng(mid_camera_point_la,mid_camera_point_long),8));
+                break;
+
         }
         switch (rot_num){               //경유지 수 마다 다른 선 계산
             case 0:
@@ -259,6 +266,17 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
                         new LatLng(region_position[dj.stringToInt(rot[1])][0],region_position[dj.stringToInt(rot[1])][1]),
                         new LatLng(region_position[dj.stringToInt(rot[2])][0],region_position[dj.stringToInt(rot[2])][1]),
                         new LatLng(region_position[dj.stringToInt(rot[3])][0],region_position[dj.stringToInt(rot[3])][1]),
+                        new LatLng(region_position[dj.stringToInt(ed)][0],region_position[dj.stringToInt(ed)][1])
+                ));
+                polyline.setMap(naverMap);;
+                break;
+            case 4:
+                polyline.setCoords(Arrays.asList(
+                        new LatLng(region_position[dj.stringToInt(st)][0],region_position[dj.stringToInt(st)][1]),
+                        new LatLng(region_position[dj.stringToInt(rot[1])][0],region_position[dj.stringToInt(rot[1])][1]),
+                        new LatLng(region_position[dj.stringToInt(rot[2])][0],region_position[dj.stringToInt(rot[2])][1]),
+                        new LatLng(region_position[dj.stringToInt(rot[3])][0],region_position[dj.stringToInt(rot[3])][1]),
+                        new LatLng(region_position[dj.stringToInt(rot[4])][0],region_position[dj.stringToInt(rot[4])][1]),
                         new LatLng(region_position[dj.stringToInt(ed)][0],region_position[dj.stringToInt(ed)][1])
                 ));
                 polyline.setMap(naverMap);;

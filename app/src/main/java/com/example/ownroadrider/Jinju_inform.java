@@ -104,7 +104,7 @@ public class Jinju_inform extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://route/car?dlat=35.1805&dlng=128.1087&dname=%ec%a7%84%ec%a3%bc%0d%0a&appname=com.example.ownroadrider")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://route/car?dlat=35.1887&dlng=128.0765&dname=%ec%a7%84%ec%a3%bc%ec%84%b1&appname=com.example.ownroadrider")));
                 } else {                    //dlat 도착지 위도 dlng 도착지 경도 dname 도착지이름 url 인코딩된 문자열 필수는 아님  //appname 우리꺼 쓰면됨
                     startActivity(intent);
                 }

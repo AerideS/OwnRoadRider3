@@ -103,7 +103,7 @@ public class TyDprDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://route/car?dlat=34.8497&dlng=128.4339&dname=%ed%86%b5%ec%98%81&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }
