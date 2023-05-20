@@ -80,7 +80,7 @@
             android:orientation="horizontal">
 
             <CheckBox
-                android:id="@+id/checkBox11"
+                android:id="@+id/checkBoxSite"
                 android:layout_width="136dp"
                 android:layout_height="match_parent"
                 android:text="유적지"
@@ -88,7 +88,7 @@
                 android:textSize="12sp" />
 
             <CheckBox
-                android:id="@+id/checkBox10"
+                android:id="@+id/checkBoxMountain"
                 android:layout_width="136dp"
                 android:layout_height="match_parent"
                 android:text="산"
@@ -96,7 +96,7 @@
                 android:textSize="12sp" />
 
             <CheckBox
-                android:id="@+id/checkBox8"
+                android:id="@+id/checkBoxSea"
                 android:layout_width="136dp"
                 android:layout_height="match_parent"
                 android:text="바다"
