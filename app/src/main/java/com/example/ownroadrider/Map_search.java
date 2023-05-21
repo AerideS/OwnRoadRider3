@@ -305,18 +305,18 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
                 naverMap.setCameraPosition(new CameraPosition(new LatLng(mid_camera_point_la,mid_camera_point_long),8));
                 break;
             case 2:
-                mid_camera_point_la = (region_position[stringToInt(rot[0])][0]+region_position[stringToInt(rot[1])][0]+region_position[stringToInt(rot[2])][0]+region_position[stringToInt(rot[rot.length-1])][0])/3;
-                mid_camera_point_long = (region_position[stringToInt(rot[0])][1]+region_position[stringToInt(rot[1])][1]+region_position[stringToInt(rot[2])][1]+region_position[stringToInt(rot[rot.length-1])][1])/3;
+                mid_camera_point_la = (region_position[stringToInt(rot[0])][0]+region_position[stringToInt(rot[1])][0]+region_position[stringToInt(rot[2])][0]+region_position[stringToInt(rot[rot.length-1])][0])/4;
+                mid_camera_point_long = (region_position[stringToInt(rot[0])][1]+region_position[stringToInt(rot[1])][1]+region_position[stringToInt(rot[2])][1]+region_position[stringToInt(rot[rot.length-1])][1])/4;
                 naverMap.setCameraPosition(new CameraPosition(new LatLng(mid_camera_point_la,mid_camera_point_long),8));
                 break;
             case 3:
-                mid_camera_point_la = (region_position[stringToInt(rot[0])][0]+region_position[stringToInt(rot[1])][0]+region_position[stringToInt(rot[2])][0]+region_position[stringToInt(rot[3])][0]+region_position[stringToInt(rot[rot.length-1])][0])/3;
-                mid_camera_point_long = (region_position[stringToInt(rot[0])][1]+region_position[stringToInt(rot[1])][1]+region_position[stringToInt(rot[2])][1]+region_position[stringToInt(rot[3])][1]+region_position[stringToInt(rot[rot.length-1])][1])/3;
+                mid_camera_point_la = (region_position[stringToInt(rot[0])][0]+region_position[stringToInt(rot[1])][0]+region_position[stringToInt(rot[2])][0]+region_position[stringToInt(rot[3])][0]+region_position[stringToInt(rot[rot.length-1])][0])/5;
+                mid_camera_point_long = (region_position[stringToInt(rot[0])][1]+region_position[stringToInt(rot[1])][1]+region_position[stringToInt(rot[2])][1]+region_position[stringToInt(rot[3])][1]+region_position[stringToInt(rot[rot.length-1])][1])/5;
                 naverMap.setCameraPosition(new CameraPosition(new LatLng(mid_camera_point_la,mid_camera_point_long),8));
                 break;
             case 4:
-                mid_camera_point_la = (region_position[stringToInt(rot[0])][0]+region_position[stringToInt(rot[1])][0]+region_position[stringToInt(rot[2])][0]+region_position[stringToInt(rot[3])][0]+region_position[stringToInt(rot[4])][0]+region_position[stringToInt(rot[rot.length-1])][0])/4;
-                mid_camera_point_long = (region_position[stringToInt(rot[0])][1]+region_position[stringToInt(rot[1])][1]+region_position[stringToInt(rot[2])][1]+region_position[stringToInt(rot[3])][1]+region_position[stringToInt(rot[4])][1]+region_position[stringToInt(rot[rot.length-1])][1])/4;
+                mid_camera_point_la = (region_position[stringToInt(rot[0])][0]+region_position[stringToInt(rot[1])][0]+region_position[stringToInt(rot[2])][0]+region_position[stringToInt(rot[3])][0]+region_position[stringToInt(rot[4])][0]+region_position[stringToInt(rot[rot.length-1])][0])/6;
+                mid_camera_point_long = (region_position[stringToInt(rot[0])][1]+region_position[stringToInt(rot[1])][1]+region_position[stringToInt(rot[2])][1]+region_position[stringToInt(rot[3])][1]+region_position[stringToInt(rot[4])][1]+region_position[stringToInt(rot[rot.length-1])][1])/6;
                 naverMap.setCameraPosition(new CameraPosition(new LatLng(mid_camera_point_la,mid_camera_point_long),8));
                 break;
 
