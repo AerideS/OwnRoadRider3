@@ -1,11 +1,13 @@
 package com.example.ownroadrider;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -34,7 +36,7 @@ public class RecommendedScheduleActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setAdapter(new CustomAdapter(list, R.layout.card_view_item_layout));
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         handler = new Handler();
 
@@ -62,6 +64,8 @@ public class RecommendedScheduleActivity extends AppCompatActivity {
 
             String jsonData = buffer.toString();
             JSONArray jsonArray = new JSONArray(jsonData);
+            Context mContext;
+            mContext =  getApplicationContext();
 
             for(int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
@@ -69,15 +73,15 @@ public class RecommendedScheduleActivity extends AppCompatActivity {
                 String scheduleTitle = jsonObject.getString("scheduleTitle");
                 String course = jsonObject.getString("course");
                 Integer rating = jsonObject.getInt("rating");
-                String dest1Img = jsonObject.getString("dest1Img");
-                String dest2Img = jsonObject.getString("dest2Img");
-                String dest3Img = jsonObject.getString("dest3Img");
+                String img1Str = jsonObject.getString("dest1Img");
+                Integer iResId1 = getResources().getIdentifier( img1Str, "drawable", this.getPackageName() );
+                String img2Str = jsonObject.getString("dest2Img");
+                Integer iResId2 = getResources().getIdentifier( img2Str, "drawable", this.getPackageName() );
+                String img3Str = jsonObject.getString("dest3Img");
+                Integer iResId3 = getResources().getIdentifier( img3Str, "drawable", this.getPackageName() );
                 String totalReview = jsonObject.getString("totalReview");
-                /*JSONObject flag = jsonObject.getJSONObject("flag");
-                int aa = flag.getInt("aa");
-                int bb = flag.getInt("bb");*/
 
-                list.add(new CardForSchedule(scheduleTitle, course, dest1Img, dest2Img, dest3Img, rating,totalReview));
+                list.add(new CardForSchedule(scheduleTitle, course, iResId1, iResId2, iResId3, rating,totalReview));
             }
         } catch (IOException e) {throw new RuntimeException(e);} catch (JSONException e) {throw new RuntimeException(e);}
     }

@@ -19,6 +19,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".MyDestinationListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetailScheduleActivity"
+            android:exported="false" />
+        <activity
             android:name=".Map_search"
             android:exported="false" />
         <activity
@@ -48,6 +54,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Map_view" />
+        <activity android:name=".TyDprDetailActivity" />
         <activity android:name=".TyDprDetailActivity"></activity>
         <activity android:name=".ChangwonDreamparkDetailActivity"></activity>
         <activity android:name=".GoseongSangjokamDetailActivity"></activity>
@@ -63,4 +70,5 @@
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="nowdd7jigt" />
     </application>
+
 </manifest>

@@ -21,7 +21,7 @@
             android:layout_height="match_parent"
             android:layout_margin="10dp"
             android:text="충렬 애국의 혼을 새기는 역사 관광"
-            android:textSize="24dp"
+            android:textSize="23dp"
             android:textStyle="bold"
             android:textAlignment="center"
             android:layout_gravity="center"/>
@@ -38,8 +38,7 @@
                 <ImageView
                     android:id="@+id/dest1Img"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/jinju2"/>
+                    android:layout_height="match_parent" />
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:layout_width="150dp"
@@ -50,8 +49,7 @@
                 <ImageView
                     android:id="@+id/dest2Img"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bak"/>
+                    android:layout_height="match_parent" />
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:layout_width="150dp"
@@ -62,8 +60,7 @@
                 <ImageView
                     android:id="@+id/dest3Img"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/debong"/>
+                    android:layout_height="match_parent" />
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
@@ -81,7 +78,7 @@
                 android:progressTint="@color/yellow"
                 android:isIndicator="false"
                 android:numStars="5"
-                android:rating="3"
+                android:rating="1"
                 android:stepSize="1" />
             </androidx.cardview.widget.CardView>
         </FrameLayout>

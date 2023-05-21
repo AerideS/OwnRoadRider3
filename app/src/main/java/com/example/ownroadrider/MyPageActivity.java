@@ -56,11 +56,17 @@ public class MyPageActivity extends AppCompatActivity {
                         break;
                     case R.id.checkedDestBtn:
                         Toast.makeText(getApplicationContext(), "내가 본 여행지", Toast.LENGTH_SHORT).show();
-                        Log.d(this.getClass().getName(), "내가 본 여행지");
+                        Intent checkedDestIntent = new Intent(MyPageActivity.this, MyDestinationListActivity.class);
+                        checkedDestIntent.putExtra("type", 0);
+                        checkedDestIntent.putExtra("listDestFilePath", "jsons/list_destination.json");
+                        startActivity(checkedDestIntent);
                         break;
                     case R.id.listDestBtn:
                         Toast.makeText(getApplicationContext(), "관심 여행지 목록", Toast.LENGTH_SHORT).show();
-                        Log.d(this.getClass().getName(), "관심 여행지 목록");
+                        Intent listDesIntent = new Intent(MyPageActivity.this, MyDestinationListActivity.class);
+                        listDesIntent.putExtra("type", 1);
+                        listDesIntent.putExtra("listDestFilePath", "jsons/list_destination.json");
+                        startActivity(listDesIntent);
                         break;
                     case R.id.recommendScheduleBtn:
                         Toast.makeText(getApplicationContext(), "여행 고수들의 추천 일정!", Toast.LENGTH_SHORT).show();
