@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ReviewActivity">
+    tools:context=".Jinju_inform">
 
     <ScrollView
         android:id="@+id/dt_scrollView"
@@ -70,6 +70,16 @@
                     android:textColor="#000000"
                     android:textSize="14sp" />
 
+                <Button
+                    android:id="@+id/route_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/black"
+                    android:text="길찾기" />
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>

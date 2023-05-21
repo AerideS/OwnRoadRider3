@@ -1,19 +1,24 @@
 package com.example.ownroadrider;
 
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageButton;
-import android.widget.TextView;
-import android.widget.Toast;
+import java.util.List;
 
 import me.relex.circleindicator.CircleIndicator3;
 
-public class ReviewActivity extends AppCompatActivity {
+public class GoseongSangjokamDetailActivity extends AppCompatActivity {
 
     private ViewPager2 mPager;
     private FragmentStateAdapter pagerAdapter;
@@ -24,11 +29,12 @@ public class ReviewActivity extends AppCompatActivity {
     private ImageButton categoryButton;
     private ImageButton mapButton;
     private ImageButton detailSearchButton;
-    private ImageButton mypageButton;
+    private ImageButton mypageButton_m;
+    private Button route_search;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.review);
+        setContentView(R.layout.goseong_sangjokam_detail);
 
 
 
@@ -59,7 +65,7 @@ public class ReviewActivity extends AppCompatActivity {
         mapButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ReviewActivity.this, Map_view.class);
+                Intent intent = new Intent(GoseongSangjokamDetailActivity.this, Map_view.class);
                 startActivity(intent);
             }
         });
@@ -75,15 +81,34 @@ public class ReviewActivity extends AppCompatActivity {
             }
         });
         //마이페이지
-        mypageButton=findViewById(R.id.mypageButton);
+        mypageButton_m=findViewById(R.id.mypageButton);
 
-        mypageButton.setOnClickListener(new View.OnClickListener() {
+        mypageButton_m.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(),"내정보 선택",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(GoseongSangjokamDetailActivity.this, MyPageActivity.class);
+                startActivity(intent);
             }
         });
+        route_search=findViewById(R.id.route_search);
 
+        route_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = "nmap://actionPath?parameter=value&appname=ownroadrider";
+
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+
+                List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+                if (list == null || list.isEmpty()) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                } else {
+                    startActivity(intent);
+                }
+            }
+        });
         /**
          * 가로 슬라이드 뷰 Fragment
          */
@@ -91,7 +116,7 @@ public class ReviewActivity extends AppCompatActivity {
         //ViewPager2
         mPager = findViewById(R.id.sliderViewPager);
         //Adapter
-        pagerAdapter = new Image_Slider_jinju(this, num_page);
+        pagerAdapter = new Image_Slider_Goseong_sangjokam(this, num_page);
         mPager.setAdapter(pagerAdapter);
         //Indicator
         mIndicator = findViewById(R.id.indicator);

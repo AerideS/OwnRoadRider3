@@ -70,6 +70,72 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
                     Integer.MAX_VALUE,30,Integer.MAX_VALUE,Integer.MAX_VALUE,Integer.MAX_VALUE,31,Integer.MAX_VALUE,27,0}      //합천
     };
 
+    //해양
+    double[][] weight_sea = {
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	1	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	1	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	1	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	1	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	1	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	1	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	1	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	1	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	1	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	1	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	1	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	1	},
+            {0.5,	1,	0.5,	0.5,	1,	1,	0.5,	1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	1	}
+    };
+
+    //산
+    double[][] weight_mountain = {
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	1	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	1	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	1	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	1	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	1	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	0.5	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	1	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	1	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	1	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	1	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	0.5	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	1	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	1	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	0.5	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	1	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	0.5	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	0.5	},
+            {1,	1,	1,	1,	1,	0.5,	1,	1,	1,	1,	0.5,	1,	1,	0.5,	1,	0.5,	0.5,	1	}
+    };
+
+    //유적
+    double[][] weight_sites = {
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	},
+            {1,	0.5,	1,	1,	0.5,	1,	1,	0.5,	0.5,	0.5,	1,	0.5,	1,	1,	0.5,	1,	1,	0.5	}
+    };
+
     double[][] region_position = {
             {35.2371, 128.6066},        //창원
             {35.1805, 128.1087},        //진주
@@ -145,9 +211,26 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
         mapView.onLowMemory();
     }
 
+
     @Override
     public void onMapReady(@NonNull NaverMap naverMap) {                                        //맵객체 매서드 사용시 여기서 작성
+        int num = 0;
+        int[][] newGN = new int[matrixGN.length][matrixGN[0].length];
+        switch(num) {
+            case 0:
+                // 가중치 아무것도 없음
 
+                break;
+            case 1:
+                //해양 가중치
+                break;
+            case 2:
+                //산 가중치
+                break;
+            case 3:
+                //유적 가중치
+                break;
+        }
         Intent intent = getIntent();
         String st = intent.getStringExtra("start");          //출발지 받아오기
         String ed = intent.getStringExtra("end");             //목적지 받아오기
@@ -160,6 +243,9 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
         int rot_num=rot.length-2;                   //경유지 수
         double mid_camera_point_la;                 //카메라 중심점 위도
         double mid_camera_point_long;               //카메라 중심점 경도
+
+
+        naverMap.setCameraPosition(new CameraPosition(new LatLng(35.2519,128.3094),6));
         PolylineOverlay polyline = new PolylineOverlay();
 
         marker_s.setPosition(new LatLng(region_position[stringToInt(rot[0])][0], region_position[stringToInt(rot[0])][1]));                 //시작점 찍기
@@ -206,6 +292,7 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
         marker_e.setMap(naverMap);
         marker_e.setWidth(80);
         marker_e.setHeight(100);
+
         switch (rot_num){               //경유지 수 마다 다른 카메라 중심점계산
             case 0:
                 mid_camera_point_la = (region_position[stringToInt(rot[0])][0]+region_position[stringToInt(rot[rot.length-1])][0])/2;
@@ -227,6 +314,12 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
                 mid_camera_point_long = (region_position[stringToInt(rot[0])][1]+region_position[stringToInt(rot[1])][1]+region_position[stringToInt(rot[2])][1]+region_position[stringToInt(rot[3])][1]+region_position[stringToInt(rot[rot.length-1])][1])/3;
                 naverMap.setCameraPosition(new CameraPosition(new LatLng(mid_camera_point_la,mid_camera_point_long),8));
                 break;
+            case 4:
+                mid_camera_point_la = (region_position[stringToInt(rot[0])][0]+region_position[stringToInt(rot[1])][0]+region_position[stringToInt(rot[2])][0]+region_position[stringToInt(rot[3])][0]+region_position[stringToInt(rot[4])][0]+region_position[stringToInt(rot[rot.length-1])][0])/4;
+                mid_camera_point_long = (region_position[stringToInt(rot[0])][1]+region_position[stringToInt(rot[1])][1]+region_position[stringToInt(rot[2])][1]+region_position[stringToInt(rot[3])][1]+region_position[stringToInt(rot[4])][1]+region_position[stringToInt(rot[rot.length-1])][1])/4;
+                naverMap.setCameraPosition(new CameraPosition(new LatLng(mid_camera_point_la,mid_camera_point_long),8));
+                break;
+
         }
         switch (rot_num){               //경유지 수 마다 다른 선 계산
             case 0:
@@ -259,6 +352,17 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
                         new LatLng(region_position[dj.stringToInt(rot[1])][0],region_position[dj.stringToInt(rot[1])][1]),
                         new LatLng(region_position[dj.stringToInt(rot[2])][0],region_position[dj.stringToInt(rot[2])][1]),
                         new LatLng(region_position[dj.stringToInt(rot[3])][0],region_position[dj.stringToInt(rot[3])][1]),
+                        new LatLng(region_position[dj.stringToInt(ed)][0],region_position[dj.stringToInt(ed)][1])
+                ));
+                polyline.setMap(naverMap);;
+                break;
+            case 4:
+                polyline.setCoords(Arrays.asList(
+                        new LatLng(region_position[dj.stringToInt(st)][0],region_position[dj.stringToInt(st)][1]),
+                        new LatLng(region_position[dj.stringToInt(rot[1])][0],region_position[dj.stringToInt(rot[1])][1]),
+                        new LatLng(region_position[dj.stringToInt(rot[2])][0],region_position[dj.stringToInt(rot[2])][1]),
+                        new LatLng(region_position[dj.stringToInt(rot[3])][0],region_position[dj.stringToInt(rot[3])][1]),
+                        new LatLng(region_position[dj.stringToInt(rot[4])][0],region_position[dj.stringToInt(rot[4])][1]),
                         new LatLng(region_position[dj.stringToInt(ed)][0],region_position[dj.stringToInt(ed)][1])
                 ));
                 polyline.setMap(naverMap);;

@@ -1,14 +1,20 @@
 package com.example.ownroadrider;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
+
+import java.util.List;
 
 import me.relex.circleindicator.CircleIndicator3;
 
@@ -23,7 +29,8 @@ public class TyDprDetailActivity extends AppCompatActivity {
     private ImageButton categoryButton;
     private ImageButton mapButton;
     private ImageButton detailSearchButton;
-    private ImageButton mypageButton;
+    private ImageButton mypageButton_m;
+    private Button route_search;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,15 +81,34 @@ public class TyDprDetailActivity extends AppCompatActivity {
             }
         });
         //마이페이지
-        mypageButton=findViewById(R.id.mypageButton);
+        mypageButton_m=findViewById(R.id.mypageButton);
 
-        mypageButton.setOnClickListener(new View.OnClickListener() {
+        mypageButton_m.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(),"내정보 선택",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(TyDprDetailActivity.this, MyPageActivity.class);
+                startActivity(intent);
             }
         });
+        route_search=findViewById(R.id.route_search);
 
+        route_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = "nmap://actionPath?parameter=value&appname=ownroadrider";
+
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+
+                List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+                if (list == null || list.isEmpty()) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://route/car?dlat=34.8497&dlng=128.4339&dname=%ed%86%b5%ec%98%81&appname=com.example.ownroadrider")));
+                } else {
+                    startActivity(intent);
+                }
+            }
+        });
         /**
          * 가로 슬라이드 뷰 Fragment
          */

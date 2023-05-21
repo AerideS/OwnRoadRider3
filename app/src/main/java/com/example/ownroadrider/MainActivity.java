@@ -1,22 +1,15 @@
 package com.example.ownroadrider;
 
 import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.Signature;
 import android.os.Bundle;
-import android.util.Base64;
-import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -38,14 +31,15 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton landscape2;
     private ImageButton landscape3;
 
+    private CheckBox checkBoxSite;
+    private CheckBox checkBoxMountain;
+    private CheckBox checkBoxSea;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        startpoint=findViewById(R.id.startPointSearch);
-        endpoint=findViewById(R.id.finishPointSearch);
-        pathSearchButton=findViewById(R.id.pathSearchButton);
+
 
         homeButton_m=findViewById(R.id.homeButton);
 
@@ -99,6 +93,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        startpoint = findViewById(R.id.startPointSearch);
+        endpoint = findViewById(R.id.finishPointSearch);
+        pathSearchButton = findViewById(R.id.pathSearchButton);
+        checkBoxSite = findViewById(R.id.checkBoxSite);
+        checkBoxMountain = findViewById(R.id.checkBoxMountain);
+        checkBoxSea = findViewById(R.id.checkBoxSea);
+
         pathSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -115,17 +117,53 @@ public class MainActivity extends AppCompatActivity {
         landscape2 = findViewById(R.id.landscapeImageButton2);
         landscape3 = findViewById(R.id.landscapeImageButton3);
 
-        themeRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        landscape1.setOnClickListener(new View.OnClickListener() {
             @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Jinju_inform.class);
+                startActivity(intent);
+            }
+        });
+        landscape2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), GoseongSangjokamDetailActivity.class);
+                startActivity(intent);
+            }
+        });
+        landscape3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ChangwonDreamparkDetailActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        themeRg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {           //테마1일때 클릭 안되는 문제
+            @Override                                                                           //테마1인거 밖으로 빼야 작동 잘 됨
             public void onCheckedChanged(RadioGroup radioGroup, int checked) {
                 if(checked == R.id.theme1){
-                    landscape1.setImageResource(R.drawable.small);
-                    landscape2.setImageResource(R.drawable.sacheon);
-                    landscape3.setImageResource(R.drawable.bak);
+                    landscape1.setImageResource(R.drawable.namgang);
+                    landscape2.setImageResource(R.drawable.goseong_sangjokam1);
+                    landscape3.setImageResource(R.drawable.changwon_dreampark1);
                     landscape1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Intent intent = new Intent(getApplicationContext(), ReviewActivity.class);
+                            Intent intent = new Intent(getApplicationContext(), Jinju_inform.class);
+                            startActivity(intent);
+                        }
+                    });
+                    landscape2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(getApplicationContext(), GoseongSangjokamDetailActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+                    landscape3.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(getApplicationContext(), ChangwonDreamparkDetailActivity.class);
                             startActivity(intent);
                         }
                     });
@@ -138,6 +176,70 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             Intent intent = new Intent(getApplicationContext(), TyDprDetailActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+                    landscape2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(getApplicationContext(), SacheonSeaCableCarDetailActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+                    landscape3.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(getApplicationContext(), HapcheonHaeinsaDetailActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+                } else if (checked==R.id.theme3) {
+                    landscape1.setImageResource(R.drawable.geoje_wind1);
+                    landscape2.setImageResource(R.drawable.gimhae_surowang1);
+                    landscape3.setImageResource(R.drawable.hadong_samsunggung1);
+                    landscape1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(getApplicationContext(), GeojeWindDetailActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+                    landscape2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(getApplicationContext(), GimhaeSurowangDetailActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+                    landscape3.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(getApplicationContext(), HadongSamsunggungDetailActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+                } else if (checked==R.id.theme4) {
+                    landscape1.setImageResource(R.drawable.haman_mujinjeong1);
+                    landscape2.setImageResource(R.drawable.miryang_lotus1);
+                    landscape3.setImageResource(R.drawable.namhae_boriam1);
+                    landscape1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(getApplicationContext(), HamanMujinjeongDetailActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+                    landscape2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(getApplicationContext(), MiryangLotusDetailActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+                    landscape3.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(getApplicationContext(), NamhaeBoriamDetailActivity.class);
                             startActivity(intent);
                         }
                     });
