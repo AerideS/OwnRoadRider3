@@ -47,29 +47,22 @@ public class MyPageActivity extends AppCompatActivity {
             public void onClick(View v) {
                 switch (v.getId()){
                     case R.id.settingBtn:
-                        Toast.makeText(getApplicationContext(), "설정 버튼", Toast.LENGTH_SHORT).show();
-                        Log.d(this.getClass().getName(), "설정 버튼");
                         break;
                     case R.id.manageReviewBtn:
-                        Toast.makeText(getApplicationContext(), "나의 리뷰 관리", Toast.LENGTH_SHORT).show();
-                        Log.d(this.getClass().getName(), "나의 리뷰 관리");
                         break;
                     case R.id.checkedDestBtn:
-                        Toast.makeText(getApplicationContext(), "내가 본 여행지", Toast.LENGTH_SHORT).show();
                         Intent checkedDestIntent = new Intent(MyPageActivity.this, MyDestinationListActivity.class);
                         checkedDestIntent.putExtra("type", 0);
                         checkedDestIntent.putExtra("listDestFilePath", "jsons/list_destination.json");
                         startActivity(checkedDestIntent);
                         break;
                     case R.id.listDestBtn:
-                        Toast.makeText(getApplicationContext(), "관심 여행지 목록", Toast.LENGTH_SHORT).show();
                         Intent listDesIntent = new Intent(MyPageActivity.this, MyDestinationListActivity.class);
                         listDesIntent.putExtra("type", 1);
                         listDesIntent.putExtra("listDestFilePath", "jsons/list_destination.json");
                         startActivity(listDesIntent);
                         break;
                     case R.id.recommendScheduleBtn:
-                        Toast.makeText(getApplicationContext(), "여행 고수들의 추천 일정!", Toast.LENGTH_SHORT).show();
                         Intent recommedIntent = new Intent(MyPageActivity.this, RecommendedScheduleActivity.class);
                         startActivity(recommedIntent);
                         break;
@@ -99,7 +92,6 @@ public class MyPageActivity extends AppCompatActivity {
                         startActivity(homeIntent);
                         break;
                     case R.id.categoryButton:
-                        Toast.makeText(getApplicationContext(),"카테고리 선택",Toast.LENGTH_LONG).show();
                         break;
                     case R.id.mapButton:
                         Intent mapIntent = new Intent(MyPageActivity.this, Map_view.class);

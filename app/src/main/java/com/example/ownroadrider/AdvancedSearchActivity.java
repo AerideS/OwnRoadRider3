@@ -9,7 +9,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class AdvancedSearchActivity extends AppCompatActivity {
+public class  AdvancedSearchActivity extends AppCompatActivity {
 
     private ImageButton homeButton;
     private ImageButton categoryButton;
@@ -39,7 +39,7 @@ public class AdvancedSearchActivity extends AppCompatActivity {
         categoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"카테고리 선택",Toast.LENGTH_LONG).show();
+
             }
         });
         //맵
@@ -69,7 +69,6 @@ public class AdvancedSearchActivity extends AppCompatActivity {
         mypageButton_m.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"내정보 선택",Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(AdvancedSearchActivity.this, MyPageActivity.class);
                 startActivity(intent);
             }

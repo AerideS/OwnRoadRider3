@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
         categoryButton_m.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"카테고리 선택",Toast.LENGTH_LONG).show();
             }
         });
         //맵
@@ -88,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
         mypageButton_m.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"내정보 선택",Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(MainActivity.this, MyPageActivity.class);
                 startActivity(intent);
             }
