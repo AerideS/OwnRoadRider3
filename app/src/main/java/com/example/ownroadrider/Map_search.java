@@ -157,7 +157,6 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
             {35.5667, 128.1684}         //합천
     };
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -211,6 +210,7 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
         mapView.onLowMemory();
     }
 
+    boolean[] checkState = getIntent().getBooleanArrayExtra("checkState");  // 체크박스 상태 배열로 받아오기. 유적 = [0], 산 = [1], 바다 = [2]
 
     @Override
     public void onMapReady(@NonNull NaverMap naverMap) {                                        //맵객체 매서드 사용시 여기서 작성
@@ -219,7 +219,6 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
         switch(num) {
             case 0:
                 // 가중치 아무것도 없음
-
                 break;
             case 1:
                 //해양 가중치
