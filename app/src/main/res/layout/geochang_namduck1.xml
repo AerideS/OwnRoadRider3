@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/changwon_dream_img_1"
+        android:id="@+id/geochang_namduck_img_1"
         android:src="@drawable/geochang_namduck1"
         ></ImageView>
 </LinearLayout>

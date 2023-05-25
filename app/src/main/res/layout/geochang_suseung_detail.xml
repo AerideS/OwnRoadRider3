@@ -46,7 +46,7 @@
                 </FrameLayout>
 
                 <TextView
-                    android:id="@+id/ty_dpr"
+                    android:id="@+id/geochang_suseung"
                     android:layout_width="205dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -59,7 +59,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/geoje_blackrock_explain"
+                    android:id="@+id/geochang_suseung_explain"
                     android:layout_width="403dp"
                     android:layout_height="275dp"
                     android:layout_alignParentEnd="true"
