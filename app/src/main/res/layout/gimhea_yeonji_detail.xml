@@ -46,27 +46,27 @@
                 </FrameLayout>
 
                 <TextView
-                    android:id="@+id/goseong_sangjokam"
-                    android:layout_width="105dp"
+                    android:id="@+id/gimhea_yeonji"
+                    android:layout_width="205dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginEnd="306dp"
+                    android:layout_marginEnd="206dp"
                     android:layout_marginBottom="295dp"
-                    android:text="상족암"
+                    android:text="연지공원"
                     android:textColor="#000000"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/goseong_sangjokam_explain"
+                    android:id="@+id/gimhea_yeonji_explain"
                     android:layout_width="403dp"
                     android:layout_height="275dp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginEnd="0dp"
                     android:layout_marginBottom="11dp"
-                    android:text="상족암 군립 공원은 남해안 한려수도를 한눈에 바라볼 수 있고 해면의 넓은 암반과 기암절벽이 계곡을 형성한 자연 경관의 수려함이 극치를 이룬 곳에 있다. 고성군은 천혜의 석보 상족암과 중생대 백악기에 살았던 공룡발자국이 선명하게 나타나 보존적 가치가 있는 지역을 1983년 11월 10일에 고성군 고시로 군립 공원으로 지정하였다."
+                    android:text=" 1999년에 개장한 경상남도 김해시 내동에 있는 김해의 대표적인 공원이자 김해의 랜드마크 중 하나. 전체 면적 약 9만 4,000㎡, 호수 면적 약 2만 4,000㎡에 이르며 거대한 연못이 공원 한가운데 있다. 연못을 빙 둘러 산책로가 조성되어 있고, 연못을 가로지르는 나무다리가 설치되어 있다."
                     android:textColor="#000000"
                     android:textSize="14sp" />
 

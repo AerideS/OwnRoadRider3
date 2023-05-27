@@ -46,27 +46,27 @@
                 </FrameLayout>
 
                 <TextView
-                    android:id="@+id/goseong_sangjokam"
-                    android:layout_width="105dp"
+                    android:id="@+id/geoje_blackrock"
+                    android:layout_width="205dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginEnd="306dp"
+                    android:layout_marginEnd="206dp"
                     android:layout_marginBottom="295dp"
-                    android:text="상족암"
+                    android:text="학동흑진주몽돌해변"
                     android:textColor="#000000"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/goseong_sangjokam_explain"
+                    android:id="@+id/geoje_blackrock_explain"
                     android:layout_width="403dp"
                     android:layout_height="275dp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginEnd="0dp"
                     android:layout_marginBottom="11dp"
-                    android:text="상족암 군립 공원은 남해안 한려수도를 한눈에 바라볼 수 있고 해면의 넓은 암반과 기암절벽이 계곡을 형성한 자연 경관의 수려함이 극치를 이룬 곳에 있다. 고성군은 천혜의 석보 상족암과 중생대 백악기에 살았던 공룡발자국이 선명하게 나타나 보존적 가치가 있는 지역을 1983년 11월 10일에 고성군 고시로 군립 공원으로 지정하였다."
+                    android:text="경상남도 거제시 동부면 학동6길 18-1 (학동리)에 위치한 해변.지형이 학이 날개를 펼친 모습이라 하여 학동이라 이름붙여졌다.모래해변과는 다르게 몽돌이라 불리는 조약돌이 깔린 몽돌해변이 펼쳐져 있다.몽돌의 크기가 작고 색깔이 까매서 흑진주몽돌해변이라 이름붙여 부른다."
                     android:textColor="#000000"
                     android:textSize="14sp" />
 

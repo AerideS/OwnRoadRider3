@@ -46,27 +46,27 @@
                 </FrameLayout>
 
                 <TextView
-                    android:id="@+id/goseong_sangjokam"
+                    android:id="@+id/geoje_maemi"
                     android:layout_width="105dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginEnd="306dp"
                     android:layout_marginBottom="295dp"
-                    android:text="상족암"
+                    android:text="매미성"
                     android:textColor="#000000"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/goseong_sangjokam_explain"
+                    android:id="@+id/geoje_maemi_explain"
                     android:layout_width="403dp"
                     android:layout_height="275dp"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginEnd="0dp"
                     android:layout_marginBottom="11dp"
-                    android:text="상족암 군립 공원은 남해안 한려수도를 한눈에 바라볼 수 있고 해면의 넓은 암반과 기암절벽이 계곡을 형성한 자연 경관의 수려함이 극치를 이룬 곳에 있다. 고성군은 천혜의 석보 상족암과 중생대 백악기에 살았던 공룡발자국이 선명하게 나타나 보존적 가치가 있는 지역을 1983년 11월 10일에 고성군 고시로 군립 공원으로 지정하였다."
+                    android:text="경상남도 거제시 장목면 복항길 29(대금리 290)에 위치한 매미성은 21세기에 비군사적 목적으로 신축된 유일한 성채이다. 이성은 백순삼씨가 2003년 태풍 매미가 지나간 이후 태풍에 대비하기위해  제방을 쌓은것이 시초로 19년가 계속 공사를 계속해오고 있다."
                     android:textColor="#000000"
                     android:textSize="14sp" />
 

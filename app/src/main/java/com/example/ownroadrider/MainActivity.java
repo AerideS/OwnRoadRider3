@@ -97,23 +97,22 @@ public class MainActivity extends AppCompatActivity {
         endpoint = findViewById(R.id.finishPointSearch);
         pathSearchButton = findViewById(R.id.pathSearchButton);
 
-        checkBoxSite = findViewById(R.id.checkBoxSite);
-        checkBoxMountain = findViewById(R.id.checkBoxMountain);
-        checkBoxSea = findViewById(R.id.checkBoxSea);
+        checkBoxSite = (CheckBox)findViewById(R.id.checkBoxSite);
+        checkBoxMountain = (CheckBox)findViewById(R.id.checkBoxMountain);
+        checkBoxSea = (CheckBox)findViewById(R.id.checkBoxSea);
 
-        boolean[] checkState = new boolean[3];
-        checkState[0] = checkBoxSite.isChecked();
-        checkState[1] = checkBoxMountain.isChecked();
-        checkState[2] = checkBoxSea.isChecked();
-
+        boolean stateSite = checkBoxSite.isChecked();
+        boolean stateMount = checkBoxMountain.isChecked();
+        boolean stateSea = checkBoxSea.isChecked();
+        boolean state[] = {stateSite,stateMount,stateSea};
         pathSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent =new Intent(MainActivity.this, Map_search.class);
+                Intent intent = new Intent(MainActivity.this, Map_search.class);
                 intent.putExtra("start",startpoint.getText().toString());
                 intent.putExtra("end",endpoint.getText().toString());
-                intent.putExtra("checkState",checkState);   // 체크박스 배열로 넘기기
+                intent.putExtra("state",state);
                 startActivity(intent);
             }
         });

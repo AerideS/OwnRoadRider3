@@ -46,7 +46,7 @@
                 </FrameLayout>
 
                 <TextView
-                    android:id="@+id/hapcheon_haeinsa"
+                    android:id="@+id/hadong_samsunggung"
                     android:layout_width="105dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -59,7 +59,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/hapcheon_haeinsa_explain"
+                    android:id="@+id/hadong_samsunggung_explain"
                     android:layout_width="403dp"
                     android:layout_height="275dp"
                     android:layout_alignParentEnd="true"
