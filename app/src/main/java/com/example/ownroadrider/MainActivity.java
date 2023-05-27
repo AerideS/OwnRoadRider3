@@ -3,14 +3,17 @@ package com.example.ownroadrider;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -35,12 +38,30 @@ public class MainActivity extends AppCompatActivity {
     private CheckBox checkBoxSite;
     private CheckBox checkBoxMountain;
     private CheckBox checkBoxSea;
+
+    DrawerLayout drawerLayout;
+    View drawer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_for_drawer);
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
+        drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
+        drawer = (View)findViewById(R.id.drawer);
+
+        Button open_btn = (Button)findViewById(R.id.sidemenu_btn);
+
+        open_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawerLayout.openDrawer(drawer);
+            }
+        });
+
+//        Button close_btn = (Button)findViewById(btn_close);
 
         homeButton_m=findViewById(R.id.homeButton);
 
@@ -91,7 +112,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
         startpoint = findViewById(R.id.startPointSearch);
         endpoint = findViewById(R.id.finishPointSearch);
@@ -253,5 +273,27 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    DrawerLayout.DrawerListener listener = new DrawerLayout.DrawerListener() {
+        @Override
+        public void onDrawerSlide(@NonNull View drawerView, float slideOffset) {
+
+        }
+
+        @Override
+        public void onDrawerOpened(@NonNull View drawerView) {
+
+        }
+
+        @Override
+        public void onDrawerClosed(@NonNull View drawerView) {
+
+        }
+
+        @Override
+        public void onDrawerStateChanged(int newState) {
+
+        }
+    };
 
 }
