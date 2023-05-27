@@ -29,4 +29,16 @@
     <string name="checked_destination">내가 본 여행지</string>
     <string name="list_destination_interest">관심 여행지 목록</string>
     <string name="recommended_schedule">여행 고수들의 추천 일정!</string>
+    <string-array name="my_array">
+        <item>딸기</item>
+        <item>사과</item>
+        <item>복숭아</item>
+        <item>포도</item>
+        <item>바나나</item>
+        <item>키위</item>
+        <item>수박</item>
+        <item>메론</item>
+        <item>배</item>
+    </string-array>
+
 </resources>

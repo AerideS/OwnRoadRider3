@@ -5,6 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.naver.maps.geometry.LatLng;
 import com.naver.maps.map.CameraPosition;
@@ -16,11 +22,16 @@ import com.naver.maps.map.OnMapReadyCallback;
 import com.naver.maps.map.overlay.Marker;
 import com.naver.maps.map.overlay.PolylineOverlay;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 public class Map_search extends AppCompatActivity implements OnMapReadyCallback {
     private MapView mapView;
+
+    private ListView exampleList;
+    private ArrayList<String> dataSample;
 
     private String[] vertex = {"창원", "진주", "통영", "사천", "김해","밀양", "거제", "양산", "의령",
             "함양", "창녕", "고성", "남해", "하동", "산청", "함안", "거창", "합천"};
@@ -166,6 +177,9 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
         mapView.onCreate(savedInstanceState);
 
         mapView.getMapAsync(this);
+
+
+
     }
 
     @Override
@@ -210,7 +224,7 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
         mapView.onLowMemory();
     }
 
-    boolean[] checkState = getIntent().getBooleanArrayExtra("checkState");  // 체크박스 상태 배열로 받아오기. 유적 = [0], 산 = [1], 바다 = [2]
+    //boolean[] checkState = getIntent().getBooleanArrayExtra("checkState");  // 체크박스 상태 배열로 받아오기. 유적 = [0], 산 = [1], 바다 = [2]
 
     @Override
     public void onMapReady(@NonNull NaverMap naverMap) {                                        //맵객체 매서드 사용시 여기서 작성
@@ -367,6 +381,17 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
                 polyline.setMap(naverMap);;
                 break;
         }
+
+        dataSample = new ArrayList<String>();
+
+        for(int i=0;i<rot.length;i++){
+            dataSample.add(rot[i]);
+        }
+
+        exampleList = findViewById(R.id.listView);
+        List_Adapter buttonListAdapter = new List_Adapter(this, dataSample);
+
+        exampleList.setAdapter(buttonListAdapter);
 
     }
 }
