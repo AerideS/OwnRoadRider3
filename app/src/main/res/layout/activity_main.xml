@@ -83,6 +83,7 @@
                 android:id="@+id/checkBoxSite"
                 android:layout_width="136dp"
                 android:layout_height="match_parent"
+                android:checked="false"
                 android:text="유적지"
                 android:textAlignment="center"
                 android:textSize="12sp" />
@@ -91,6 +92,7 @@
                 android:id="@+id/checkBoxMountain"
                 android:layout_width="136dp"
                 android:layout_height="match_parent"
+                android:checked="false"
                 android:text="산"
                 android:textAlignment="center"
                 android:textSize="12sp" />
@@ -99,6 +101,7 @@
                 android:id="@+id/checkBoxSea"
                 android:layout_width="136dp"
                 android:layout_height="match_parent"
+                android:checked="false"
                 android:text="바다"
                 android:textAlignment="center"
                 android:textSize="12sp" />

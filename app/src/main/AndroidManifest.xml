@@ -54,7 +54,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".Map_view" />
-        <activity android:name=".TyDprDetailActivity" />
         <activity android:name=".TyDprDetailActivity"></activity>
         <activity android:name=".ChangwonDreamparkDetailActivity"></activity>
         <activity android:name=".GoseongSangjokamDetailActivity"></activity>
