@@ -103,7 +103,7 @@ public class GoseongDinoDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=34.908&dlng=128.1486&dname=%ea%b3%a0%ec%84%b1+%ea%b3%b5%eb%a3%a1%eb%b0%95%eb%ac%bc%ea%b4%80&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }

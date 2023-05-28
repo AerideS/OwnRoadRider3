@@ -1,13 +1,18 @@
 package com.example.ownroadrider;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -19,6 +24,7 @@ import com.naver.maps.map.LocationTrackingMode;
 import com.naver.maps.map.MapView;
 import com.naver.maps.map.NaverMap;
 import com.naver.maps.map.OnMapReadyCallback;
+import com.naver.maps.map.overlay.InfoWindow;
 import com.naver.maps.map.overlay.Marker;
 import com.naver.maps.map.overlay.PolylineOverlay;
 
@@ -30,8 +36,9 @@ import java.util.List;
 public class Map_search extends AppCompatActivity implements OnMapReadyCallback {
     private MapView mapView;
 
-    private ListView exampleList;
+    private ListView List;
     private ArrayList<String> dataSample;
+
 
     private String[] vertex = {"창원", "진주", "통영", "사천", "김해","밀양", "거제", "양산", "의령",
             "함양", "창녕", "고성", "남해", "하동", "산청", "함안", "거창", "합천"};
@@ -258,7 +265,6 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
         double mid_camera_point_la;                 //카메라 중심점 위도
         double mid_camera_point_long;               //카메라 중심점 경도
 
-
         naverMap.setCameraPosition(new CameraPosition(new LatLng(35.2519,128.3094),6));
         PolylineOverlay polyline = new PolylineOverlay();
 
@@ -266,6 +272,17 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
         marker_s.setMap(naverMap);
         marker_s.setWidth(80);
         marker_s.setHeight(100);
+
+        InfoWindow infoWindow_start = new InfoWindow();
+        infoWindow_start.setAdapter(new InfoWindow.DefaultTextAdapter(getApplication()) {
+            @NonNull
+            @Override
+            public CharSequence getText(@NonNull InfoWindow infoWindow) {
+                return "출발";
+            }
+        });
+
+        infoWindow_start.open(marker_s);
 
         switch (rot_num){                   //경유지 수 별 경유지 점찍기
             case 0:
@@ -306,6 +323,17 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
         marker_e.setMap(naverMap);
         marker_e.setWidth(80);
         marker_e.setHeight(100);
+
+        InfoWindow infoWindow_end = new InfoWindow();
+        infoWindow_end.setAdapter(new InfoWindow.DefaultTextAdapter(getApplication()) {
+            @NonNull
+            @Override
+            public CharSequence getText(@NonNull InfoWindow infoWindow) {
+                return "도착";
+            }
+        });
+
+        infoWindow_end.open(marker_e);
 
         switch (rot_num){               //경유지 수 마다 다른 카메라 중심점계산
             case 0:
@@ -389,10 +417,10 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
             dataSample.add(rot[i]);
         }
 
-        exampleList = findViewById(R.id.listView);
+        List = findViewById(R.id.listView);
         List_Adapter buttonListAdapter = new List_Adapter(this, dataSample);
+        List.setAdapter(buttonListAdapter);
 
-        exampleList.setAdapter(buttonListAdapter);
 
     }
 }

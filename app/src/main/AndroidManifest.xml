@@ -26,7 +26,16 @@
             android:exported="false" />
         <activity
             android:name=".Map_search"
-            android:exported="false" />
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="actionPath?parameter=value&amp;appname=ownroadrider"
+                android:host="nmap"
+                tools:ignore="AppLinkUrlError" />
+        </intent-filter>
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -42,7 +51,7 @@
             android:name=".MyPageActivity"
             android:exported="false" />
         <activity android:name=".AdvancedSearchActivity" /> <!-- 상세 검색 화면 동작하게 하기 -->
-        <activity android:name=".Jinju_inform"
+        <activity android:name=".Jinju_detail"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -66,6 +75,7 @@
         <activity android:name=".HamanMujinjeongDetailActivity"></activity>
         <activity android:name=".MiryangLotusDetailActivity"></activity>
         <activity android:name=".NamhaeBoriamDetailActivity"></activity>
+
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="nowdd7jigt" />

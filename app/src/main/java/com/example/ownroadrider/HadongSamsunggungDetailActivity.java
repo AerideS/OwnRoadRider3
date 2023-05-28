@@ -103,7 +103,7 @@ public class HadongSamsunggungDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.2409&dlng=127.7013&dname=%ed%95%98%eb%8f%99+%ec%82%bc%ec%84%b1%ea%b6%81&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }

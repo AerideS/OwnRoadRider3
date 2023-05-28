@@ -18,7 +18,7 @@ import java.util.List;
 
 import me.relex.circleindicator.CircleIndicator3;
 
-public class Jinju_inform extends AppCompatActivity {
+public class Jinju_detail extends AppCompatActivity {
 
     private ViewPager2 mPager;
     private FragmentStateAdapter pagerAdapter;
@@ -65,7 +65,7 @@ public class Jinju_inform extends AppCompatActivity {
         mapButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Jinju_inform.this, Map_view.class);
+                Intent intent = new Intent(Jinju_detail.this, Map_view.class);
                 startActivity(intent);
             }
         });
@@ -87,7 +87,7 @@ public class Jinju_inform extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(),"내정보 선택",Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(Jinju_inform.this, MyPageActivity.class);
+                Intent intent = new Intent(Jinju_detail.this, MyPageActivity.class);
                 startActivity(intent);
             }
         });
@@ -104,7 +104,7 @@ public class Jinju_inform extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://route/car?dlat=35.1887&dlng=128.0765&dname=%ec%a7%84%ec%a3%bc%ec%84%b1&appname=com.example.ownroadrider")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.1887&dlng=128.0765&dname=%ec%a7%84%ec%a3%bc%ec%84%b1&appname=com.example.ownroadrider")));
                 } else {                    //dlat 도착지 위도 dlng 도착지 경도 dname 도착지이름 url 인코딩된 문자열 필수는 아님  //appname 우리꺼 쓰면됨
                     startActivity(intent);
                 }

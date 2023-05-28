@@ -7,7 +7,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -125,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
         landscape1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Jinju_inform.class);
+                Intent intent = new Intent(getApplicationContext(), Jinju_detail.class);
                 startActivity(intent);
             }
         });
@@ -154,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
                     landscape1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Intent intent = new Intent(getApplicationContext(), Jinju_inform.class);
+                            Intent intent = new Intent(getApplicationContext(), Jinju_detail.class);
                             startActivity(intent);
                         }
                     });

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Jinju_inform">
+    tools:context=".Jinju_detail">
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -47,15 +47,15 @@
 
                 <TextView
                     android:id="@+id/jinju"
-                    android:layout_width="wrap_content"
+                    android:layout_width="171dp"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginStart="10dp"
-                    android:layout_marginEnd="354dp"
+                    android:layout_marginEnd="227dp"
                     android:layout_marginBottom="297dp"
-                    android:text="진주"
+                    android:text="진주성(남강)"
                     android:textColor="#000000"
                     android:textSize="24sp"
                     android:textStyle="bold" />

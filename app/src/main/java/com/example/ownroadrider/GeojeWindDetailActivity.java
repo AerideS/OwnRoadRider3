@@ -103,7 +103,7 @@ public class GeojeWindDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=34.7745&dlng=128.6632&dname=%eb%b0%94%eb%9e%8c%ec%9d%98+%ec%96%b8%eb%8d%95%0d%0a%0d%0a&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }

@@ -103,7 +103,7 @@ public class GeochangNamduckDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.8570&dlng=127.7463&dname=%ea%b1%b0%ec%b0%bd+%eb%8d%95%ec%9c%a0%ec%82%b0&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }

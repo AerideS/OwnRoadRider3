@@ -103,7 +103,7 @@ public class HamanMujinjeongDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.2554&dlng=128.4230&dname=%ed%95%a8%ec%95%88+%eb%ac%b4%ec%a7%84%ec%a0%95&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }

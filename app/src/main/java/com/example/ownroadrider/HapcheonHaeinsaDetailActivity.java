@@ -103,7 +103,7 @@ public class HapcheonHaeinsaDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.8006&dlng=128.0974&dname=%ed%95%b4%ec%9d%b8%ec%82%ac%0d%0a&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }

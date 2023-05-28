@@ -103,7 +103,7 @@ public class GimhaeSurowangDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.2353&dlng=128.8783&dname=%ec%88%98%eb%a1%9c%ec%99%95%eb%a6%89&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }

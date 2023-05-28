@@ -103,7 +103,7 @@ public class NamhaeBoriamDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=34.7518&dlng=127.9824&dname=%eb%82%a8%ed%95%b4+%eb%b3%b4%eb%a6%ac%ec%95%94&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }
