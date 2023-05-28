@@ -21,13 +21,26 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="VisualLintBounds">
 
-        <ImageView
-            android:id="@+id/logoImage"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/logo"
-            android:padding="10dp"
-            app:srcCompat="@drawable/logo" />
+            android:layout_height="51dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/sidemenu_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="cate" />
+
+            <ImageView
+                android:id="@+id/logoImage"
+                android:layout_width="209dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/logo"
+                android:padding="10dp"
+                app:srcCompat="@drawable/logo" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="360dp"
