@@ -104,10 +104,15 @@ public class Jinju_detail extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.1887&dlng=128.0765&dname=%ec%a7%84%ec%a3%bc%ec%84%b1&appname=com.example.ownroadrider")));
+                    try {
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.1887&dlng=128.0765&dname=%ec%a7%84%ec%a3%bc%ec%84%b1&appname=com.example.ownroadrider")));
+                    } catch (Exception e){
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                    }
                 } else {                    //dlat 도착지 위도 dlng 도착지 경도 dname 도착지이름 url 인코딩된 문자열 필수는 아님  //appname 우리꺼 쓰면됨
                     startActivity(intent);
                 }
+
             }
         });
 

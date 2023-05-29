@@ -79,7 +79,11 @@ public class List_Adapter extends BaseAdapter{
 
                         list = context.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                         if (list == null || list.isEmpty()) {
-                            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.1322&dlng=128.7167&dname=%ec%b0%bd%ec%9b%90+%eb%93%9c%eb%a6%bc%ed%8c%8c%ed%81%ac&appname=com.example.ownroadrider")));
+                            try {
+                                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.1322&dlng=128.7167&dname=%ec%b0%bd%ec%9b%90+%eb%93%9c%eb%a6%bc%ed%8c%8c%ed%81%ac&appname=com.example.ownroadrider")));
+                            }catch (Exception e){
+                                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                            }
                         } else {
                             context.startActivity(intent);
                         }
@@ -92,7 +96,11 @@ public class List_Adapter extends BaseAdapter{
 
                         list = context.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                         if (list == null || list.isEmpty()) {
-                            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.1887&dlng=128.0765&dname=%ec%a7%84%ec%a3%bc%ec%84%b1&appname=com.example.ownroadrider")));
+                            try {
+                                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.1887&dlng=128.0765&dname=%ec%a7%84%ec%a3%bc%ec%84%b1&appname=com.example.ownroadrider")));
+                            } catch (Exception e){
+                                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                            }
                         } else {
                             context.startActivity(intent);
                         }
@@ -105,7 +113,11 @@ public class List_Adapter extends BaseAdapter{
 
                         list = context.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                         if (list == null || list.isEmpty()) {
-                            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=34.8446&dlng=128.4258&dname=%%eb%8f%99%ed%94%bc%eb%9e%91&appname=com.example.ownroadrider")));
+                            try{
+                                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=34.8446&dlng=128.4258&dname=%%eb%8f%99%ed%94%bc%eb%9e%91&appname=com.example.ownroadrider")));
+                            }catch (Exception e){
+                                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                            }
                         } else {
                             context.startActivity(intent);
                         }
@@ -118,7 +130,11 @@ public class List_Adapter extends BaseAdapter{
 
                         list = context.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                         if (list == null || list.isEmpty()) {
-                            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=34.9337&dlng=128.0532&dname=%ec%82%ac%ec%b2%9c+%ed%95%b4%ec%83%81%ec%bc%80%ec%9d%b4%eb%b8%94%ec%b9%b4%0d%0a&appname=com.example.ownroadrider")));
+                            try{
+                                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=34.9337&dlng=128.0532&dname=%ec%82%ac%ec%b2%9c+%ed%95%b4%ec%83%81%ec%bc%80%ec%9d%b4%eb%b8%94%ec%b9%b4%0d%0a&appname=com.example.ownroadrider")));
+                            } catch (Exception e){
+                                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                            }
                         } else {
                             context.startActivity(intent);
                         }
@@ -131,7 +147,11 @@ public class List_Adapter extends BaseAdapter{
 
                         list = context.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                         if (list == null || list.isEmpty()) {
-                            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.2353&dlng=128.8783&dname=%ec%88%98%eb%a1%9c%ec%99%95%eb%a6%89&appname=com.example.ownroadrider")));
+                            try{
+                                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.2353&dlng=128.8783&dname=%ec%88%98%eb%a1%9c%ec%99%95%eb%a6%89&appname=com.example.ownroadrider")));
+                            } catch (Exception e){
+                                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                            }
                         } else {
                             context.startActivity(intent);
                         }
@@ -144,7 +164,11 @@ public class List_Adapter extends BaseAdapter{
 
                         list = context.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                         if (list == null || list.isEmpty()) {
-                            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.5328&dlng=128.7029&dname=%eb%b0%80%ec%96%91+%ec%97%b0%ea%bd%83%eb%a7%88%ec%9d%84&appname=com.example.ownroadrider")));
+                            try{
+                                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.5328&dlng=128.7029&dname=%eb%b0%80%ec%96%91+%ec%97%b0%ea%bd%83%eb%a7%88%ec%9d%84&appname=com.example.ownroadrider")));
+                            } catch (Exception e){
+                                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                            }
                         } else {
                             context.startActivity(intent);
                         }
@@ -157,7 +181,11 @@ public class List_Adapter extends BaseAdapter{
 
                         list = context.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                         if (list == null || list.isEmpty()) {
-                            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=34.7745&dlng=128.6632&dname=%eb%b0%94%eb%9e%8c%ec%9d%98+%ec%96%b8%eb%8d%95%0d%0a%0d%0a&appname=com.example.ownroadrider")));
+                            try{
+                                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=34.7745&dlng=128.6632&dname=%eb%b0%94%eb%9e%8c%ec%9d%98+%ec%96%b8%eb%8d%95%0d%0a%0d%0a&appname=com.example.ownroadrider")));
+                            } catch (Exception e){
+                                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                            }
                         } else {
                             context.startActivity(intent);
                         }
@@ -222,7 +250,11 @@ public class List_Adapter extends BaseAdapter{
 
                         list = context.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                         if (list == null || list.isEmpty()) {
-                            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=34.908&dlng=128.1486&dname=%ea%b3%a0%ec%84%b1+%ea%b3%b5%eb%a3%a1%eb%b0%95%eb%ac%bc%ea%b4%80&appname=com.example.ownroadrider")));
+                            try {
+                                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=34.908&dlng=128.1486&dname=%ea%b3%a0%ec%84%b1+%ea%b3%b5%eb%a3%a1%eb%b0%95%eb%ac%bc%ea%b4%80&appname=com.example.ownroadrider")));
+                            } catch (Exception e){
+                                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                            }
                         } else {
                             context.startActivity(intent);
                         }
@@ -235,7 +267,11 @@ public class List_Adapter extends BaseAdapter{
 
                         list = context.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                         if (list == null || list.isEmpty()) {
-                            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=34.7518&dlng=127.9824&dname=%eb%82%a8%ed%95%b4+%eb%b3%b4%eb%a6%ac%ec%95%94&appname=com.example.ownroadrider")));
+                            try {
+                                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=34.7518&dlng=127.9824&dname=%eb%82%a8%ed%95%b4+%eb%b3%b4%eb%a6%ac%ec%95%94&appname=com.example.ownroadrider")));
+                            } catch (Exception e){
+                                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                            }
                         } else {
                             context.startActivity(intent);
                         }
@@ -248,7 +284,11 @@ public class List_Adapter extends BaseAdapter{
 
                         list = context.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                         if (list == null || list.isEmpty()) {
-                            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.2409&dlng=127.7013&dname=%ed%95%98%eb%8f%99+%ec%82%bc%ec%84%b1%ea%b6%81&appname=com.example.ownroadrider")));
+                            try{
+                                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.2409&dlng=127.7013&dname=%ed%95%98%eb%8f%99+%ec%82%bc%ec%84%b1%ea%b6%81&appname=com.example.ownroadrider")));
+                            } catch (Exception e){
+                                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                            }
                         } else {
                             context.startActivity(intent);
                         }
@@ -274,7 +314,11 @@ public class List_Adapter extends BaseAdapter{
 
                         list = context.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                         if (list == null || list.isEmpty()) {
-                            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.2554&dlng=128.4230&dname=%ed%95%a8%ec%95%88+%eb%ac%b4%ec%a7%84%ec%a0%95&appname=com.example.ownroadrider")));
+                            try{
+                                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.2554&dlng=128.4230&dname=%ed%95%a8%ec%95%88+%eb%ac%b4%ec%a7%84%ec%a0%95&appname=com.example.ownroadrider")));
+                            }catch (Exception e){
+                                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                            }
                         } else {
                             context.startActivity(intent);
                         }
@@ -287,7 +331,11 @@ public class List_Adapter extends BaseAdapter{
 
                         list = context.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                         if (list == null || list.isEmpty()) {
-                            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.8570&dlng=127.7463&dname=%ea%b1%b0%ec%b0%bd+%eb%8d%95%ec%9c%a0%ec%82%b0&appname=com.example.ownroadrider")));
+                            try{
+                                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.8570&dlng=127.7463&dname=%ea%b1%b0%ec%b0%bd+%eb%8d%95%ec%9c%a0%ec%82%b0&appname=com.example.ownroadrider")));
+                            }catch (Exception e){
+                                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                            }
                         } else {
                             context.startActivity(intent);
                         }
@@ -300,7 +348,11 @@ public class List_Adapter extends BaseAdapter{
 
                         list = context.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                         if (list == null || list.isEmpty()) {
-                            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.8006&dlng=128.0974&dname=%ed%95%b4%ec%9d%b8%ec%82%ac%0d%0a&appname=com.example.ownroadrider")));
+                            try{
+                                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.8006&dlng=128.0974&dname=%ed%95%b4%ec%9d%b8%ec%82%ac%0d%0a&appname=com.example.ownroadrider")));
+                            }catch (Exception e){
+                                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                            }
                         } else {
                             context.startActivity(intent);
                         }
