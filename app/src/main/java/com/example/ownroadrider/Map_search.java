@@ -260,6 +260,8 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
         Collections.reverse(Arrays.asList(rot));
         Marker marker_s = new Marker();
         Marker marker_m = new Marker();             //경유지 마커
+        Marker marker_m_2= new Marker();
+        Marker marker_m_3= new Marker();
         Marker marker_e = new Marker();             //도착지 마커
         int rot_num=rot.length-2;                   //경유지 수
         double mid_camera_point_la;                 //카메라 중심점 위도
@@ -298,26 +300,56 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
                 marker_m.setMap(naverMap);
                 marker_m.setWidth(80);
                 marker_m.setHeight(100);
-                marker_m.setPosition(new LatLng(region_position[stringToInt(rot[2])][0], region_position[stringToInt(rot[2])][1]));
-                marker_m.setMap(naverMap);
-                marker_m.setWidth(80);
-                marker_m.setHeight(100);
+                marker_m_2.setPosition(new LatLng(region_position[stringToInt(rot[2])][0], region_position[stringToInt(rot[2])][1]));
+                marker_m_2.setMap(naverMap);
+                marker_m_2.setWidth(80);
+                marker_m_2.setHeight(100);
                 break;
             case 3:
                 marker_m.setPosition(new LatLng(region_position[stringToInt(rot[1])][0], region_position[stringToInt(rot[1])][1]));
                 marker_m.setMap(naverMap);
                 marker_m.setWidth(80);
                 marker_m.setHeight(100);
-                marker_m.setPosition(new LatLng(region_position[stringToInt(rot[2])][0], region_position[stringToInt(rot[2])][1]));
-                marker_m.setMap(naverMap);
-                marker_m.setWidth(80);
-                marker_m.setHeight(100);
-                marker_m.setPosition(new LatLng(region_position[stringToInt(rot[3])][0], region_position[stringToInt(rot[3])][1]));
-                marker_m.setMap(naverMap);
-                marker_m.setWidth(80);
-                marker_m.setHeight(100);
+                marker_m_2.setPosition(new LatLng(region_position[stringToInt(rot[2])][0], region_position[stringToInt(rot[2])][1]));
+                marker_m_2.setMap(naverMap);
+                marker_m_2.setWidth(80);
+                marker_m_3.setHeight(100);
+                marker_m_3.setPosition(new LatLng(region_position[stringToInt(rot[3])][0], region_position[stringToInt(rot[3])][1]));
+                marker_m_3.setMap(naverMap);
+                marker_m_3.setWidth(80);
+                marker_m_3.setHeight(100);
                 break;
         }
+
+        InfoWindow infoWindow_m = new InfoWindow();
+        infoWindow_m.setAdapter(new InfoWindow.DefaultTextAdapter(getApplication()) {
+            @NonNull
+            @Override
+            public CharSequence getText(@NonNull InfoWindow infoWindow) {
+                return "경유";
+            }
+        });
+        InfoWindow infoWindow_m_2 = new InfoWindow();
+        infoWindow_m_2.setAdapter(new InfoWindow.DefaultTextAdapter(getApplication()) {
+            @NonNull
+            @Override
+            public CharSequence getText(@NonNull InfoWindow infoWindow) {
+                return "경유";
+            }
+        });
+
+        InfoWindow infoWindow_m_3 = new InfoWindow();
+        infoWindow_m_3.setAdapter(new InfoWindow.DefaultTextAdapter(getApplication()) {
+            @NonNull
+            @Override
+            public CharSequence getText(@NonNull InfoWindow infoWindow) {
+                return "경유";
+            }
+        });
+
+        infoWindow_m.open(marker_m);
+        infoWindow_m_2.open(marker_m_2);
+        infoWindow_m_3.open(marker_m_3);
 
         marker_e.setPosition(new LatLng(region_position[stringToInt(rot[rot.length-1])][0], region_position[stringToInt(rot[rot.length-1])][1]));           //끝점찍기
         marker_e.setMap(naverMap);
@@ -339,27 +371,27 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
             case 0:
                 mid_camera_point_la = (region_position[stringToInt(rot[0])][0]+region_position[stringToInt(rot[rot.length-1])][0])/2;
                 mid_camera_point_long = (region_position[stringToInt(rot[0])][1]+region_position[stringToInt(rot[rot.length-1])][1])/2;
-                naverMap.setCameraPosition(new CameraPosition(new LatLng(mid_camera_point_la,mid_camera_point_long),8));
+                naverMap.setCameraPosition(new CameraPosition(new LatLng(mid_camera_point_la,mid_camera_point_long),7));
                 break;
             case 1:
                 mid_camera_point_la = (region_position[stringToInt(rot[0])][0]+region_position[stringToInt(rot[1])][0]+region_position[stringToInt(rot[rot.length-1])][0])/3;
                 mid_camera_point_long = (region_position[stringToInt(rot[0])][1]+region_position[stringToInt(rot[1])][1]+region_position[stringToInt(rot[rot.length-1])][1])/3;
-                naverMap.setCameraPosition(new CameraPosition(new LatLng(mid_camera_point_la,mid_camera_point_long),8));
+                naverMap.setCameraPosition(new CameraPosition(new LatLng(mid_camera_point_la,mid_camera_point_long),7));
                 break;
             case 2:
                 mid_camera_point_la = (region_position[stringToInt(rot[0])][0]+region_position[stringToInt(rot[1])][0]+region_position[stringToInt(rot[2])][0]+region_position[stringToInt(rot[rot.length-1])][0])/4;
                 mid_camera_point_long = (region_position[stringToInt(rot[0])][1]+region_position[stringToInt(rot[1])][1]+region_position[stringToInt(rot[2])][1]+region_position[stringToInt(rot[rot.length-1])][1])/4;
-                naverMap.setCameraPosition(new CameraPosition(new LatLng(mid_camera_point_la,mid_camera_point_long),8));
+                naverMap.setCameraPosition(new CameraPosition(new LatLng(mid_camera_point_la,mid_camera_point_long),7));
                 break;
             case 3:
                 mid_camera_point_la = (region_position[stringToInt(rot[0])][0]+region_position[stringToInt(rot[1])][0]+region_position[stringToInt(rot[2])][0]+region_position[stringToInt(rot[3])][0]+region_position[stringToInt(rot[rot.length-1])][0])/5;
                 mid_camera_point_long = (region_position[stringToInt(rot[0])][1]+region_position[stringToInt(rot[1])][1]+region_position[stringToInt(rot[2])][1]+region_position[stringToInt(rot[3])][1]+region_position[stringToInt(rot[rot.length-1])][1])/5;
-                naverMap.setCameraPosition(new CameraPosition(new LatLng(mid_camera_point_la,mid_camera_point_long),8));
+                naverMap.setCameraPosition(new CameraPosition(new LatLng(mid_camera_point_la,mid_camera_point_long),7));
                 break;
             case 4:
                 mid_camera_point_la = (region_position[stringToInt(rot[0])][0]+region_position[stringToInt(rot[1])][0]+region_position[stringToInt(rot[2])][0]+region_position[stringToInt(rot[3])][0]+region_position[stringToInt(rot[4])][0]+region_position[stringToInt(rot[rot.length-1])][0])/6;
                 mid_camera_point_long = (region_position[stringToInt(rot[0])][1]+region_position[stringToInt(rot[1])][1]+region_position[stringToInt(rot[2])][1]+region_position[stringToInt(rot[3])][1]+region_position[stringToInt(rot[4])][1]+region_position[stringToInt(rot[rot.length-1])][1])/6;
-                naverMap.setCameraPosition(new CameraPosition(new LatLng(mid_camera_point_la,mid_camera_point_long),8));
+                naverMap.setCameraPosition(new CameraPosition(new LatLng(mid_camera_point_la,mid_camera_point_long),7));
                 break;
 
         }
