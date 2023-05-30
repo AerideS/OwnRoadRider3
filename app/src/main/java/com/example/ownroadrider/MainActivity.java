@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
         drawer = (View)findViewById(R.id.drawer);
 
-        Button open_btn = (Button)findViewById(R.id.sidemenu_btn);
+        ImageButton open_btn = (ImageButton)findViewById(R.id.sidemenu_btn);
 
         open_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +60,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        Button close_btn = (Button)findViewById(btn_close);
+        Button close_btn = (Button)findViewById(R.id.btn_close);
+
+        close_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawerLayout.closeDrawer(drawer);
+            }
+        });
 
         homeButton_m=findViewById(R.id.homeButton);
 

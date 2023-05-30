@@ -23,19 +23,21 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="51dp"
-            android:orientation="horizontal">
+            android:layout_height="51dp">
 
-            <Button
+            <ImageButton
                 android:id="@+id/sidemenu_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="cate" />
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_margin="5dp"
+                android:src="@drawable/category"
+                android:background="#00FFFFFF"/>
 
             <ImageView
                 android:id="@+id/logoImage"
-                android:layout_width="209dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="103dp"
                 android:contentDescription="@string/logo"
                 android:padding="10dp"
                 app:srcCompat="@drawable/logo" />
@@ -255,9 +257,7 @@
     <!--하단 네비게이션 바 삽입-->
     <include
         android:id="@+id/navigation_bar"
-        layout="@layout/navigation_bar"/>
-
-
+        layout="@layout/navigation_bar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
