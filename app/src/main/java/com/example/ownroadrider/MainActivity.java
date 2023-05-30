@@ -48,27 +48,6 @@ public class MainActivity extends AppCompatActivity {
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
-        drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
-        drawer = (View)findViewById(R.id.drawer);
-
-        ImageButton open_btn = (ImageButton)findViewById(R.id.sidemenu_btn);
-
-        open_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                drawerLayout.openDrawer(drawer);
-            }
-        });
-
-        Button close_btn = (Button)findViewById(R.id.btn_close);
-
-        close_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                drawerLayout.closeDrawer(drawer);
-            }
-        });
-
         homeButton_m=findViewById(R.id.homeButton);
 
         homeButton_m.setOnClickListener(new View.OnClickListener() {
@@ -274,6 +253,47 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(intent);
                         }
                     });
+                }
+            }
+
+        });
+
+        // 좌상단 카테고리 버튼 선택 시 표시되는 사이드 메뉴에 관한 코드부
+
+        drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
+        drawer = (View)findViewById(R.id.drawer);
+
+        ImageButton open_btn = (ImageButton)findViewById(R.id.sidemenu_btn);
+
+        open_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawerLayout.openDrawer(drawer);
+            }
+        });
+
+        Button close_btn = (Button)findViewById(R.id.btn_close);
+
+        close_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawerLayout.closeDrawer(drawer);
+            }
+        });
+
+        Button btnCw = findViewById(R.id.side_btn_changwon);
+        Button btnCwDream = findViewById(R.id.side_btn_changwon_dream);
+        final boolean[] btnCwVisible = {false};
+        btnCw.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(btnCwVisible[0]){
+                    btnCwDream.setVisibility(View.GONE);
+                    btnCwVisible[0] = false;
+                }
+                else{
+                    btnCwDream.setVisibility(View.VISIBLE);
+                    btnCwVisible[0] = true;
                 }
             }
         });

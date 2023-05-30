@@ -32,6 +32,13 @@ android:id="@+id/drawer">
                 android:text="창원"
                 android:textColor="#FFFFFF" />
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_changwon_dream"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=" - 창원 드림파크"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/side_btn_jinju"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
