@@ -240,7 +240,6 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
         mapView.onLowMemory();
     }
 
-    //boolean[] checkState = getIntent().getBooleanArrayExtra("checkState");  // 체크박스 상태 배열로 받아오기. 유적 = [0], 산 = [1], 바다 = [2]
 
     @Override
     public void onMapReady(@NonNull NaverMap naverMap) {                                        //맵객체 매서드 사용시 여기서 작성
@@ -253,7 +252,8 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
                 newGN[i][j] = matrixGN[i][j];
             }
         }
-        boolean state[] = getIntent().getBooleanArrayExtra("state");  // 0 = 유적, 1 = 산, 2 = 바다
+
+        boolean[] state = getIntent().getBooleanArrayExtra("state");  // 0 = 유적, 1 = 산, 2 = 바다
         
         // 유적, 산, 바다 모두 선택
         if(state[0] && state[1] && state[2]) {

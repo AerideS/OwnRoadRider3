@@ -2,6 +2,7 @@ package com.example.ownroadrider;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -86,17 +87,17 @@ public class MainActivity extends AppCompatActivity {
         checkBoxMountain = (CheckBox)findViewById(R.id.checkBoxMountain);
         checkBoxSea = (CheckBox)findViewById(R.id.checkBoxSea);
 
-        boolean stateSite = checkBoxSite.isChecked();
-        boolean stateMount = checkBoxMountain.isChecked();
-        boolean stateSea = checkBoxSea.isChecked();
-        boolean state[] = {stateSite,stateMount,stateSea};
+
         pathSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent intent = new Intent(MainActivity.this, Map_search.class);
                 intent.putExtra("start",startpoint.getText().toString());
                 intent.putExtra("end",endpoint.getText().toString());
+                boolean stateSite = checkBoxSite.isChecked();
+                boolean stateMount = checkBoxMountain.isChecked();
+                boolean stateSea = checkBoxSea.isChecked();
+                boolean state[] = {stateSite,stateMount,stateSea};
                 intent.putExtra("state",state);
                 startActivity(intent);
             }
@@ -240,10 +241,10 @@ public class MainActivity extends AppCompatActivity {
 
         // 좌상단 카테고리 버튼 선택 시 표시되는 사이드 메뉴에 관한 코드부
 
-        drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
+        drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);  //드로어레이아웃 선택을 통해 작동
         drawer = (View)findViewById(R.id.drawer);
 
-        ImageButton openBtn = (ImageButton)findViewById(R.id.sidemenu_btn);
+        ImageButton openBtn = (ImageButton)findViewById(R.id.sidemenu_btn);  // 사이드메뉴 열기 버튼
 
         openBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -252,7 +253,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button closeBtn = (Button)findViewById(R.id.btn_close);
+        Button closeBtn = (Button)findViewById(R.id.btn_close);  //사이드메뉴 닫기
 
         closeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -261,18 +262,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // 창원
         Button btnChangwon = findViewById(R.id.side_btn_changwon);
         Button btnChangwonDream = findViewById(R.id.side_btn_changwon_dream);
+        Button btnChangwonQwai = findViewById(R.id.side_btn_changwon_qwai);
+        Button btnChangwonSokuri = findViewById(R.id.side_btn_changwon_sokuri);
         final boolean[] btnCwVisible = {false};
         btnChangwon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(btnCwVisible[0]){
                     btnChangwonDream.setVisibility(View.GONE);
+                    btnChangwonQwai.setVisibility(View.GONE);
+                    btnChangwonSokuri.setVisibility(View.GONE);
                     btnCwVisible[0] = false;
                 }
                 else{
                     btnChangwonDream.setVisibility(View.VISIBLE);
+                    btnChangwonQwai.setVisibility(View.VISIBLE);
+                    btnChangwonSokuri.setVisibility(View.VISIBLE);
                     btnCwVisible[0] = true;
                 }
             }
@@ -283,6 +291,66 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ChangwonDreamparkDetailActivity.class);
                 startActivity(intent);
+            }
+        });
+        btnChangwonQwai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ChangwonQwaiDetailActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnChangwonSokuri.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ChangwonSokuriDetailActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //진주
+        Button btnJinju = findViewById(R.id.side_btn_jinju);
+        Button btnJinjuNamgang = findViewById(R.id.side_btn_jinju_namgang);
+        Button btnJinjuGeumho = findViewById(R.id.side_btn_jinju_geumhoji);
+        Button btnJinjuJinyang = findViewById(R.id.side_btn_jinju_jinyangho);
+        final boolean[] jinjuVisible = {false};
+
+        btnJinju.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(jinjuVisible[0]){
+                    btnJinjuGeumho.setVisibility(View.GONE);
+                    btnJinjuJinyang.setVisibility(View.GONE);
+                    btnJinjuNamgang.setVisibility(View.GONE);
+                    jinjuVisible[0] = false;
+                }
+                else{
+                    btnJinjuGeumho.setVisibility(View.VISIBLE);
+                    btnJinjuNamgang.setVisibility(View.VISIBLE);
+                    btnJinjuJinyang.setVisibility(View.VISIBLE);
+                    jinjuVisible[0] = true;
+                }
+            }
+        });
+        btnJinjuNamgang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),Jinju_detail.class);
+                startActivity(i);
+            }
+        });
+        btnJinjuGeumho.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),JinjuGeumhojiDetailActivity.class);
+                startActivity(i);
+            }
+        });
+        btnJinjuJinyang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),JinjuJinyanghoDetailActivity.class);
+                startActivity(i);
             }
         });
     }
