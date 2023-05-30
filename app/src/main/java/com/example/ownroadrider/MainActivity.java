@@ -24,9 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton pathSearchButton;
 
     private ImageButton homeButton_m;
-    private ImageButton categoryButton_m;
     private ImageButton mapButton;
-    private ImageButton detailSearchButton_m;
     private ImageButton mypageButton_m;
 
     private RadioGroup themeRg; // 테마 선택 라디오 그룹
@@ -58,14 +56,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //카테고리
-        categoryButton_m=findViewById(R.id.categoryButton);
-
-        categoryButton_m.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            }
-        });
         //맵
         mapButton=findViewById(R.id.mapButton);
 
@@ -77,16 +67,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //검색
-        detailSearchButton_m=findViewById(R.id.detailSearchButton);
-
-        detailSearchButton_m.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, AdvancedSearchActivity.class);
-                startActivity(intent);
-            }
-        });
         //마이페이지
         mypageButton_m=findViewById(R.id.mypageButton);
 
@@ -263,41 +243,48 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
         drawer = (View)findViewById(R.id.drawer);
 
-        ImageButton open_btn = (ImageButton)findViewById(R.id.sidemenu_btn);
+        ImageButton openBtn = (ImageButton)findViewById(R.id.sidemenu_btn);
 
-        open_btn.setOnClickListener(new View.OnClickListener() {
+        openBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 drawerLayout.openDrawer(drawer);
             }
         });
 
-        Button close_btn = (Button)findViewById(R.id.btn_close);
+        Button closeBtn = (Button)findViewById(R.id.btn_close);
 
-        close_btn.setOnClickListener(new View.OnClickListener() {
+        closeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 drawerLayout.closeDrawer(drawer);
             }
         });
 
-        Button btnCw = findViewById(R.id.side_btn_changwon);
-        Button btnCwDream = findViewById(R.id.side_btn_changwon_dream);
+        Button btnChangwon = findViewById(R.id.side_btn_changwon);
+        Button btnChangwonDream = findViewById(R.id.side_btn_changwon_dream);
         final boolean[] btnCwVisible = {false};
-        btnCw.setOnClickListener(new View.OnClickListener() {
+        btnChangwon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(btnCwVisible[0]){
-                    btnCwDream.setVisibility(View.GONE);
+                    btnChangwonDream.setVisibility(View.GONE);
                     btnCwVisible[0] = false;
                 }
                 else{
-                    btnCwDream.setVisibility(View.VISIBLE);
+                    btnChangwonDream.setVisibility(View.VISIBLE);
                     btnCwVisible[0] = true;
                 }
             }
         });
 
+        btnChangwonDream.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ChangwonDreamparkDetailActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     DrawerLayout.DrawerListener listener = new DrawerLayout.DrawerListener() {

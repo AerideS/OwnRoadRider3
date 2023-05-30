@@ -50,7 +50,7 @@
         <activity
             android:name=".MyPageActivity"
             android:exported="false" />
-        <activity android:name=".AdvancedSearchActivity" /> <!-- 상세 검색 화면 동작하게 하기 -->
+        <!-- 상세 검색 화면 동작하게 하기 -->
         <activity android:name=".Jinju_detail"
             android:exported="true">
             <intent-filter>

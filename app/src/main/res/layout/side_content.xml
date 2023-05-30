@@ -35,7 +35,24 @@ android:id="@+id/drawer">
                 android:id="@+id/side_btn_changwon_dream"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="#339933"
                 android:text=" - 창원 드림파크"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_changwon_qwai"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 콰이강의 다리"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_changwon_sokuri"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 창원 소쿠리섬"
                 android:textColor="#FFFFFF"
                 android:visibility="gone" />
             <androidx.appcompat.widget.AppCompatButton

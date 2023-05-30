@@ -33,14 +33,6 @@
                 app:srcCompat="@drawable/home" />
 
             <!--카테고리버튼-->
-            <ImageButton
-                android:id="@+id/categoryButton"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_weight="1"
-                android:background="#00FFFFFF"
-                android:contentDescription="@string/category"
-                app:srcCompat="@drawable/category" />
 
             <!--지도버튼-->
             <ImageButton
@@ -53,14 +45,6 @@
                 app:srcCompat="@drawable/location" />
 
             <!--상세검색버튼-->
-            <ImageButton
-                android:id="@+id/detailSearchButton"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_weight="1"
-                android:background="#00FFFFFF"
-                android:contentDescription="@string/detail_search"
-                app:srcCompat="@drawable/search" />
 
 
             <!--마이페이지버튼-->
