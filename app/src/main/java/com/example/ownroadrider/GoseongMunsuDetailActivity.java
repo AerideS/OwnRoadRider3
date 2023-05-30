@@ -34,7 +34,7 @@ public class GoseongMunsuDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.geoje_maemi_detail);
+        setContentView(R.layout.goseong_munsu_detail);
 
 
 
@@ -85,7 +85,7 @@ public class GoseongMunsuDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=34.9792473&dlng=128.2117567&dname=%eb%ac%b8%ec%88%98%ec%95%94&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }
@@ -98,7 +98,7 @@ public class GoseongMunsuDetailActivity extends AppCompatActivity {
         //ViewPager2
         mPager = findViewById(R.id.sliderViewPager);
         //Adapter
-        pagerAdapter = new Image_Slider_Geoje_Maemi(this, num_page);
+        pagerAdapter = new Image_Slider_Goseong_Munsu(this, num_page);
         mPager.setAdapter(pagerAdapter);
         //Indicator
         mIndicator = findViewById(R.id.indicator);

@@ -83,7 +83,7 @@ public class ChangwonQwaiDetailActivity extends AppCompatActivity {
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
                     try {
-                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.0675695&dlng=128.5628285&dname=%ec%b0%bd%ec%9b%90+%eb%93%9c%eb%a6%bc%ed%8c%8c%ed%81%ac&appname=com.example.ownroadrider")));
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.0675695&dlng=128.5628285&dname=%ec%bd%b0%ec%9d%b4%ea%b0%95%ec%9d%98+%eb%8b%a4%eb%a6%ac&appname=com.example.ownroadrider")));
                     } catch (Exception e){
                         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
                     }

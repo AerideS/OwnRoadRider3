@@ -87,7 +87,7 @@ android:id="@+id/drawer">
                 android:textColor="#FFFFFF"
                 android:visibility="gone" />
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/side_btn_tongyoung"
+                android:id="@+id/side_btn_tongyeong"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#008200"
@@ -141,11 +141,11 @@ android:id="@+id/drawer">
                 android:textColor="#FFFFFF"
                 android:visibility="gone" />
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/side_btn_sacheon_daewon"
+                android:id="@+id/side_btn_sacheon_dasol"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#339933"
-                android:text=" - 대원사"
+                android:text=" - 다솔사"
                 android:textColor="#FFFFFF"
                 android:visibility="gone" />
             <androidx.appcompat.widget.AppCompatButton

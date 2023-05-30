@@ -86,7 +86,7 @@ public class GeojeMaemiDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=34.9678885&dlng=128.7052684&dname=%eb%a7%a4%eb%af%b8%ec%84%b1&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }
