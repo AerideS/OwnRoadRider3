@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
                     landscape1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Intent intent = new Intent(getApplicationContext(), TyDprDetailActivity.class);
+                            Intent intent = new Intent(getApplicationContext(), TongyeongDongpirangDetailActivity.class);
                             startActivity(intent);
                         }
                     });

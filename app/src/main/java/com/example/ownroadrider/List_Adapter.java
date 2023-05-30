@@ -1,7 +1,5 @@
 package com.example.ownroadrider;
 
-import static androidx.core.content.ContextCompat.startActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -12,11 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.CompoundButton;
-import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.net.Uri;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -382,7 +376,7 @@ public class List_Adapter extends BaseAdapter{
                         context.startActivity(intent);
                         break;
                     case"통영":
-                        intent=new Intent(view.getContext(),TyDprDetailActivity.class);
+                        intent=new Intent(view.getContext(), TongyeongDongpirangDetailActivity.class);
                         context.startActivity(intent);
                         break;
                     case"사천":

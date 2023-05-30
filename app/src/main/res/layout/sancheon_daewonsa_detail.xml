@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Jinju_detail">
+
+    <ScrollView
+        android:id="@+id/dt_scrollView"
+        android:layout_width="411dp"
+        android:layout_height="620dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="615dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="277dp"
+                    android:layout_gravity="center">
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/sliderViewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        android:scaleType="fitXY" />
+
+                    <me.relex.circleindicator.CircleIndicator3
+                        android:id="@+id/indicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="10dp" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/sancheon_daewonsa"
+                    android:layout_width="173dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="238dp"
+                    android:layout_marginBottom="295dp"
+                    android:text="산청 대원사"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/sancheon_daewonsa_explain"
+                    android:layout_width="403dp"
+                    android:layout_height="275dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="11dp"
+                    android:text="경남 전통사찰 제 81호로 지정된 대원사는 진흥왕 시기 건립되었다. 대원사 입구 주차장에서 대원사까지 약 2㎞에 이르는 대원사계곡은 희귀한 고산식물, 너럭바위와 괴석, 약수로 유명하다. 보물로는 신라 선덕여왕 때 자장율사가 조성한 다층석탑이 있으며 부처님 진신사리 58과가 봉안되어있다. 탑의 높이는 6.6m이며, 화강암으로 보물 제1112호로 지정되어 있다. "
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/route_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/gray"
+                    android:text="길찾기" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/navigation_bar"
+        layout="@layout/navigation_bar"></include>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

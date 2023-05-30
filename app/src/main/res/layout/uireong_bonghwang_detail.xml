@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Jinju_detail">
+
+    <ScrollView
+        android:id="@+id/dt_scrollView"
+        android:layout_width="411dp"
+        android:layout_height="620dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="615dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="277dp"
+                    android:layout_gravity="center">
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/sliderViewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        android:scaleType="fitXY" />
+
+                    <me.relex.circleindicator.CircleIndicator3
+                        android:id="@+id/indicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="10dp" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/sancheon_daewonsa"
+                    android:layout_width="173dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="238dp"
+                    android:layout_marginBottom="295dp"
+                    android:text="의령 봉황대"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/sancheon_daewonsa_explain"
+                    android:layout_width="403dp"
+                    android:layout_height="275dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="11dp"
+                    android:text="기암괴석이 절경을 이루는 거대한 암산(巖山)으로, 경상남도 의령군 궁류면 평촌리 벽계저수지 근처에 있다. 생김새가 봉황을 닮았다 하여 봉황대(鳳凰臺)라 부른다. 돌계단을 따라 봉황대에 오르면 암벽 사이로 자연동굴이 나오고, 이 동굴을 지나 석문(石門)이라 부르는 좁은 통로를 통과하면 또 하나의 동굴이 나오는데 이곳에는 사시사철 약수가 흐르는 약수터가 있다."
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/route_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/gray"
+                    android:text="길찾기" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/navigation_bar"
+        layout="@layout/navigation_bar"></include>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
