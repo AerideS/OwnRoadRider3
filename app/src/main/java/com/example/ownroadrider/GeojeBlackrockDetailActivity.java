@@ -50,15 +50,6 @@ public class GeojeBlackrockDetailActivity extends AppCompatActivity {
             }
         });
 
-        //카테고리
-        categoryButton=findViewById(R.id.categoryButton);
-
-        categoryButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"카테고리 선택",Toast.LENGTH_LONG).show();
-            }
-        });
         //맵
         mapButton=findViewById(R.id.mapButton);
 
@@ -70,16 +61,6 @@ public class GeojeBlackrockDetailActivity extends AppCompatActivity {
             }
         });
 
-        //검색
-        detailSearchButton=findViewById(R.id.detailSearchButton);
-
-        detailSearchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), AdvancedSearchActivity.class);
-                startActivity(intent);
-            }
-        });
         //마이페이지
         mypageButton_m=findViewById(R.id.mypageButton);
 

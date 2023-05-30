@@ -26,9 +26,7 @@ public class TyDprDetailActivity extends AppCompatActivity {
     private CircleIndicator3 mIndicator;
 
     private ImageButton homeButton;
-    private ImageButton categoryButton;
     private ImageButton mapButton;
-    private ImageButton detailSearchButton;
     private ImageButton mypageButton_m;
     private Button route_search;
     @Override
@@ -50,15 +48,6 @@ public class TyDprDetailActivity extends AppCompatActivity {
             }
         });
 
-        //카테고리
-        categoryButton=findViewById(R.id.categoryButton);
-
-        categoryButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"카테고리 선택",Toast.LENGTH_LONG).show();
-            }
-        });
         //맵
         mapButton=findViewById(R.id.mapButton);
 
@@ -70,16 +59,6 @@ public class TyDprDetailActivity extends AppCompatActivity {
             }
         });
 
-        //검색
-        detailSearchButton=findViewById(R.id.detailSearchButton);
-
-        detailSearchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), AdvancedSearchActivity.class);
-                startActivity(intent);
-            }
-        });
         //마이페이지
         mypageButton_m=findViewById(R.id.mypageButton);
 

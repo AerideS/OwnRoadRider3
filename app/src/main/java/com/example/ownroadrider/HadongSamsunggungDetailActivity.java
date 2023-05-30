@@ -26,9 +26,8 @@ public class HadongSamsunggungDetailActivity extends AppCompatActivity {
     private CircleIndicator3 mIndicator;
 
     private ImageButton homeButton;
-    private ImageButton categoryButton;
+
     private ImageButton mapButton;
-    private ImageButton detailSearchButton;
     private ImageButton mypageButton_m;
     private Button route_search;
     @Override
@@ -50,15 +49,6 @@ public class HadongSamsunggungDetailActivity extends AppCompatActivity {
             }
         });
 
-        //카테고리
-        categoryButton=findViewById(R.id.categoryButton);
-
-        categoryButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"카테고리 선택",Toast.LENGTH_LONG).show();
-            }
-        });
         //맵
         mapButton=findViewById(R.id.mapButton);
 
@@ -66,17 +56,6 @@ public class HadongSamsunggungDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HadongSamsunggungDetailActivity.this, Map_view.class);
-                startActivity(intent);
-            }
-        });
-
-        //검색
-        detailSearchButton=findViewById(R.id.detailSearchButton);
-
-        detailSearchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), AdvancedSearchActivity.class);
                 startActivity(intent);
             }
         });

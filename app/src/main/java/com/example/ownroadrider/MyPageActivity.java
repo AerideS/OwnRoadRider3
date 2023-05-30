@@ -20,9 +20,7 @@ public class MyPageActivity extends AppCompatActivity {
     private Button recommendScheduleBtn;
     private Button.OnClickListener clickListener;
     private ImageButton homeButton;
-    private ImageButton categoryButton;
     private ImageButton mapButton;
-    private ImageButton detailSearchButton;
     private ImageButton.OnClickListener navClickListener;
 
     @SuppressLint("MissingInflatedId")
@@ -79,9 +77,7 @@ public class MyPageActivity extends AppCompatActivity {
 
     private void SetNavBtn() {
         homeButton=(ImageButton)findViewById(R.id.homeButton);
-        categoryButton=findViewById(R.id.categoryButton);
         mapButton=findViewById(R.id.mapButton);
-        detailSearchButton=findViewById(R.id.detailSearchButton);
 
         navClickListener = new ImageButton.OnClickListener() {
             @Override
@@ -91,23 +87,15 @@ public class MyPageActivity extends AppCompatActivity {
                         Intent homeIntent = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(homeIntent);
                         break;
-                    case R.id.categoryButton:
-                        break;
                     case R.id.mapButton:
                         Intent mapIntent = new Intent(MyPageActivity.this, Map_view.class);
                         startActivity(mapIntent);
-                        break;
-                    case R.id.detailSearchButton:
-                        Intent searchIntent = new Intent(MyPageActivity.this, AdvancedSearchActivity.class);
-                        startActivity(searchIntent);
                         break;
                 }
             }
         };
 
         homeButton.setOnClickListener(navClickListener);
-        categoryButton.setOnClickListener(navClickListener);
         mapButton.setOnClickListener(navClickListener);
-        detailSearchButton.setOnClickListener(navClickListener);
     }
 }
