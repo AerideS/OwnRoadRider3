@@ -35,7 +35,6 @@ public class MyPageActivity extends AppCompatActivity {
 
     private void SetMyPageBtn() {
         settingBtn = (ImageButton) findViewById(R.id.settingBtn);
-        manageReviewBtn = (Button) findViewById(R.id.manageReviewBtn);
         checkedDestBtn = (Button) findViewById(R.id.checkedDestBtn);
         listDestBtn = (Button) findViewById(R.id.listDestBtn);
         recommendScheduleBtn = (Button) findViewById(R.id.recommendScheduleBtn);
@@ -45,8 +44,6 @@ public class MyPageActivity extends AppCompatActivity {
             public void onClick(View v) {
                 switch (v.getId()){
                     case R.id.settingBtn:
-                        break;
-                    case R.id.manageReviewBtn:
                         break;
                     case R.id.checkedDestBtn:
                         Intent checkedDestIntent = new Intent(MyPageActivity.this, MyDestinationListActivity.class);
