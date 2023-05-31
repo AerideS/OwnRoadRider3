@@ -458,7 +458,7 @@ public class List_Adapter extends BaseAdapter{
                                         +url_city[stringToInt(data.get(position-4))]
                                         +"&v1lat="+ String.valueOf(region_position[stringToInt(data.get(position-3))][0])
                                         +"&v1lng="+String.valueOf(region_position[stringToInt(data.get(position-3))][1])+"&v1name="
-                                        +url_city[stringToInt(data.get(position-3))]+"&v2lat"+
+                                        +url_city[stringToInt(data.get(position-3))]+"&v2lat="+
                                         String.valueOf(region_position[stringToInt(data.get(position-2))][0])
                                         +"&v2lng="+String.valueOf(region_position[stringToInt(data.get(position-2))][1])+"&v2name="
                                         +url_city[stringToInt(data.get(position-2))]+
@@ -489,7 +489,7 @@ public class List_Adapter extends BaseAdapter{
                                         +url_city[stringToInt(data.get(position-5))]+
                                         "&v1lat="+String.valueOf(region_position[stringToInt(data.get(position-4))][0])
                                         +"&v1lng="+String.valueOf(region_position[stringToInt(data.get(position-4))][1])+"&v1name="
-                                        +url_city[stringToInt(data.get(position-4))]+"&v2lat"+
+                                        +url_city[stringToInt(data.get(position-4))]+"&v2lat="+
                                         String.valueOf(region_position[stringToInt(data.get(position-3))][0])
                                         +"&v2lng="+String.valueOf(region_position[stringToInt(data.get(position-3))][1])+"&v2name="
                                         +url_city[stringToInt(data.get(position-3))]+
@@ -523,7 +523,7 @@ public class List_Adapter extends BaseAdapter{
                                         +url_city[stringToInt(data.get(position-6))]+
                                         "&v1lat="+String.valueOf(region_position[stringToInt(data.get(position-5))][0])
                                         +"&v1lng="+String.valueOf(region_position[stringToInt(data.get(position-5))][1])+"&v1name="
-                                        +url_city[stringToInt(data.get(position-5))]+"&v2lat"+
+                                        +url_city[stringToInt(data.get(position-5))]+"&v2lat="+
                                         String.valueOf(region_position[stringToInt(data.get(position-4))][0])
                                         +"&v2lng="+String.valueOf(region_position[stringToInt(data.get(position-4))][1])+"&v2name="
                                         +url_city[stringToInt(data.get(position-4))]+
@@ -532,8 +532,47 @@ public class List_Adapter extends BaseAdapter{
                                         +url_city[stringToInt(data.get(position-3))]+
                                         "&v4lat="+ String.valueOf(region_position[stringToInt(data.get(position-2))][0])
                                         +"&v4lng="+String.valueOf(region_position[stringToInt(data.get(position-2))][1])+"&v4name="
-                                        +url_city[stringToInt(data.get(position-2))]+"&dlat"+
+                                        +url_city[stringToInt(data.get(position-2))]+"&dlat="+
                                         String.valueOf(region_position[stringToInt(data.get(position-1))][0])
+                                        +"&dlng="+String.valueOf(region_position[stringToInt(data.get(position-1))][1])+"&dname="
+                                        +url_city[stringToInt(data.get(position-1))]+"&appname=com.example.ownroadrider";
+
+                                intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+
+                                list = context.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+                                if (list == null || list.isEmpty()) {
+                                    try{
+                                        context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url_s)));
+                                    }catch (Exception e){
+                                        context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                                    }
+                                } else {
+                                    context.startActivity(intent);
+                                }
+                                break;
+                            case 5:
+                                url = "nmap://actionPath?parameter=value&appname=ownroadrider";
+                                url_s="nmap://navigation?"
+                                        +"slat="+String.valueOf(region_position[stringToInt(data.get(position-7))][0])
+                                        +"&slng="+String.valueOf(region_position[stringToInt(data.get(position-7))][1])+"&sname="
+                                        +url_city[stringToInt(data.get(position-7))]+
+                                        "&v1lat="+String.valueOf(region_position[stringToInt(data.get(position-6))][0])
+                                        +"&v1lng="+String.valueOf(region_position[stringToInt(data.get(position-6))][1])+"&v1name="
+                                        +url_city[stringToInt(data.get(position-6))]+"&v2lat"+
+                                        String.valueOf(region_position[stringToInt(data.get(position-5))][0])
+                                        +"&v2lng="+String.valueOf(region_position[stringToInt(data.get(position-5))][1])+"&v2name="
+                                        +url_city[stringToInt(data.get(position-5))]+
+                                        "&v3lat="+String.valueOf(region_position[stringToInt(data.get(position-4))][0])
+                                        +"&v3lng="+String.valueOf(region_position[stringToInt(data.get(position-4))][1])+"&v3name="
+                                        +url_city[stringToInt(data.get(position-4))]+
+                                        "&v4lat="+ String.valueOf(region_position[stringToInt(data.get(position-3))][0])
+                                        +"&v4lng="+String.valueOf(region_position[stringToInt(data.get(position-3))][1])+"&v4name="
+                                        +url_city[stringToInt(data.get(position-3))]
+                                        +"&v5lat="+ String.valueOf(region_position[stringToInt(data.get(position-2))][0])
+                                        +"&v5lng="+String.valueOf(region_position[stringToInt(data.get(position-2))][1])+"&v5name="
+                                        +url_city[stringToInt(data.get(position-2))]
+                                        +"&dlat="+ String.valueOf(region_position[stringToInt(data.get(position-1))][0])
                                         +"&dlng="+String.valueOf(region_position[stringToInt(data.get(position-1))][1])+"&dname="
                                         +url_city[stringToInt(data.get(position-1))]+"&appname=com.example.ownroadrider";
 
