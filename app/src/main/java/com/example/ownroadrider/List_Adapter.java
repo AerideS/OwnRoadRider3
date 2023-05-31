@@ -396,12 +396,40 @@ public class List_Adapter extends BaseAdapter{
                         }
                         break;
                     case "길찾기":
-                        int rot_num=data.size()-2;
+                        int rot_num=data.size()-3;
                         switch(rot_num){
+                            case 0:
+                                url = "nmap://actionPath?parameter=value&appname=ownroadrider";
+                                url_s="nmap://navigation?"
+                                        +"slat="+String.valueOf(region_position[stringToInt(data.get(position-2))][0])
+                                        +"&slng="+String.valueOf(region_position[stringToInt(data.get(position-2))][1])+"&sname="
+                                        +url_city[stringToInt(data.get(position-2))]
+                                        +"&dlat="+
+                                        String.valueOf(region_position[stringToInt(data.get(position-1))][0])
+                                        +"&dlng="+String.valueOf(region_position[stringToInt(data.get(position-1))][1])+"&dname="
+                                        +url_city[stringToInt(data.get(position-1))]+"&appname=com.example.ownroadrider";
+
+                                intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+
+                                list = context.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+                                if (list == null || list.isEmpty()) {
+                                    try{
+                                        context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url_s)));
+                                    }catch (Exception e){
+                                        context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                                    }
+                                } else {
+                                    context.startActivity(intent);
+                                }
+                                break;
                             case 1:
                                 url = "nmap://actionPath?parameter=value&appname=ownroadrider";
-                                url_s="nmap://navigation?v1lat="+
-                                        String.valueOf(region_position[stringToInt(data.get(position-2))][0])
+                                url_s="nmap://navigation?"
+                                        +"slat="+String.valueOf(region_position[stringToInt(data.get(position-3))][0])
+                                        +"&slng="+String.valueOf(region_position[stringToInt(data.get(position-3))][1])+"&sname="
+                                        +url_city[stringToInt(data.get(position-3))]+
+                                        "&v1lat="+ String.valueOf(region_position[stringToInt(data.get(position-2))][0])
                                         +"&v1lng="+String.valueOf(region_position[stringToInt(data.get(position-2))][1])+"&v1name="
                                         +url_city[stringToInt(data.get(position-2))]+"&dlat="+
                                         String.valueOf(region_position[stringToInt(data.get(position-1))][0])
@@ -424,8 +452,11 @@ public class List_Adapter extends BaseAdapter{
                                 break;
                             case 2:
                                 url = "nmap://actionPath?parameter=value&appname=ownroadrider";
-                                url_s="nmap://navigation?v1lat="+
-                                        String.valueOf(region_position[stringToInt(data.get(position-3))][0])
+                                url_s="nmap://navigation?"
+                                        +"slat="+String.valueOf(region_position[stringToInt(data.get(position-4))][0])
+                                        +"&slng="+String.valueOf(region_position[stringToInt(data.get(position-4))][1])+"&sname="
+                                        +url_city[stringToInt(data.get(position-4))]
+                                        +"&v1lat="+ String.valueOf(region_position[stringToInt(data.get(position-3))][0])
                                         +"&v1lng="+String.valueOf(region_position[stringToInt(data.get(position-3))][1])+"&v1name="
                                         +url_city[stringToInt(data.get(position-3))]+"&v2lat"+
                                         String.valueOf(region_position[stringToInt(data.get(position-2))][0])
@@ -452,8 +483,11 @@ public class List_Adapter extends BaseAdapter{
                                 break;
                             case 3:
                                 url = "nmap://actionPath?parameter=value&appname=ownroadrider";
-                                url_s="nmap://navigation?v1lat="+
-                                        String.valueOf(region_position[stringToInt(data.get(position-4))][0])
+                                url_s="nmap://navigation?"
+                                        +"slat="+String.valueOf(region_position[stringToInt(data.get(position-5))][0])
+                                        +"&slng="+String.valueOf(region_position[stringToInt(data.get(position-5))][1])+"&sname="
+                                        +url_city[stringToInt(data.get(position-5))]+
+                                        "&v1lat="+String.valueOf(region_position[stringToInt(data.get(position-4))][0])
                                         +"&v1lng="+String.valueOf(region_position[stringToInt(data.get(position-4))][1])+"&v1name="
                                         +url_city[stringToInt(data.get(position-4))]+"&v2lat"+
                                         String.valueOf(region_position[stringToInt(data.get(position-3))][0])
@@ -483,8 +517,11 @@ public class List_Adapter extends BaseAdapter{
                                 break;
                             case 4:
                                 url = "nmap://actionPath?parameter=value&appname=ownroadrider";
-                                url_s="nmap://navigation?v1lat="+
-                                        String.valueOf(region_position[stringToInt(data.get(position-5))][0])
+                                url_s="nmap://navigation?"
+                                        +"slat="+String.valueOf(region_position[stringToInt(data.get(position-6))][0])
+                                        +"&slng="+String.valueOf(region_position[stringToInt(data.get(position-6))][1])+"&sname="
+                                        +url_city[stringToInt(data.get(position-6))]+
+                                        "&v1lat="+String.valueOf(region_position[stringToInt(data.get(position-5))][0])
                                         +"&v1lng="+String.valueOf(region_position[stringToInt(data.get(position-5))][1])+"&v1name="
                                         +url_city[stringToInt(data.get(position-5))]+"&v2lat"+
                                         String.valueOf(region_position[stringToInt(data.get(position-4))][0])
