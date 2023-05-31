@@ -34,7 +34,7 @@ public class GoseongDinoDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.geoje_maemi_detail);
+        setContentView(R.layout.goseong_dino_detail);
 
 
 
@@ -98,7 +98,7 @@ public class GoseongDinoDetailActivity extends AppCompatActivity {
         //ViewPager2
         mPager = findViewById(R.id.sliderViewPager);
         //Adapter
-        pagerAdapter = new Image_Slider_Geoje_Maemi(this, num_page);
+        pagerAdapter = new Image_Slider_Goseong_Dino(this, num_page);
         mPager.setAdapter(pagerAdapter);
         //Indicator
         mIndicator = findViewById(R.id.indicator);

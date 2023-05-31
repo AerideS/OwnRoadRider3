@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Jinju_detail">
+
+    <ScrollView
+        android:id="@+id/dt_scrollView"
+        android:layout_width="411dp"
+        android:layout_height="620dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="615dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="277dp"
+                    android:layout_gravity="center">
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/sliderViewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        android:scaleType="fitXY" />
+
+                    <me.relex.circleindicator.CircleIndicator3
+                        android:id="@+id/indicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="10dp" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/sancheon_daewonsa"
+                    android:layout_width="173dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="238dp"
+                    android:layout_marginBottom="295dp"
+                    android:text="한우산"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/sancheon_daewonsa_explain"
+                    android:layout_width="403dp"
+                    android:layout_height="275dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="11dp"
+                    android:text="한우산(836m)은 자굴산으로부터 이어지는 맥이다. 산세가 웅장하고 골이 깊어 곳곳에 기암괴석이 연출하는 절승이 즐비하며, 가운데 계곡이 시원스럽게 흐르고 있다. 이 계곡은 여름에도 찬비가 내린다 하여 찰비계곡이라고도 부르며 한우산 자락에서 내려오는 계곡의 길이가 3km에 이른다. 곳곳에 전설이 서려 있는 농소와 각시소 등이 운치를 더하는 가운데 봄이면 진달래가 흐드러지게 피고 여름에는 싱그러운 숲이 울창함을 더하고 가을이면 단풍이 절정을 이룬다. 겨울이면 계곡 따라 즐비한 바위틈새에서 고드름이 주렁주렁 열려 겨울의 정취를 느끼게 한다."
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/route_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/gray"
+                    android:text="길찾기" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/navigation_bar"
+        layout="@layout/navigation_bar"></include>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

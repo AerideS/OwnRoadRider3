@@ -36,7 +36,7 @@ android:id="@+id/drawer">
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#339933"
-                android:text=" - 창원 드림파크"
+                android:text=" - 드림파크"
                 android:textColor="#FFFFFF"
                 android:visibility="gone" />
             <androidx.appcompat.widget.AppCompatButton
@@ -52,7 +52,7 @@ android:id="@+id/drawer">
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#339933"
-                android:text=" - 창원 소쿠리섬"
+                android:text=" - 소쿠리섬"
                 android:textColor="#FFFFFF"
                 android:visibility="gone" />
             <androidx.appcompat.widget.AppCompatButton
@@ -63,12 +63,60 @@ android:id="@+id/drawer">
                 android:text="진주"
                 android:textColor="#FFFFFF" />
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/side_btn_tongyoung"
+                android:id="@+id/side_btn_jinju_namgang"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 남강(진주성)"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_jinju_geumhoji"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 금호지"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_jinju_jinyangho"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 진양호"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_tongyeong"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#008200"
                 android:text="통영"
                 android:textColor="#FFFFFF" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_tongyeong_dongpirang"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 동피랑"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_tongyeong_jogak"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 디피랑 조각공원"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_tongyeong_yokji"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 욕지도"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/side_btn_sacheon"
                 android:layout_width="match_parent"
@@ -77,12 +125,60 @@ android:id="@+id/drawer">
                 android:text="사천"
                 android:textColor="#FFFFFF" />
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_sacheon_cable"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 바다케이블카"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_sacheon_wins"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 다래와인갤러리"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_sacheon_dasol"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 다솔사"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/side_btn_gimhae"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#008200"
                 android:text="김해"
                 android:textColor="#FFFFFF" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_gimhae_suro"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 수로왕릉"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_gimhae_gaya"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 가야테마파크"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_gimhae_yeonji"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 연지공원"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/side_btn_miryang"
                 android:layout_width="match_parent"
@@ -91,12 +187,60 @@ android:id="@+id/drawer">
                 android:text="밀양"
                 android:textColor="#FFFFFF" />
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_miryang_ice"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 얼음골"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_miryang_lotus"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 연꽃단지"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_miryang_ynr"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 영남루"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/side_btn_geoje"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#008200"
                 android:text="거제"
                 android:textColor="#FFFFFF" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_geoje_wind"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 바람의 언덕"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_geoje_maemi"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 매미성"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_geoje_black"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 학동흑진주몽돌해변"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/side_btn_yangsan"
                 android:layout_width="match_parent"
@@ -105,12 +249,60 @@ android:id="@+id/drawer">
                 android:text="양산"
                 android:textColor="#FFFFFF" />
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_yangsan_dragon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 홍룡폭포"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_yangsan_tongdo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 통도사"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_yangsan_naewon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 내원사계곡"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/side_btn_uiryeong"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#008200"
                 android:text="의령"
                 android:textColor="#FFFFFF" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_uiryeong_bonghwang"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 봉황대"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_uiryeong_chungik"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 충익사"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_uiryeong_hanwu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 한우산"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/side_btn_hamyang"
                 android:layout_width="match_parent"
@@ -119,12 +311,60 @@ android:id="@+id/drawer">
                 android:text="함양"
                 android:textColor="#FFFFFF" />
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_hamyang_namgye"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 남계서원"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_hamyang_seoam"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 서암정사"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_hamyang_sangrim"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 상림공원"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/side_btn_changnyeong"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#008200"
                 android:text="창녕"
                 android:textColor="#FFFFFF" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_changnyeong_upo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 우포늪"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_changnyeong_hwawang"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 화왕산"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_changnyeong_manok"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 만옥정공원"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/side_btn_goseong"
                 android:layout_width="match_parent"
@@ -133,12 +373,60 @@ android:id="@+id/drawer">
                 android:text="고성"
                 android:textColor="#FFFFFF" />
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_goseong_dino"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 공룡박물관"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_goseong_sangjokam"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 상족암"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_goseong_munsu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 문수암"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/side_btn_namhae"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#008200"
                 android:text="남해"
                 android:textColor="#FFFFFF" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_namhae_boriam"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 보리암"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_namhae_german"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 독일마을"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_namhae_pyeonbaek"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 편백휴양림"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/side_btn_hadong"
                 android:layout_width="match_parent"
@@ -147,12 +435,60 @@ android:id="@+id/drawer">
                 android:text="하동"
                 android:textColor="#FFFFFF" />
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_hadong_choi"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 최참판댁"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_hadong_songrim"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 송림"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_hadong_ssg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 삼성궁"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/side_btn_sancheong"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#008200"
                 android:text="산청"
                 android:textColor="#FFFFFF" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_sancheong_daewon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 대원사"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_sancheong_hwangmae"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 황매산"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_sancheong_yedam"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 남사예담촌"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/side_btn_haman"
                 android:layout_width="match_parent"
@@ -161,6 +497,30 @@ android:id="@+id/drawer">
                 android:text="함안"
                 android:textColor="#FFFFFF" />
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_haman_ipgok"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 입곡군립공원"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_haman_hamju"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 함주공원"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_haman_mujin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 무진정"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/side_btn_geochang"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -168,12 +528,60 @@ android:id="@+id/drawer">
                 android:text="거창"
                 android:textColor="#FFFFFF" />
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_geochang_susung"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 수승대"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_geochang_wolsung"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 월성계곡"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_geochang_namduck"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 남덕유산"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/side_btn_hapcheon"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#005600"
                 android:text="합천"
                 android:textColor="#FFFFFF" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_hapcheon_haeinsa"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 해인사"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_hapcheon_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 영상테마파크"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/side_btn_hapcheon_hongryu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#339933"
+                android:text=" - 홍류동계곡"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

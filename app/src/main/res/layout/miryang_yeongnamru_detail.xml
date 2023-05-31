@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Jinju_detail">
+
+    <ScrollView
+        android:id="@+id/dt_scrollView"
+        android:layout_width="411dp"
+        android:layout_height="620dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="615dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="277dp"
+                    android:layout_gravity="center">
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/sliderViewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        android:scaleType="fitXY" />
+
+                    <me.relex.circleindicator.CircleIndicator3
+                        android:id="@+id/indicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="10dp" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/sacheon_cablecar"
+                    android:layout_width="173dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="238dp"
+                    android:layout_marginBottom="295dp"
+                    android:text="영남루"
+                    android:textColor="#000000"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/sacheon_cablecar_explain"
+                    android:layout_width="403dp"
+                    android:layout_height="275dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="11dp"
+                    android:text="밀양 남천강 옆 아동산에 위치한 영남루(보물)는 진주의 촉석루, 평양의 부벽루와 함께 우리나라의 3대 누각으로 손꼽힌다. 동서 5간, 남북 4간의 팔작지붕에다 좌우로 2개의 딸린 누각을 거느린 이 거대한 2층 누각은 신라의 5대 명사 중의 하나였던 영남사의 부속건물인 소루였으나, 영남사가 폐사되고 난 이후 고려 공민왕 때 그전부터 있던 누각을 철거하고 규모를 크게 하여 세웠다는 기록이 있으며, 현재의 건물은 1884년에 밀양부사 이인재가 다시 세운 것이다."
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/route_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/gray"
+                    android:text="길찾기" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:id="@+id/navigation_bar"
+        layout="@layout/navigation_bar"></include>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -34,7 +34,7 @@ public class GimheaYeonjiDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.geoje_maemi_detail);
+        setContentView(R.layout.gimhea_yeonji_detail);
 
 
 
@@ -86,7 +86,7 @@ public class GimheaYeonjiDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.2460475&dlng=128.8689837&dname=%ec%97%b0%ec%a7%80%ea%b3%b5%ec%9b%90&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }
@@ -99,7 +99,7 @@ public class GimheaYeonjiDetailActivity extends AppCompatActivity {
         //ViewPager2
         mPager = findViewById(R.id.sliderViewPager);
         //Adapter
-        pagerAdapter = new Image_Slider_Geoje_Maemi(this, num_page);
+        pagerAdapter = new Image_Slider_Gimhea_Yeonji(this, num_page);
         mPager.setAdapter(pagerAdapter);
         //Indicator
         mIndicator = findViewById(R.id.indicator);

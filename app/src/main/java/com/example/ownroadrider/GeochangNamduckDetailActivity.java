@@ -34,7 +34,7 @@ public class GeochangNamduckDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.geoje_maemi_detail);
+        setContentView(R.layout.geochang_namduck_detail);
 
 
 
@@ -84,7 +84,7 @@ public class GeochangNamduckDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.8570&dlng=127.7463&dname=%ea%b1%b0%ec%b0%bd+%eb%8d%95%ec%9c%a0%ec%82%b0&appname=com.example.ownroadrider")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.8327&dlng=127.8057&dname=%eb%82%a8%eb%8d%95%ec%9c%a0%ec%82%b0&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }
@@ -97,7 +97,7 @@ public class GeochangNamduckDetailActivity extends AppCompatActivity {
         //ViewPager2
         mPager = findViewById(R.id.sliderViewPager);
         //Adapter
-        pagerAdapter = new Image_Slider_Geoje_Maemi(this, num_page);
+        pagerAdapter = new Image_Slider_Geochang_Namduck(this, num_page);
         mPager.setAdapter(pagerAdapter);
         //Indicator
         mIndicator = findViewById(R.id.indicator);

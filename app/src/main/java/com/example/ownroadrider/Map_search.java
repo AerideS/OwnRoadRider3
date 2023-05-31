@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -39,6 +40,14 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
     private ListView List;
     private ArrayList<String> dataSample;
 
+    // 가중치 곱 함수
+    public void multiplyMatix(int[][] newGN, double[][] map) {
+        for(int i = 0; i < 18; i++){
+            for(int j = 0; j < 18; j++) {
+                newGN[i][j] =(int) (newGN[i][j] * map[i][j]);
+            }
+        }
+    }
 
     private String[] vertex = {"창원", "진주", "통영", "사천", "김해","밀양", "거제", "양산", "의령",
             "함양", "창녕", "고성", "남해", "하동", "산청", "함안", "거창", "합천"};
@@ -231,31 +240,61 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
         mapView.onLowMemory();
     }
 
-    //boolean[] checkState = getIntent().getBooleanArrayExtra("checkState");  // 체크박스 상태 배열로 받아오기. 유적 = [0], 산 = [1], 바다 = [2]
 
     @Override
     public void onMapReady(@NonNull NaverMap naverMap) {                                        //맵객체 매서드 사용시 여기서 작성
         int num = 0;
         int[][] newGN = new int[matrixGN.length][matrixGN[0].length];
-        boolean state[] = getIntent().getBooleanArrayExtra("state");  // 0 = 유적, 1 = 산, 2 = 바다
-        switch(num) {
-            case 0:
-                // 가중치 아무것도 없음
-                break;
-            case 1:
-                //해양 가중치
-                break;
-            case 2:
-                //산 가중치
-                break;
-            case 3:
-                //유적 가중치
-                break;
+        
+        // newGN에 matrixGN 깊은 복사
+        for(int i = 0; i < 18; i++) {
+            for(int j = 0; j < 18; j++) {
+                newGN[i][j] = matrixGN[i][j];
+            }
         }
+
+        boolean[] state = getIntent().getBooleanArrayExtra("state");  // 0 = 유적, 1 = 산, 2 = 바다
+        
+        // 유적, 산, 바다 모두 선택
+        if(state[0] && state[1] && state[2]) {
+            multiplyMatix(newGN, weight_sites);
+            multiplyMatix(newGN, weight_mountain);
+            multiplyMatix(newGN, weight_sea);
+        }
+        // 유적, 산 선택
+        else if (state[0] && state[1]) {
+            multiplyMatix(newGN, weight_sites);
+            multiplyMatix(newGN, weight_mountain);
+        }
+        // 산, 바다 선택
+        else if(state[1] && state[2]) {
+            multiplyMatix(newGN, weight_mountain);
+            multiplyMatix(newGN, weight_sea);
+        }
+        // 유적 선택
+        else if(state[0]) {
+            multiplyMatix(newGN, weight_sites);
+        }
+        // 산 선택
+        else if(state[1]) {
+            multiplyMatix(newGN, weight_mountain);
+        }
+        // 바다 선택
+        else if(state[2]){
+            multiplyMatix(newGN, weight_sea);
+        }
+        else {
+
+        }
+
         Intent intent = getIntent();
         String st = intent.getStringExtra("start");          //출발지 받아오기
         String ed = intent.getStringExtra("end");             //목적지 받아오기
-        Dijkstra dj=new Dijkstra(18, matrixGN);
+        Dijkstra dj=new Dijkstra(18, newGN);
+
+        for(int i = 0; i < 3; i++) {
+            Log.d("check" + Integer.toString(i), Boolean.toString(state[i]));
+        }
         String[]rot =dj.algorithm(vertex[dj.stringToInt(st)],vertex[dj.stringToInt(ed)]);
         Collections.reverse(Arrays.asList(rot));
         Marker marker_s = new Marker();
