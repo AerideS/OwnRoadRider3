@@ -73,23 +73,6 @@
         </TableLayout>
 
         <Button
-            android:id="@+id/manageReviewBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="5dp"
-            android:background="@color/transparent_color"
-            android:gravity="left|center_vertical"
-            android:text="@string/mange_my_review"
-            android:textColor="@color/black_string_color"
-            android:textStyle="bold"
-            android:textSize="24dp"
-            android:shadowColor="@color/black_string_color"
-            android:shadowDx="1"
-            android:shadowDy="1"
-            android:shadowRadius="1"/>
-        <Button
             android:id="@+id/checkedDestBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
