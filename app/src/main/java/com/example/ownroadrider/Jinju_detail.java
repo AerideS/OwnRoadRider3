@@ -80,6 +80,7 @@ public class Jinju_detail extends AppCompatActivity {
             public void onClick(View view) {
                 String url = "nmap://actionPath?parameter=value&appname=ownroadrider";
 
+
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
 

@@ -262,6 +262,7 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
         Marker marker_m = new Marker();             //경유지 마커
         Marker marker_m_2= new Marker();
         Marker marker_m_3= new Marker();
+        Marker marker_m_4= new Marker();
         Marker marker_e = new Marker();             //도착지 마커
         int rot_num=rot.length-2;                   //경유지 수
         double mid_camera_point_la;                 //카메라 중심점 위도
@@ -313,15 +314,19 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
                 marker_m_2.setPosition(new LatLng(region_position[stringToInt(rot[2])][0], region_position[stringToInt(rot[2])][1]));
                 marker_m_2.setMap(naverMap);
                 marker_m_2.setWidth(80);
-                marker_m_3.setHeight(100);
+                marker_m_2.setHeight(100);
                 marker_m_3.setPosition(new LatLng(region_position[stringToInt(rot[3])][0], region_position[stringToInt(rot[3])][1]));
                 marker_m_3.setMap(naverMap);
                 marker_m_3.setWidth(80);
                 marker_m_3.setHeight(100);
+                marker_m_4.setPosition(new LatLng(region_position[stringToInt(rot[3])][0], region_position[stringToInt(rot[3])][1]));
+                marker_m_4.setMap(naverMap);
+                marker_m_4.setWidth(80);
+                marker_m_4.setHeight(100);
                 break;
         }
 
-        InfoWindow infoWindow_m = new InfoWindow();
+        InfoWindow infoWindow_m = new InfoWindow();                 //정보창 추가
         infoWindow_m.setAdapter(new InfoWindow.DefaultTextAdapter(getApplication()) {
             @NonNull
             @Override
@@ -347,9 +352,19 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
             }
         });
 
+        InfoWindow infoWindow_m_4 = new InfoWindow();
+        infoWindow_m_4.setAdapter(new InfoWindow.DefaultTextAdapter(getApplication()) {
+            @NonNull
+            @Override
+            public CharSequence getText(@NonNull InfoWindow infoWindow) {
+                return "경유";
+            }
+        });
+
         infoWindow_m.open(marker_m);
         infoWindow_m_2.open(marker_m_2);
         infoWindow_m_3.open(marker_m_3);
+        infoWindow_m_4.open(marker_m_4);
 
         marker_e.setPosition(new LatLng(region_position[stringToInt(rot[rot.length-1])][0], region_position[stringToInt(rot[rot.length-1])][1]));           //끝점찍기
         marker_e.setMap(naverMap);
@@ -445,9 +460,10 @@ public class Map_search extends AppCompatActivity implements OnMapReadyCallback 
 
         dataSample = new ArrayList<String>();
 
-        for(int i=0;i<rot.length;i++){
+        for(int i=0;i<rot.length;i++){                  //출발,경유,도착지 넣기
             dataSample.add(rot[i]);
         }
+        dataSample.add("길찾기");
 
         List = findViewById(R.id.listView);
         List_Adapter buttonListAdapter = new List_Adapter(this, dataSample);

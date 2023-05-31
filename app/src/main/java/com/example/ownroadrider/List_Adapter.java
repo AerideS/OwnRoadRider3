@@ -25,6 +25,45 @@ public class List_Adapter extends BaseAdapter{
     Context context;
     LayoutInflater layoutInflater;
     static ArrayList<String> data;
+
+    private String[] vertex = {"창원", "진주", "통영", "사천", "김해","밀양", "거제", "양산", "의령",
+            "함양", "창녕", "고성", "남해", "하동", "산청", "함안", "거창", "합천"};
+
+    public int stringToInt(String s) {              // String to Int
+        int x = 0;
+        for (int i = 0; i < vertex.length; i++) {
+            if (vertex[i].equals(s)) x = i;
+        }
+        return x;
+    }
+
+
+
+    double[][] region_position = {
+            {35.1320, 128.7163},        //창원
+            {35.1805, 128.1087},        //진주
+            {34.8497, 128.4339},        //통영
+            {35.0903, 128.0705},        //사천
+            {35.2332, 128.8819},        //김해
+            {35.4913, 128.7481},        //밀양
+            {34.8918, 128.6206},        //거제
+            {35.3385, 129.0265},        //양산
+            {35.3227, 128.2878},        //의령
+            {35.5202, 127.7259},        //함양
+            {35.5414, 128.5004},        //창녕
+            {34.9754, 128.3234},        //고성
+            {34.8953, 127.8828},        //남해
+            {35.0642, 127.7556},        //하동
+            {35.4138, 127.8741},        //산청
+            {35.2795, 128.4075},        //함안
+            {35.6875, 127.9056},        //거창
+            {35.5667, 128.1684}         //합천
+    };
+    String[] url_city={"%ec%b0%bd%ec%9b%90","%ec%a7%84%ec%a3%bc","%ED%86%B5%EC%98%81","%EC%82%AC%EC%B2%9C","%EA%B9%80%ED%95%B4","%EB%B0%80%EC%96%91","%EA%B1%B0%EC%A0%9C"
+    ,"%EC%96%91%EC%82%B0","%EC%9D%98%EB%A0%B9","%ED%95%A8%EC%96%91","%ED%95%A8%EC%96%91","%EA%B3%A0%EC%84%B1","%EB%82%A8%ED%95%B4","%ED%95%98%EB%8F%99","%EC%82%B0%EC%B2%AD",
+            "%ED%95%A8%EC%95%88","%EA%B1%B0%EC%B0%BD","%ED%95%A9%EC%B2%9C"};
+
+
     public List_Adapter(Context context, ArrayList<String> data){
         this.context = context;
         this.layoutInflater = LayoutInflater.from(context);
@@ -55,7 +94,6 @@ public class List_Adapter extends BaseAdapter{
 
         Button find_route_d = view.findViewById(R.id.find_route);
         Button find_inform = view.findViewById(R.id.find_inform);
-
         title.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -63,12 +101,18 @@ public class List_Adapter extends BaseAdapter{
             }
         });
 
+        if(title.getText().toString().equals("길찾기")){
+            find_route_d.setText("길찾기");
+            find_inform.setVisibility(View.INVISIBLE);
+
+        }
         find_route_d.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {                //길찾기 버튼
                 String item =data.get(position);
                 Intent intent;
                 String url;
+                String url_s;
                 List<ResolveInfo> list;
                 switch (item){
                     case"창원":
@@ -357,6 +401,93 @@ public class List_Adapter extends BaseAdapter{
                             context.startActivity(intent);
                         }
                         break;
+                    case "길찾기":
+                        int rot_num=data.size()-2;
+                        switch(rot_num){
+                            case 1:
+                                url = "nmap://actionPath?parameter=value&appname=ownroadrider";
+                                url_s="nmap://navigation?v1lat="+
+                                        String.valueOf(region_position[stringToInt(data.get(position-2))][0])
+                                        +"&v1lng="+String.valueOf(region_position[stringToInt(data.get(position-2))][1])+"&v1name="
+                                        +url_city[stringToInt(data.get(position-2))]+"&dlat="+
+                                        String.valueOf(region_position[stringToInt(data.get(position-1))][0])
+                                        +"&dlng="+String.valueOf(region_position[stringToInt(data.get(position-1))][1])+"&dname="
+                                        +url_city[stringToInt(data.get(position-1))]+"&appname=com.example.ownroadrider";
+
+                                intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+
+                                list = context.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+                                if (list == null || list.isEmpty()) {
+                                    try{
+                                        context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url_s)));
+                                    }catch (Exception e){
+                                        context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                                    }
+                                } else {
+                                    context.startActivity(intent);
+                                }
+                                break;
+                            case 2:
+                                url = "nmap://actionPath?parameter=value&appname=ownroadrider";
+                                url_s="nmap://navigation?v1lat="+
+                                        String.valueOf(region_position[stringToInt(data.get(position-3))][0])
+                                        +"&v1lng="+String.valueOf(region_position[stringToInt(data.get(position-3))][1])+"&v1name="
+                                        +url_city[stringToInt(data.get(position-3))]+"&v2lat"+
+                                        String.valueOf(region_position[stringToInt(data.get(position-2))][0])
+                                        +"&v2lng="+String.valueOf(region_position[stringToInt(data.get(position-2))][1])+"&v2name="
+                                        +url_city[stringToInt(data.get(position-2))]+
+                                        "&dlat="+
+                                        String.valueOf(region_position[stringToInt(data.get(position-1))][0])
+                                        +"&dlng="+String.valueOf(region_position[stringToInt(data.get(position-1))][1])+"&dname="
+                                        +url_city[stringToInt(data.get(position-1))]+"&appname=com.example.ownroadrider";
+
+                                intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+
+                                list = context.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+                                if (list == null || list.isEmpty()) {
+                                    try{
+                                        context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url_s)));
+                                    }catch (Exception e){
+                                        context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                                    }
+                                } else {
+                                    context.startActivity(intent);
+                                }
+                                break;
+                            case 3:
+                                url = "nmap://actionPath?parameter=value&appname=ownroadrider";
+                                url_s="nmap://navigation?v1lat="+
+                                        String.valueOf(region_position[stringToInt(data.get(position-4))][0])
+                                        +"&v1lng="+String.valueOf(region_position[stringToInt(data.get(position-4))][1])+"&v1name="
+                                        +url_city[stringToInt(data.get(position-4))]+"&v2lat"+
+                                        String.valueOf(region_position[stringToInt(data.get(position-3))][0])
+                                        +"&v2lng="+String.valueOf(region_position[stringToInt(data.get(position-3))][1])+"&v2name="
+                                        +url_city[stringToInt(data.get(position-3))]+
+                                        "&v3lat"+String.valueOf(region_position[stringToInt(data.get(position-2))][0])
+                                        +"&v3lng="+String.valueOf(region_position[stringToInt(data.get(position-2))][1])+"&v3name="
+                                        +url_city[stringToInt(data.get(position-2))]+
+                                        "&dlat="+
+                                        String.valueOf(region_position[stringToInt(data.get(position-1))][0])
+                                        +"&dlng="+String.valueOf(region_position[stringToInt(data.get(position-1))][1])+"&dname="
+                                        +url_city[stringToInt(data.get(position-1))]+"&appname=com.example.ownroadrider";
+
+                                intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+
+                                list = context.getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+                                if (list == null || list.isEmpty()) {
+                                    try{
+                                        context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url_s)));
+                                    }catch (Exception e){
+                                        context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
+                                    }
+                                } else {
+                                    context.startActivity(intent);
+                                }
+                                break;
+                        }
 
                     default:
                         throw new IllegalStateException("Unexpected value: " + item);
