@@ -66,7 +66,6 @@ public class MyPageActivity extends AppCompatActivity {
         };
 
         settingBtn.setOnClickListener(clickListener);
-        manageReviewBtn.setOnClickListener(clickListener);
         checkedDestBtn.setOnClickListener(clickListener);
         listDestBtn.setOnClickListener(clickListener);
         recommendScheduleBtn.setOnClickListener(clickListener);
