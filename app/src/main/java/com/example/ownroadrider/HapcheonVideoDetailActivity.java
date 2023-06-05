@@ -86,7 +86,7 @@ public class HapcheonVideoDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.5484071&dlng=128.0728404&dname=%ed%95%b4%ec%9d%b8%ec%82%ac%0d%0a&appname=com.example.ownroadrider")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.5484071&dlng=128.0728404&dname=%ed%95%a9%ec%b2%9c+%ec%98%81%ec%83%81%ed%85%8c%eb%a7%88%ed%8c%8c%ed%81%ac&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }

@@ -82,7 +82,7 @@ public class HadongSongrimDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.0624445&dlng=127.7440686&dname=%ed%95%98%eb%8f%99+%ec%82%bc%ec%84%b1%ea%b6%81&appname=com.example.ownroadrider")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.0624445&dlng=127.7440686&dname=%ec%86%a1%eb%a6%bc%ea%b3%b5%ec%9b%90&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }

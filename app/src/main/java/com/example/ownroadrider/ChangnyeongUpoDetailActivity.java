@@ -83,7 +83,7 @@ public class ChangnyeongUpoDetailActivity extends AppCompatActivity {
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
                     try {
-                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.5421441&dlng=128.4197630&dname=%ec%b0%bd%ec%9b%90+%eb%93%9c%eb%a6%bc%ed%8c%8c%ed%81%ac&appname=com.example.ownroadrider")));
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.5421441&dlng=128.4197630&dname=%ec%9a%b0%ed%8f%ac%eb%8a%aa&appname=com.example.ownroadrider")));
                     } catch (Exception e){
                         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.nhn.android.nmap")));
                     }

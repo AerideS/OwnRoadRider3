@@ -82,7 +82,7 @@ public class HamyangSeoamDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.3936393&dlng=127.6975676&dname=%ed%95%a8%ec%95%88+%eb%ac%b4%ec%a7%84%ec%a0%95&appname=com.example.ownroadrider")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.3936393&dlng=127.6975676&dname=%ec%84%9c%ec%95%94%ec%a0%95%ec%82%ac&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }

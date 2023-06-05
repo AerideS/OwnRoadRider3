@@ -82,7 +82,7 @@ public class HadongChoiDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.1559090&dlng=127.6884348&dname=%ed%95%98%eb%8f%99+%ec%82%bc%ec%84%b1%ea%b6%81&appname=com.example.ownroadrider")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.1559090&dlng=127.6884348&dname=%ec%b5%9c%ec%b0%b8%ed%8c%90%eb%8c%81&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }

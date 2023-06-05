@@ -83,7 +83,7 @@ public class NamhaePyeonbaekDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=34.7535421&dlng=128.0162667&dname=%eb%82%a8%ed%95%b4+%eb%b3%b4%eb%a6%ac%ec%95%94&appname=com.example.ownroadrider")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=34.7535421&dlng=128.0162667&dname=%eb%82%a8%ed%95%b4+%ed%8e%b8%eb%b0%b1+%ed%9c%b4%ec%96%91%eb%a6%bc&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }

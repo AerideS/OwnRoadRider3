@@ -82,7 +82,7 @@ public class MiryangIceDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.596123&dlng=128.984849&dname=%eb%b0%80%ec%96%91+%ec%97%b0%ea%bd%83%eb%a7%88%ec%9d%84&appname=com.example.ownroadrider")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.596123&dlng=128.984849&dname=%ec%96%bc%ec%9d%8c%ea%b3%a8&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }

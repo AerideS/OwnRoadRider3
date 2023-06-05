@@ -79,7 +79,7 @@ public class UireongBonghwangDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.4199575&dlng=128.202414&dname=%ec%82%ac%ec%b2%9c+%ed%95%b4%ec%83%81%ec%bc%80%ec%9d%b4%eb%b8%94%ec%b9%b4%0d%0a&appname=com.example.ownroadrider")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.4199575&dlng=128.202414&dname=%eb%b4%89%ed%99%a9%eb%8c%80&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }

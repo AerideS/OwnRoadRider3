@@ -86,7 +86,7 @@ public class HapcheonHongryuDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.7843096&dlng=128.1118949&dname=%ed%95%b4%ec%9d%b8%ec%82%ac%0d%0a&appname=com.example.ownroadrider")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.7843096&dlng=128.1118949&dname=%ed%99%8d%eb%a5%98%eb%8f%99%ea%b3%84%ea%b3%a1&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }

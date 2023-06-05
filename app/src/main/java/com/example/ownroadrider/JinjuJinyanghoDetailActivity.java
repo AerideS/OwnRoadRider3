@@ -82,7 +82,7 @@ public class JinjuJinyanghoDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.1760769&dlng=128.0356263&dname=%eb%b0%80%ec%96%91+%ec%97%b0%ea%bd%83%eb%a7%88%ec%9d%84&appname=com.example.ownroadrider")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.1760769&dlng=128.0356263&dname=%ec%a7%84%ec%96%91%ed%98%b8&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }

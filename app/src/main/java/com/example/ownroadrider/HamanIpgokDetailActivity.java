@@ -82,7 +82,7 @@ public class HamanIpgokDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.2656970&dlng=128.4506237&dname=%ed%95%a8%ec%95%88+%eb%ac%b4%ec%a7%84%ec%a0%95&appname=com.example.ownroadrider")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.2656970&dlng=128.4506237&dname=%ec%9e%85%ea%b3%a1%ea%b5%b0%eb%a6%bd%ea%b3%b5%ec%9b%90&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }

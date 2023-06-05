@@ -82,7 +82,7 @@ public class HamyangNamgyeDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.5489024&dlng=127.7836828&dname=%ed%95%a8%ec%95%88+%eb%ac%b4%ec%a7%84%ec%a0%95&appname=com.example.ownroadrider")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.5489024&dlng=127.7836828&dname=%eb%82%a8%ea%b3%84%ec%84%9c%ec%9b%90&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }

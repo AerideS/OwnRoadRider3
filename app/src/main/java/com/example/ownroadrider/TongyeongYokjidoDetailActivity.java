@@ -82,7 +82,7 @@ public class TongyeongYokjidoDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=34.6363253&dlng=128.2633784&dname=%%eb%8f%99%ed%94%bc%eb%9e%91&appname=com.example.ownroadrider")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=34.6363253&dlng=128.2633784&dname=%ec%9a%95%ec%a7%80%eb%8f%84&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }

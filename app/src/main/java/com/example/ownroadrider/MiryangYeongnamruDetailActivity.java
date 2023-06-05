@@ -82,7 +82,7 @@ public class MiryangYeongnamruDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.4921304&dlng=128.7552449&dname=%eb%b0%80%ec%96%91+%ec%97%b0%ea%bd%83%eb%a7%88%ec%9d%84&appname=com.example.ownroadrider")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=35.4921304&dlng=128.7552449&dname=%ec%98%81%eb%82%a8%eb%a3%a8&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }

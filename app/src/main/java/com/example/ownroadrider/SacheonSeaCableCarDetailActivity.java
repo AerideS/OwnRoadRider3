@@ -82,7 +82,7 @@ public class SacheonSeaCableCarDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=34.9337&dlng=128.0532&dname=%ec%82%ac%ec%b2%9c+%ed%95%b4%ec%83%81%ec%bc%80%ec%9d%b4%eb%b8%94%ec%b9%b4%0d%0a&appname=com.example.ownroadrider")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=34.9337&dlng=128.0532&dname=%eb%b0%94%eb%8b%a4%ec%bc%80%ec%9d%b4%eb%b8%94%ec%b9%b4&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }

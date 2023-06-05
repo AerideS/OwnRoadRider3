@@ -83,7 +83,7 @@ public class NamhaeGermanDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=34.7983539&dlng=128.0416087&dname=%eb%82%a8%ed%95%b4+%eb%b3%b4%eb%a6%ac%ec%95%94&appname=com.example.ownroadrider")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=34.7983539&dlng=128.0416087&dname=%eb%8f%85%ec%9d%bc%eb%a7%88%ec%9d%84&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }

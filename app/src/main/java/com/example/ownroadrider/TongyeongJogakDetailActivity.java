@@ -82,7 +82,7 @@ public class TongyeongJogakDetailActivity extends AppCompatActivity {
 
                 List<ResolveInfo> list = getPackageManager().queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
                 if (list == null || list.isEmpty()) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=34.8423239&dlng=128.4286307&dname=%%eb%8f%99%ed%94%bc%eb%9e%91&appname=com.example.ownroadrider")));
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("nmap://navigation?dlat=34.8423239&dlng=128.4286307&dname=%eb%94%94%ed%94%bc%eb%9e%91&appname=com.example.ownroadrider")));
                 } else {
                     startActivity(intent);
                 }
